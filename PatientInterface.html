@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Data Management</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1>Patient Data Access Management</h1>
+
+    <!-- Access Log -->
+    <div>
+        <h3>Access Log</h3>
+        <button onclick="viewAccessLog()">View Access Log</button>
+        <pre id="accessLog"></pre>
+    </div>
+
+    <!-- Manage Permissions -->
+    <div>
+        <h3>Manage Permissions</h3>
+        <input type="text" id="grantAddress" placeholder="Address to grant permission">
+        <button onclick="grantPermission()">Grant Permission</button>
+
+        <input type="text" id="revokeAddress" placeholder="Address to revoke permission">
+        <button onclick="revokePermission()">Revoke Permission</button>
+    </div>
+</body>
+</html>
