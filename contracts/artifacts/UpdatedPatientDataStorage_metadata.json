@@ -1,0 +1,305 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_rbacAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_auditLogAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "provider",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "patient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "expiryTime",
+						"type": "uint256"
+					}
+				],
+				"name": "EmergencyAccessGranted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "provider",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "patient",
+						"type": "address"
+					}
+				],
+				"name": "EmergencyAccessRevoked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "patient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "category",
+						"type": "string"
+					}
+				],
+				"name": "PatientDataUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "EMERGENCY_ACCESS_DURATION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "accessControl",
+				"outputs": [
+					{
+						"internalType": "contract IEnhancedRBAC",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "auditLog",
+				"outputs": [
+					{
+						"internalType": "contract EnhancedAuditLog",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "provider",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "patient",
+						"type": "address"
+					}
+				],
+				"name": "checkEmergencyAccess",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "granted",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "expiry",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "reason",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "patient",
+						"type": "address"
+					}
+				],
+				"name": "createPatientRecord",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "patient",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "category",
+						"type": "string"
+					}
+				],
+				"name": "getPatientData",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "patient",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "reason",
+						"type": "string"
+					}
+				],
+				"name": "requestEmergencyAccess",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "provider",
+						"type": "address"
+					}
+				],
+				"name": "revokeEmergencyAccess",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "patient",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "category",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "encryptedData",
+						"type": "string"
+					}
+				],
+				"name": "updatePatientData",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/UpdatedPatientDataStorage.sol": "UpdatedPatientDataStorage"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/EnhancedAuditLog.sol": {
+			"keccak256": "0x5f10f235f7f1310a221225754a803acd6e73a618155e8cfad62c612b5ff1911f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a581370cf7befbf1c368746b0601218d32a20a3c289482e8d41e63dab2fedbd7",
+				"dweb:/ipfs/Qmafhpi22AKFZhLh5jvz294rDvKmYR4b3918t5bsBCtBcS"
+			]
+		},
+		"contracts/IEnhancedRBAC.sol": {
+			"keccak256": "0x33dd64be5d7547f310b2e4887c87cb1cf8663132d4e955af7d585d97b5dbcfbb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://531df54a83da1e5eec3fdc5dc94213e02a83b7f4860c5a882d780655e9c1ffcb",
+				"dweb:/ipfs/QmdTbd6K36HJksA5jfywh8CLBUaFsaD8SMDm6MGV2d316M"
+			]
+		},
+		"contracts/UpdatedPatientDataStorage.sol": {
+			"keccak256": "0x634b379b7b996f8773ab2b8fd68fdbb25859179fe0a484928e9314cdad94c47d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://be24a89581a0ccf02d438db4acbdbd182717d0b48e2adf70564b4128ec7d0fce",
+				"dweb:/ipfs/QmexMBsy1j8jPvNgLfPDsScfAJ3qYyncBewKkSav3ftQmv"
+			]
+		}
+	},
+	"version": 1
+}
