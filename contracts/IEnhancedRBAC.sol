@@ -8,4 +8,5 @@ interface IEnhancedRBAC {
     function getUserRole(address user) external view returns (Role);
     function verifyRoleCredential(address user, bytes32 credentialHash) external view returns (bool);
     function getUserDID(address user) external view returns (string memory);
+    function getRoleCredential(address user) external view returns (bytes32);
 }

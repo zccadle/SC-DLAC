@@ -95,6 +95,70 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getAccessRecord",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "user",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "patient",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "accessType",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "justification",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isEmergency",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct EnhancedAuditLog.AccessRecord",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAccessRecordCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "patient",
 						"type": "address"
@@ -205,11 +269,11 @@
 	},
 	"sources": {
 		"contracts/EnhancedAuditLog.sol": {
-			"keccak256": "0x5f10f235f7f1310a221225754a803acd6e73a618155e8cfad62c612b5ff1911f",
+			"keccak256": "0xb226f6176c6164d6d607108e284244f79602543532fedc04aec0d3a45838a9ca",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a581370cf7befbf1c368746b0601218d32a20a3c289482e8d41e63dab2fedbd7",
-				"dweb:/ipfs/Qmafhpi22AKFZhLh5jvz294rDvKmYR4b3918t5bsBCtBcS"
+				"bzz-raw://a27e0b416d213ba18df532ce26a539dfefd731816cc846022ae43602c301f174",
+				"dweb:/ipfs/QmZqqw6anK51DZcWemikKaj1B8pMeEqF6y5DtdWepYT7jA"
 			]
 		}
 	},

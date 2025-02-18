@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-// EnhancedAuditLog.sol
 contract EnhancedAuditLog {
     struct AccessRecord {
         address user;
@@ -71,5 +70,14 @@ contract EnhancedAuditLog {
         }
         
         return records;
+    }
+
+    function getAccessRecordCount() public view returns (uint256) {
+        return accessRecords.length;
+    }
+
+    function getAccessRecord(uint256 index) public view returns (AccessRecord memory) {
+        require(index < accessRecords.length, "Index out of bounds");
+        return accessRecords[index];
     }
 }
