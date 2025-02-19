@@ -16,6 +16,16 @@
 						"internalType": "address",
 						"name": "_auditLogAddress",
 						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_didRegistryAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_zkpVerifierAddress",
+						"type": "address"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -171,6 +181,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "didRegistry",
+				"outputs": [
+					{
+						"internalType": "contract IDIDRegistry",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -181,6 +204,11 @@
 						"internalType": "string",
 						"name": "category",
 						"type": "string"
+					},
+					{
+						"internalType": "bytes",
+						"name": "zkProof",
+						"type": "bytes"
 					}
 				],
 				"name": "getPatientData",
@@ -205,6 +233,11 @@
 						"internalType": "string",
 						"name": "reason",
 						"type": "string"
+					},
+					{
+						"internalType": "bytes",
+						"name": "zkProof",
+						"type": "bytes"
 					}
 				],
 				"name": "requestEmergencyAccess",
@@ -241,11 +274,29 @@
 						"internalType": "string",
 						"name": "encryptedData",
 						"type": "string"
+					},
+					{
+						"internalType": "bytes",
+						"name": "zkProof",
+						"type": "bytes"
 					}
 				],
 				"name": "updatePatientData",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "zkpVerifier",
+				"outputs": [
+					{
+						"internalType": "contract ZKPVerifier",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -277,27 +328,43 @@
 	},
 	"sources": {
 		"contracts/EnhancedAuditLog.sol": {
-			"keccak256": "0x5f10f235f7f1310a221225754a803acd6e73a618155e8cfad62c612b5ff1911f",
+			"keccak256": "0xb226f6176c6164d6d607108e284244f79602543532fedc04aec0d3a45838a9ca",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a581370cf7befbf1c368746b0601218d32a20a3c289482e8d41e63dab2fedbd7",
-				"dweb:/ipfs/Qmafhpi22AKFZhLh5jvz294rDvKmYR4b3918t5bsBCtBcS"
+				"bzz-raw://a27e0b416d213ba18df532ce26a539dfefd731816cc846022ae43602c301f174",
+				"dweb:/ipfs/QmZqqw6anK51DZcWemikKaj1B8pMeEqF6y5DtdWepYT7jA"
+			]
+		},
+		"contracts/IDIDRegistry.sol": {
+			"keccak256": "0x5251c4fa4cafadb22cb9903402d4b89147c8a829288e443c60f7a102cb563cf3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ffd50b7ed02133d93f1fce564fc4500283a93a5ba7c3fd658ed305212340cff",
+				"dweb:/ipfs/QmWJcSwtXB7HGQRyWNTBoD64NoKMFP75bqK8hhVJbkhsPP"
 			]
 		},
 		"contracts/IEnhancedRBAC.sol": {
-			"keccak256": "0x33dd64be5d7547f310b2e4887c87cb1cf8663132d4e955af7d585d97b5dbcfbb",
+			"keccak256": "0xf7db5523b50b48f9e16801afebd1f861627cd4d8da65d67cc1a8386459e73db0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://531df54a83da1e5eec3fdc5dc94213e02a83b7f4860c5a882d780655e9c1ffcb",
-				"dweb:/ipfs/QmdTbd6K36HJksA5jfywh8CLBUaFsaD8SMDm6MGV2d316M"
+				"bzz-raw://e3b3e177b2cf371b6e58c4e7370a787289c48040dd0ddf63f73485ed94b68b15",
+				"dweb:/ipfs/Qmaq9r7Akfvv2iH3yQA2HSaoMr4gFJiEESftoCLFf2ynWZ"
 			]
 		},
 		"contracts/UpdatedPatientDataStorage.sol": {
-			"keccak256": "0x634b379b7b996f8773ab2b8fd68fdbb25859179fe0a484928e9314cdad94c47d",
+			"keccak256": "0xd7a1f8fdddd24787399b38b1ac7460f08524a9edc7be20c3767a6180ab84297b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://be24a89581a0ccf02d438db4acbdbd182717d0b48e2adf70564b4128ec7d0fce",
-				"dweb:/ipfs/QmexMBsy1j8jPvNgLfPDsScfAJ3qYyncBewKkSav3ftQmv"
+				"bzz-raw://2e075320b6d63a9a9781998f7dca121926c9a55b7bc191bc98c8d3e4ecd05e9a",
+				"dweb:/ipfs/QmV8EPRFwykQNtpgMiwaN8jX15UU8aNPUvBVDW9CkuYhPq"
+			]
+		},
+		"contracts/ZKPVerifier.sol": {
+			"keccak256": "0x7bb896d4302e7f7d9ed4a0bffe495318554282814fd2884809fa6fa9328ec268",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fd2e9af3b86b4ed34d9141652fce010083a7ea7ea5f9dc73264be60ff30e4372",
+				"dweb:/ipfs/QmWkAVUCm4e3uDtHWX1MCYoJCgy84ziX6yYQnWsrnrqvnM"
 			]
 		}
 	},

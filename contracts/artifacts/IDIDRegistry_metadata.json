@@ -1,0 +1,226 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "did",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "value",
+						"type": "string"
+					}
+				],
+				"name": "addAttribute",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "did",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "initialControllers",
+						"type": "string[]"
+					}
+				],
+				"name": "createDID",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "did",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "getAttribute",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "getDIDByAddress",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "did",
+						"type": "string"
+					}
+				],
+				"name": "getDIDDocument",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lastUpdated",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string[]",
+						"name": "controllers",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "did",
+						"type": "string"
+					}
+				],
+				"name": "verifyDIDControl",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "did",
+						"type": "string"
+					},
+					{
+						"internalType": "enum IEnhancedRBAC.Role",
+						"name": "role",
+						"type": "uint8"
+					}
+				],
+				"name": "verifyDIDRole",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/IDIDRegistry.sol": "IDIDRegistry"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/IDIDRegistry.sol": {
+			"keccak256": "0x5251c4fa4cafadb22cb9903402d4b89147c8a829288e443c60f7a102cb563cf3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ffd50b7ed02133d93f1fce564fc4500283a93a5ba7c3fd658ed305212340cff",
+				"dweb:/ipfs/QmWJcSwtXB7HGQRyWNTBoD64NoKMFP75bqK8hhVJbkhsPP"
+			]
+		},
+		"contracts/IEnhancedRBAC.sol": {
+			"keccak256": "0xf7db5523b50b48f9e16801afebd1f861627cd4d8da65d67cc1a8386459e73db0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e3b3e177b2cf371b6e58c4e7370a787289c48040dd0ddf63f73485ed94b68b15",
+				"dweb:/ipfs/Qmaq9r7Akfvv2iH3yQA2HSaoMr4gFJiEESftoCLFf2ynWZ"
+			]
+		}
+	},
+	"version": 1
+}

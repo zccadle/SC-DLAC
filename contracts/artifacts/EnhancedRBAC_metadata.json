@@ -6,48 +6,20 @@
 	"output": {
 		"abi": [
 			{
-				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": true,
 						"internalType": "address",
-						"name": "user",
+						"name": "_didRegistryAddress",
 						"type": "address"
 					},
 					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "did",
-						"type": "string"
+						"internalType": "address",
+						"name": "_zkpVerifierAddress",
+						"type": "address"
 					}
 				],
-				"name": "DIDAssigned",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "provider",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "patient",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "expiry",
-						"type": "uint256"
-					}
-				],
-				"name": "EmergencyAccessGranted",
-				"type": "event"
+				"stateMutability": "nonpayable",
+				"type": "constructor"
 			},
 			{
 				"anonymous": false,
@@ -63,12 +35,6 @@
 						"internalType": "string",
 						"name": "permission",
 						"type": "string"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "validUntil",
-						"type": "uint256"
 					}
 				],
 				"name": "PermissionGranted",
@@ -110,9 +76,9 @@
 					},
 					{
 						"indexed": false,
-						"internalType": "uint256",
-						"name": "validUntil",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "did",
+						"type": "string"
 					}
 				],
 				"name": "RoleAssigned",
@@ -126,31 +92,6 @@
 						"internalType": "address",
 						"name": "user",
 						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "bytes32",
-						"name": "credentialHash",
-						"type": "bytes32"
-					}
-				],
-				"name": "RoleCredentialUpdated",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "user",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "enum EnhancedRBAC.Role",
-						"name": "role",
-						"type": "uint8"
 					}
 				],
 				"name": "RoleRevoked",
@@ -169,11 +110,6 @@
 						"type": "uint8"
 					},
 					{
-						"internalType": "uint256",
-						"name": "validityPeriod",
-						"type": "uint256"
-					},
-					{
 						"internalType": "bytes32",
 						"name": "roleCredential",
 						"type": "bytes32"
@@ -182,6 +118,11 @@
 						"internalType": "string",
 						"name": "did",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "validityPeriod",
+						"type": "uint256"
 					}
 				],
 				"name": "assignRole",
@@ -190,206 +131,26 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "user",
-						"type": "address"
-					}
-				],
-				"name": "getRoleCredential",
+				"inputs": [],
+				"name": "didRegistry",
 				"outputs": [
 					{
-						"internalType": "bytes32",
+						"internalType": "contract IDIDRegistry",
 						"name": "",
-						"type": "bytes32"
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "user",
-						"type": "address"
-					}
-				],
-				"name": "getUserDID",
+				"inputs": [],
+				"name": "zkpVerifier",
 				"outputs": [
 					{
-						"internalType": "string",
+						"internalType": "contract ZKPVerifier",
 						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "user",
 						"type": "address"
-					}
-				],
-				"name": "getUserRole",
-				"outputs": [
-					{
-						"internalType": "enum EnhancedRBAC.Role",
-						"name": "",
-						"type": "uint8"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "provider",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "patient",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "duration",
-						"type": "uint256"
-					}
-				],
-				"name": "grantEmergencyAccess",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "provider",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "patient",
-						"type": "address"
-					}
-				],
-				"name": "hasEmergencyAccess",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "user",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "permission",
-						"type": "string"
-					}
-				],
-				"name": "hasPermission",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "user",
-						"type": "address"
-					}
-				],
-				"name": "revokeRole",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "enum EnhancedRBAC.Role",
-						"name": "role",
-						"type": "uint8"
-					},
-					{
-						"internalType": "string",
-						"name": "permission",
-						"type": "string"
-					},
-					{
-						"internalType": "bool",
-						"name": "allowed",
-						"type": "bool"
-					}
-				],
-				"name": "setRolePermission",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "user",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "newDID",
-						"type": "string"
-					}
-				],
-				"name": "updateDID",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "user",
-						"type": "address"
-					},
-					{
-						"internalType": "bytes32",
-						"name": "credentialHash",
-						"type": "bytes32"
-					}
-				],
-				"name": "verifyRoleCredential",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -424,11 +185,35 @@
 	},
 	"sources": {
 		"contracts/EnhancedRBAC.sol": {
-			"keccak256": "0x41fae1d06c32549b95de8f5f9fdef87d686066573216bbedf672f8f47f97a67b",
+			"keccak256": "0xf99763b4fa5959c61d6cbfe548c8b80b5ef9998e00d083c1e1a4f92693ee27e4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5941950f849bba5350c934fe25f81027889b9c7edc530cc85cc2cfd842d5e079",
-				"dweb:/ipfs/QmVFRhhe5ggU2k3W91HnfkpWk6YADqxjEWSo7j17tMLUsb"
+				"bzz-raw://7bd603e686cceafb7be88078a6255382af3971fc15c49b567f46cd95b0ebf06b",
+				"dweb:/ipfs/QmRZyFpfotmTNockUmVBFEvq2gn8F5WufcK4XSUjknYoKd"
+			]
+		},
+		"contracts/IDIDRegistry.sol": {
+			"keccak256": "0x5251c4fa4cafadb22cb9903402d4b89147c8a829288e443c60f7a102cb563cf3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ffd50b7ed02133d93f1fce564fc4500283a93a5ba7c3fd658ed305212340cff",
+				"dweb:/ipfs/QmWJcSwtXB7HGQRyWNTBoD64NoKMFP75bqK8hhVJbkhsPP"
+			]
+		},
+		"contracts/IEnhancedRBAC.sol": {
+			"keccak256": "0xf7db5523b50b48f9e16801afebd1f861627cd4d8da65d67cc1a8386459e73db0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e3b3e177b2cf371b6e58c4e7370a787289c48040dd0ddf63f73485ed94b68b15",
+				"dweb:/ipfs/Qmaq9r7Akfvv2iH3yQA2HSaoMr4gFJiEESftoCLFf2ynWZ"
+			]
+		},
+		"contracts/ZKPVerifier.sol": {
+			"keccak256": "0x7bb896d4302e7f7d9ed4a0bffe495318554282814fd2884809fa6fa9328ec268",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fd2e9af3b86b4ed34d9141652fce010083a7ea7ea5f9dc73264be60ff30e4372",
+				"dweb:/ipfs/QmWkAVUCm4e3uDtHWX1MCYoJCgy84ziX6yYQnWsrnrqvnM"
 			]
 		}
 	},

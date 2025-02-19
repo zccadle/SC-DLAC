@@ -13,6 +13,25 @@
 						"type": "address"
 					}
 				],
+				"name": "getRoleCredential",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
 				"name": "getUserDID",
 				"outputs": [
 					{
@@ -120,11 +139,11 @@
 	},
 	"sources": {
 		"contracts/IEnhancedRBAC.sol": {
-			"keccak256": "0x33dd64be5d7547f310b2e4887c87cb1cf8663132d4e955af7d585d97b5dbcfbb",
+			"keccak256": "0xf7db5523b50b48f9e16801afebd1f861627cd4d8da65d67cc1a8386459e73db0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://531df54a83da1e5eec3fdc5dc94213e02a83b7f4860c5a882d780655e9c1ffcb",
-				"dweb:/ipfs/QmdTbd6K36HJksA5jfywh8CLBUaFsaD8SMDm6MGV2d316M"
+				"bzz-raw://e3b3e177b2cf371b6e58c4e7370a787289c48040dd0ddf63f73485ed94b68b15",
+				"dweb:/ipfs/Qmaq9r7Akfvv2iH3yQA2HSaoMr4gFJiEESftoCLFf2ynWZ"
 			]
 		}
 	},
