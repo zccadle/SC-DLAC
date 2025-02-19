@@ -5,12 +5,12 @@ import "./IEnhancedRBAC.sol";
 
 contract DIDRegistry {
     struct DIDDocument {
-        string did;                    // DID identifier
-        address owner;                 // Ethereum address of DID owner
-        string[] controllers;          // List of authorized controllers
-        mapping(string => string) attributes;  // DID document attributes
-        bool isActive;                 // DID status
-        uint256 lastUpdated;          // Last update timestamp
+        string did;
+        address owner;
+        string[] controllers;
+        mapping(string => string) attributes;
+        bool isActive;
+        uint256 lastUpdated;
     }
 
     // Main DID storage
@@ -42,7 +42,6 @@ contract DIDRegistry {
         _;
     }
 
-    // Create a new DID
     function createDID(
         string memory did,
         string[] memory initialControllers
@@ -67,7 +66,6 @@ contract DIDRegistry {
         return true;
     }
 
-    // Add an attribute to DID document
     function addAttribute(
         string memory did,
         string memory name,
@@ -80,7 +78,6 @@ contract DIDRegistry {
         emit DIDUpdated(did, "attribute_added");
     }
 
-    // Add a controller to DID document
     function addController(
         string memory did,
         string memory controller
@@ -92,7 +89,6 @@ contract DIDRegistry {
         emit DIDUpdated(did, "controller_added");
     }
 
-    // Deactivate a DID
     function deactivateDID(string memory did) 
         public 
         onlyOwner(did) 
@@ -105,7 +101,6 @@ contract DIDRegistry {
         emit DIDUpdated(did, "deactivated");
     }
 
-    // Get DID document (basic info)
     function getDIDDocument(string memory did) 
         public 
         view 
@@ -126,7 +121,6 @@ contract DIDRegistry {
         );
     }
 
-    // Get DID attribute
     function getAttribute(
         string memory did,
         string memory name
@@ -134,25 +128,24 @@ contract DIDRegistry {
         return didDocuments[did].attributes[name];
     }
 
-    // Get DID by address
     function getDIDByAddress(address addr) public view returns (string memory) {
-        return addressToDID[addr];
+        string memory did = addressToDID[addr];
+        require(bytes(did).length > 0, "No DID found for address");
+        require(didDocuments[did].isActive, "DID is inactive");
+        return did;
     }
 
-    // Verify if an address controls a DID
     function verifyDIDControl(
         address addr,
         string memory did
     ) public view returns (bool) {
-        return didDocuments[did].owner == addr;
+        return didDocuments[did].owner == addr && didDocuments[did].isActive;
     }
 
-    // Helper function to verify DID matches role
     function verifyDIDRole(
         string memory did,
         IEnhancedRBAC.Role role
     ) public view returns (bool) {
-        address owner = didDocuments[did].owner;
-        return rbac.getUserRole(owner) == role;
+        return rbac.getUserRole(didDocuments[did].owner) == role;
     }
 }

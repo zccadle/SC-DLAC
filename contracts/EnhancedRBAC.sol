@@ -55,25 +55,6 @@ contract EnhancedRBAC {
         emit DIDRegistryUpdated(_didRegistryAddress);
     }
 
-    function setupAdmin(
-        address admin,
-        bytes32 roleCredential,
-        string memory did,
-        uint256 validityPeriod
-    ) public onlyOwner {
-        require(userRoles[admin].role == Role.None, "Address already has a role");
-        
-        userRoles[admin] = RoleData({
-            role: Role.Admin,
-            isActive: true,
-            validUntil: block.timestamp + validityPeriod,
-            roleCredential: roleCredential,
-            did: did
-        });
-
-        emit RoleAssigned(admin, Role.Admin, did);
-    }
-
     function assignRole(
         address user,
         Role role,
@@ -151,26 +132,5 @@ contract EnhancedRBAC {
 
     function getRoleCredential(address user) public view returns (bytes32) {
         return userRoles[user].roleCredential;
-    }
-
-    function verifyUserRole(
-        address user,
-        Role role,
-        bytes memory zkProof
-    ) public view returns (bool) {
-        if (!userRoles[user].isActive || userRoles[user].validUntil <= block.timestamp) {
-            return false;
-        }
-
-        // Create proof hash using the zkProof
-        bytes32 proofHash = keccak256(abi.encodePacked(user, userRoles[user].roleCredential, zkProof));
-        
-        return userRoles[user].role == role &&
-            zkpVerifier.validateProof(user, proofHash);
-    }
-
-    function transferOwnership(address newOwner) public onlyOwner {
-        require(newOwner != address(0), "New owner cannot be zero address");
-        owner = newOwner;
     }
 }

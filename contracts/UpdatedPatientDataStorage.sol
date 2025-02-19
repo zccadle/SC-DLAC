@@ -80,7 +80,7 @@ contract UpdatedPatientDataStorage {
         require(bytes(providerDID).length > 0, "Provider DID not found");
         
         bytes32 roleHash = accessControl.getRoleCredential(msg.sender);
-        bytes32 proofHash = keccak256(abi.encodePacked(roleHash, zkProof));
+        bytes32 proofHash = keccak256(abi.encode(roleHash, zkProof));
         
         require(
             zkpVerifier.validateProof(msg.sender, proofHash),
