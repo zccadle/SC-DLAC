@@ -144,8 +144,8 @@ contract DIDRegistry {
 
     function verifyDIDRole(
         string memory did,
-        IEnhancedRBAC.Role role
+        string memory role
     ) public view returns (bool) {
-        return rbac.getUserRole(didDocuments[did].owner) == role;
+        return rbac.hasRole(didDocuments[did].owner, role);
     }
 }

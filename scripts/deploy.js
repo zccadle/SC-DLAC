@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-  console.log("Starting deployment...");
+  console.log("Starting deployment of DACEMS with delegation support...");
 
   // Get the deployer account
   const [deployer] = await ethers.getSigners();
@@ -67,6 +67,14 @@ async function main() {
   // Check RBAC's DID Registry address
   const rbacDidRegistry = await rbac.didRegistry();
   console.log("RBAC's DID Registry address:", rbacDidRegistry);
+  
+  // Verify roles were created
+  const allRoles = await rbac.getAllRoles();
+  console.log("\nAvailable roles:");
+  for (const role of allRoles) {
+    console.log(`- ${role}`);
+  }
+  
   console.log("Verification complete!");
 }
 

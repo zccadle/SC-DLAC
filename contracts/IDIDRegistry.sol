@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./IEnhancedRBAC.sol";
-
 interface IDIDRegistry {
     function createDID(
         string memory did,
@@ -39,6 +37,6 @@ interface IDIDRegistry {
     
     function verifyDIDRole(
         string memory did,
-        IEnhancedRBAC.Role role
+        string memory role
     ) external view returns (bool);
 }
