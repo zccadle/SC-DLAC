@@ -2,11 +2,11 @@
 pragma solidity ^0.8.0;
 
 interface IEnhancedRBAC {
-    enum Role { None, Patient, Nurse, Paramedic, Doctor, Admin, Auditor }
-    
     function hasPermission(address user, string memory permission) external view returns (bool);
-    function getUserRole(address user) external view returns (Role);
+    function hasRole(address user, string memory roleID) external view returns (bool);
+    function getUserRole(address user) external view returns (string memory);
     function verifyRoleCredential(address user, bytes32 credentialHash) external view returns (bool);
     function getUserDID(address user) external view returns (string memory);
     function getRoleCredential(address user) external view returns (bytes32);
+    function isDelegatedRole(address user) external view returns (bool);
 }
