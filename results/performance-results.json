@@ -1,0 +1,197 @@
+{
+  "encryptionDecryption": {
+    "description": "Measures time taken to encrypt and decrypt data of varying sizes",
+    "data": [
+      {
+        "sizeKB": 1,
+        "encryptionTimeMs": 0.5715999999999894,
+        "decryptionTimeMs": 0.07810000000006312
+      },
+      {
+        "sizeKB": 2,
+        "encryptionTimeMs": 0.06470000000001619,
+        "decryptionTimeMs": 0.027100000000018554
+      },
+      {
+        "sizeKB": 4,
+        "encryptionTimeMs": 0.05570000000000164,
+        "decryptionTimeMs": 0.034300000000030195
+      },
+      {
+        "sizeKB": 8,
+        "encryptionTimeMs": 0.09510000000000218,
+        "decryptionTimeMs": 0.058699999999930697
+      },
+      {
+        "sizeKB": 16,
+        "encryptionTimeMs": 0.29710000000000036,
+        "decryptionTimeMs": 0.11760000000003856
+      },
+      {
+        "sizeKB": 32,
+        "encryptionTimeMs": 0.14239999999995234,
+        "decryptionTimeMs": 0.1412000000000262
+      },
+      {
+        "sizeKB": 64,
+        "encryptionTimeMs": 0.31949999999994816,
+        "decryptionTimeMs": 0.22079999999994016
+      },
+      {
+        "sizeKB": 128,
+        "encryptionTimeMs": 0.43240000000002965,
+        "decryptionTimeMs": 0.5288000000000466
+      },
+      {
+        "sizeKB": 256,
+        "encryptionTimeMs": 0.8018000000000711,
+        "decryptionTimeMs": 0.9169000000000551
+      },
+      {
+        "sizeKB": 512,
+        "encryptionTimeMs": 1.5425000000000182,
+        "decryptionTimeMs": 1.8636999999999944
+      },
+      {
+        "sizeKB": 1024,
+        "encryptionTimeMs": 2.5469000000000506,
+        "decryptionTimeMs": 3.755300000000034
+      }
+    ]
+  },
+  "zkProofOperations": {
+    "description": "Measures time taken for ZK proof generation and validation with varying complexities",
+    "data": [
+      {
+        "complexity": 1,
+        "generationTimeMs": 0.5391000000000759,
+        "validationTimeMs": 0.025700000000028922
+      },
+      {
+        "complexity": 2,
+        "generationTimeMs": 0.039099999999962165,
+        "validationTimeMs": 0.009900000000016007
+      },
+      {
+        "complexity": 4,
+        "generationTimeMs": 0.06180000000006203,
+        "validationTimeMs": 0.0061000000000603904
+      },
+      {
+        "complexity": 8,
+        "generationTimeMs": 0.05169999999998254,
+        "validationTimeMs": 0.020599999999944885
+      },
+      {
+        "complexity": 16,
+        "generationTimeMs": 0.0523000000000593,
+        "validationTimeMs": 0.09960000000000946
+      },
+      {
+        "complexity": 32,
+        "generationTimeMs": 0.06689999999991869,
+        "validationTimeMs": 0.02329999999994925
+      },
+      {
+        "complexity": 64,
+        "generationTimeMs": 0.11879999999996471,
+        "validationTimeMs": 0.03679999999997108
+      },
+      {
+        "complexity": 128,
+        "generationTimeMs": 0.24729999999999563,
+        "validationTimeMs": 0.06100000000003547
+      }
+    ]
+  },
+  "transactionTimes": {
+    "description": "Measures average execution time for contract operations",
+    "data": {
+      "policyRegistration": {
+        "iterations": 5,
+        "times": [
+          54.72439999999983,
+          36.063399999999774,
+          46.28009999999995,
+          44.728999999999814,
+          24.855999999999995
+        ],
+        "averageMs": 41.33057999999987
+      },
+      "accessRightDelegation": {
+        "iterations": 5,
+        "times": [
+          47.725400000000036,
+          83.02869999999984,
+          46.71419999999989,
+          40.83129999999983,
+          39.76270000000022
+        ],
+        "averageMs": 51.61245999999996
+      },
+      "emergencyAccessRequest": {
+        "iterations": 3,
+        "times": [
+          82.96979999999985,
+          63.57519999999977,
+          49.243299999999635
+        ],
+        "averageMs": 65.26276666666642
+      },
+      "dataUpdate": {
+        "iterations": 5,
+        "times": [
+          62.53089999999975,
+          67.55310000000009,
+          55.76690000000008,
+          57.4064000000003,
+          56.07750000000033
+        ],
+        "averageMs": 59.866960000000105
+      }
+    }
+  },
+  "responsiveness": {
+    "description": "Measures system responsiveness under different loads",
+    "latency": [
+      {
+        "concurrentTxs": 1,
+        "totalTimeMs": 35.302700000000186,
+        "avgLatencyMs": 35.302700000000186
+      },
+      {
+        "concurrentTxs": 2,
+        "totalTimeMs": 33.625,
+        "avgLatencyMs": 16.8125
+      },
+      {
+        "concurrentTxs": 4,
+        "totalTimeMs": 40.283100000000104,
+        "avgLatencyMs": 10.070775000000026
+      },
+      {
+        "concurrentTxs": 8,
+        "totalTimeMs": 62.81869999999981,
+        "avgLatencyMs": 7.852337499999976
+      }
+    ],
+    "throughput": [
+      {
+        "concurrentTxs": 1,
+        "throughputTps": 28.326445286054458
+      },
+      {
+        "concurrentTxs": 2,
+        "throughputTps": 59.479553903345725
+      },
+      {
+        "concurrentTxs": 4,
+        "throughputTps": 99.29722389786262
+      },
+      {
+        "concurrentTxs": 8,
+        "throughputTps": 127.35061375036453
+      }
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "accessPolicyOperations": {
+    "description": "Performance of access policy operations",
+    "registration": [
+      {
+        "iteration": 0,
+        "timeMs": 65.19700000000012
+      },
+      {
+        "iteration": 1,
+        "timeMs": 45.668499999999995
+      },
+      {
+        "iteration": 2,
+        "timeMs": 64.17879999999991
+      },
+      {
+        "iteration": 3,
+        "timeMs": 44.4563999999998
+      },
+      {
+        "iteration": 4,
+        "timeMs": 65.97929999999997
+      }
+    ],
+    "delegation": [
+      {
+        "iteration": 0,
+        "timeMs": 59.06739999999991
+      },
+      {
+        "iteration": 1,
+        "timeMs": 59.389700000000175
+      },
+      {
+        "iteration": 2,
+        "timeMs": 46.597899999999754
+      },
+      {
+        "iteration": 3,
+        "timeMs": 30.23199999999997
+      },
+      {
+        "iteration": 4,
+        "timeMs": 69.83230000000003
+      }
+    ],
+    "verification": [
+      {
+        "iteration": 0,
+        "timeMs": 3.900100000000293
+      },
+      {
+        "iteration": 1,
+        "timeMs": 19.717299999999796
+      },
+      {
+        "iteration": 2,
+        "timeMs": 9.548800000000028
+      },
+      {
+        "iteration": 3,
+        "timeMs": 15.396600000000035
+      },
+      {
+        "iteration": 4,
+        "timeMs": 12.859899999999925
+      }
+    ],
+    "authorization": [
+      {
+        "iteration": 0,
+        "timeMs": 22.94210000000021
+      },
+      {
+        "iteration": 1,
+        "timeMs": 14.056099999999788
+      },
+      {
+        "iteration": 2,
+        "timeMs": 9.157200000000103
+      },
+      {
+        "iteration": 3,
+        "timeMs": 9.21939999999995
+      },
+      {
+        "iteration": 4,
+        "timeMs": 13.476799999999912
+      }
+    ],
+    "registrationAvg": 57.09599999999996,
+    "delegationAvg": 53.02385999999997,
+    "verificationAvg": 12.284540000000016,
+    "authorizationAvg": 13.770319999999993
+  },
+  "dataPolicyPerformance": {
+    "description": "Performance comparison of data-intensive vs non-intensive policies",
+    "dataIntensive": [
+      {
+        "iteration": 0,
+        "dataSize": "10KB",
+        "timeMs": 75.88300000000027
+      },
+      {
+        "iteration": 1,
+        "dataSize": "10KB",
+        "timeMs": 78.48720000000003
+      },
+      {
+        "iteration": 2,
+        "dataSize": "10KB",
+        "timeMs": 68.76650000000018
+      }
+    ],
+    "nonDataIntensive": [
+      {
+        "iteration": 0,
+        "dataSize": "small",
+        "timeMs": 43.25070000000005
+      },
+      {
+        "iteration": 1,
+        "dataSize": "small",
+        "timeMs": 73.39980000000014
+      },
+      {
+        "iteration": 2,
+        "dataSize": "small",
+        "timeMs": 66.87300000000005
+      }
+    ],
+    "dataIntensiveAvg": 74.37890000000016,
+    "nonDataIntensiveAvg": 61.17450000000008
+  }
+}
