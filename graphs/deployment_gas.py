@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Data
-contracts = ['ZKPVerifier', 'EnhancedRBAC', 'DIDRegistry', 'EnhancedAuditLog', 'PatientDataStorage']
-gas_costs = [292943, 2391738, 1195579, 813096, 2486605]
+# Data from enhanced-gas-analysis.json
+contracts = ['ZKP_Manager', 'DLAC_Manager', 'DID_Manager', 'AuditLogger', 'EHR_Manager']
+gas_costs = [292943, 2391738, 1195591, 813096, 2405196]
 
 # Create figure
 plt.figure(figsize=(10, 6))

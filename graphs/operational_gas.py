@@ -1,20 +1,45 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Data (sorted by gas cost)
+# Data from enhanced-gas-analysis.json (sorted by gas cost)
 functions = [
-    'requestDelegatedEmergencyAccess', 'createPatientRecord', 'updatePatientData',
-    'createDID', 'revokeDelegatedEmergencyAccess', 'assignRole', 'createDelegationPolicy', 
-    'submitProof', 'addRole', 'addAttribute', 'grantPermission', 
-    'updateDIDRegistry', 'revokePermission', 'updatePolicy'
+    'requestDelegatedEmergencyAccess', 
+    'createPatientRecord', 
+    'updatePatientData',
+    'createDID', 
+    'revokeDelegatedEmergencyAccess', 
+    'assignRole', 
+    'createDelegationPolicy', 
+    'submitProof',
+    'addRole', 
+    'addAttribute', 
+    'grantPermission', 
+    'revokeRole',
+    'revokePermission', 
+    'updateDIDRegistry',
+    'updatePolicy'
 ]
+
 gas_costs = [
-    529692, 325834, 257562, 227129, 202191, 192274, 191438, 
-    114493, 102054, 63561, 53554, 47251, 31745, 25696
+    529692, 
+    355561, 
+    278768, 
+    272041, 
+    202191, 
+    222190, 
+    191714, 
+    43285,
+    109112, 
+    64661, 
+    60843, 
+    60364,
+    40986, 
+    27363, 
+    25696
 ]
 
 # Create horizontal bar chart
-plt.figure(figsize=(12, 8))
+plt.figure(figsize=(12, 10))
 bars = plt.barh(functions[::-1], gas_costs[::-1], color='#5A67D8')
 
 # Annotate bars with values
