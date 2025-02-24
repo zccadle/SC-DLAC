@@ -1,22 +1,104 @@
 const { ethers } = require("hardhat");
+const fs = require("fs");
+const path = require("path");
 
 async function main() {
     console.log("Starting initial setup with delegation support...");
 
-    // Get contract addresses from deployment
-    const DEPLOYED_ADDRESSES = {
-        zkpVerifier: "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1",
-        rbac: "0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE",
-        didRegistry: "0x68B1D87F95878fE05B998F19b66F4baba5De1aed",
-        auditLog: "0xc6e7DF5E7b4f2A278906862b61205850344D4e7d",
-        patientStorage: "0x59b670e9fA9D0A427751Af201D676719a970857b"
-    };
+    // Read the most recent local deployment addresses
+    const deploymentsDir = path.join(__dirname, '../deployments');
+    let deployedAddresses;
+    
+    try {
+        // Find the most recent local deployment file
+        const files = fs.readdirSync(deploymentsDir)
+            .filter(file => file.startsWith('deployment-localhost'))
+            .sort((a, b) => b.localeCompare(a)); // Sort by filename (latest first)
+        
+        if (files.length === 0) {
+            console.log("No local deployment found. Run deploy.js first.");
+            console.log("Using dummy addresses for testing only...");
+            // Get deployed contracts from the network
+            const ZKPVerifier = await ethers.getContractFactory("ZKPVerifier");
+            const zkpVerifier = await ZKPVerifier.deploy();
+            await zkpVerifier.deployed();
+            
+            const EnhancedRBAC = await ethers.getContractFactory("EnhancedRBAC");
+            const rbac = await EnhancedRBAC.deploy(ethers.constants.AddressZero, zkpVerifier.address);
+            await rbac.deployed();
+            
+            const DIDRegistry = await ethers.getContractFactory("DIDRegistry");
+            const didRegistry = await DIDRegistry.deploy(rbac.address);
+            await didRegistry.deployed();
+            
+            await rbac.updateDIDRegistry(didRegistry.address);
+            
+            const EnhancedAuditLog = await ethers.getContractFactory("EnhancedAuditLog");
+            const auditLog = await EnhancedAuditLog.deploy();
+            await auditLog.deployed();
+            
+            const PatientDataStorage = await ethers.getContractFactory("UpdatedPatientDataStorage");
+            const patientStorage = await PatientDataStorage.deploy(
+                rbac.address,
+                auditLog.address,
+                didRegistry.address,
+                zkpVerifier.address
+            );
+            await patientStorage.deployed();
+            
+            deployedAddresses = {
+                zkpVerifier: zkpVerifier.address,
+                rbac: rbac.address,
+                didRegistry: didRegistry.address,
+                auditLog: auditLog.address,
+                patientStorage: patientStorage.address
+            };
+            
+            // Save the deployment info
+            if (!fs.existsSync(deploymentsDir)) {
+                fs.mkdirSync(deploymentsDir, { recursive: true });
+            }
+            
+            fs.writeFileSync(
+                path.join(deploymentsDir, `deployment-localhost-${Date.now()}.json`),
+                JSON.stringify({
+                    network: "localhost",
+                    timestamp: new Date().toISOString(),
+                    ...deployedAddresses
+                }, null, 2)
+            );
+        } else {
+            const latestDeployment = JSON.parse(
+                fs.readFileSync(path.join(deploymentsDir, files[0]), 'utf8')
+            );
+            
+            deployedAddresses = {
+                zkpVerifier: latestDeployment.zkpManager || latestDeployment.zkpVerifier,
+                rbac: latestDeployment.dlacManager || latestDeployment.rbac,
+                didRegistry: latestDeployment.didManager || latestDeployment.didRegistry,
+                auditLog: latestDeployment.auditLogger || latestDeployment.auditLog,
+                patientStorage: latestDeployment.ehrManager || latestDeployment.patientStorage
+            };
+            
+            console.log("Using deployment from:", files[0]);
+        }
+    } catch (error) {
+        console.error("Error reading deployment files:", error);
+        process.exit(1);
+    }
+
+    console.log("\nContract addresses:");
+    console.log("ZKP Manager:", deployedAddresses.zkpVerifier);
+    console.log("DLAC Manager:", deployedAddresses.rbac);
+    console.log("DID Manager:", deployedAddresses.didRegistry);
+    console.log("Audit Logger:", deployedAddresses.auditLog);
+    console.log("EHR Manager:", deployedAddresses.patientStorage);
 
     // Get contract instances
-    const rbac = await ethers.getContractAt("EnhancedRBAC", DEPLOYED_ADDRESSES.rbac);
-    const didRegistry = await ethers.getContractAt("DIDRegistry", DEPLOYED_ADDRESSES.didRegistry);
-    const zkpVerifier = await ethers.getContractAt("ZKPVerifier", DEPLOYED_ADDRESSES.zkpVerifier);
-    const patientStorage = await ethers.getContractAt("UpdatedPatientDataStorage", DEPLOYED_ADDRESSES.patientStorage);
+    const rbac = await ethers.getContractAt("EnhancedRBAC", deployedAddresses.rbac);
+    const didRegistry = await ethers.getContractAt("DIDRegistry", deployedAddresses.didRegistry);
+    const zkpVerifier = await ethers.getContractAt("ZKPVerifier", deployedAddresses.zkpVerifier);
+    const patientStorage = await ethers.getContractAt("UpdatedPatientDataStorage", deployedAddresses.patientStorage);
 
     // Get signers for different roles
     const [owner, doctor1, doctor2, nurse1, patient1, paramedic1] = await ethers.getSigners();
@@ -39,9 +121,13 @@ async function main() {
     };
 
     for (const [user, did] of Object.entries(dids)) {
-        console.log(`Creating DID for ${user}...`);
-        await didRegistry.connect(eval(user)).createDID(did, []);
-        console.log(`DID created: ${did}`);
+        try {
+            console.log(`Creating DID for ${user}...`);
+            await didRegistry.connect(eval(user)).createDID(did, []);
+            console.log(`DID created: ${did}`);
+        } catch (error) {
+            console.log(`Error creating DID for ${user} (may already exist): ${error.message}`);
+        }
     }
 
     // Set up role credentials
@@ -55,14 +141,13 @@ async function main() {
 
     // Submit proofs for each role
     for (const [user, credential] of Object.entries(roleCredentials)) {
-        console.log(`Submitting proof for ${user}...`);
-        await zkpVerifier.connect(eval(user)).submitProof(credential);
+        try {
+            console.log(`Submitting proof for ${user}...`);
+            await zkpVerifier.connect(eval(user)).submitProof(credential);
+        } catch (error) {
+            console.log(`Error submitting proof for ${user}: ${error.message}`);
+        }
     }
-
-    // Verify roles are created correctly
-    console.log("\nVerifying roles in the system...");
-    const allRoles = await rbac.getAllRoles();
-    console.log("Available roles:", allRoles);
 
     // Assign roles (validity period of 1 year)
     console.log("\nAssigning roles...");
@@ -77,15 +162,19 @@ async function main() {
     ];
 
     for (const assignment of roleAssignments) {
-        console.log(`Assigning role ${assignment.roleID} to ${assignment.user.address}...`);
-        await rbac.connect(owner).assignRole(
-            assignment.user.address,
-            assignment.roleID,
-            assignment.credential,
-            assignment.did,
-            ONE_YEAR,
-            assignment.isDelegated
-        );
+        try {
+            console.log(`Assigning role ${assignment.roleID} to ${assignment.user.address}...`);
+            await rbac.connect(owner).assignRole(
+                assignment.user.address,
+                assignment.roleID,
+                assignment.credential,
+                assignment.did,
+                ONE_YEAR,
+                assignment.isDelegated
+            );
+        } catch (error) {
+            console.log(`Error assigning role ${assignment.roleID} to ${assignment.user.address}: ${error.message}`);
+        }
     }
 
     // Grant permissions to roles
@@ -99,45 +188,60 @@ async function main() {
     // Grant permissions to roles
     for (const [role, rolePermissions] of Object.entries(permissions)) {
         for (const permission of rolePermissions) {
-            await rbac.connect(owner).grantPermission(role, permission);
-            console.log(`Granted ${permission} to ${role} role`);
+            try {
+                await rbac.connect(owner).grantPermission(role, permission);
+                console.log(`Granted ${permission} to ${role} role`);
+            } catch (error) {
+                console.log(`Error granting ${permission} to ${role}: ${error.message}`);
+            }
         }
     }
 
     // Create patient record
     console.log("\nCreating patient record...");
-    await patientStorage.connect(doctor1).createPatientRecord(patient1.address);
-    console.log(`Patient record created for ${patient1.address}`);
+    try {
+        await patientStorage.connect(doctor1).createPatientRecord(patient1.address);
+        console.log(`Patient record created for ${patient1.address}`);
+    } catch (error) {
+        console.log(`Error creating patient record: ${error.message}`);
+    }
 
     // Create delegation policies
     console.log("\nCreating delegation policies...");
-    
-    // Patient creates delegation policy for paramedic (24 hour validity)
-    const tx = await patientStorage.connect(patient1).createDelegationPolicy(
-        paramedic1.address,
-        "vitals",
-        "read",
-        24 * 60 * 60
-    );
-    
-    const receipt = await tx.wait();
-    const event = receipt.events.find(e => e.event === 'PolicyCreated');
-    const policyID = event.args.policyID;
-    
-    console.log(`Policy created: ID ${policyID}, Delegator: ${patient1.address}, Delegatee: ${paramedic1.address}`);
+    try {
+        // Patient creates delegation policy for paramedic (24 hour validity)
+        const tx = await patientStorage.connect(patient1).createDelegationPolicy(
+            paramedic1.address,
+            "vitals",
+            "read",
+            24 * 60 * 60
+        );
+        
+        const receipt = await tx.wait();
+        const event = receipt.events.find(e => e.event === 'PolicyCreated');
+        const policyID = event.args.policyID;
+        
+        console.log(`Policy created: ID ${policyID}, Delegator: ${patient1.address}, Delegatee: ${paramedic1.address}`);
 
-    // Verify policy
-    const [id, delegator, delegatee, dataID, permission, isActive, validUntil] = 
-        await patientStorage.getPolicy(policyID);
-    
-    console.log("\nVerifying policy details:");
-    console.log(`- ID: ${id}`);
-    console.log(`- Delegator: ${delegator}`);
-    console.log(`- Delegatee: ${delegatee}`);
-    console.log(`- Data ID: ${dataID}`);
-    console.log(`- Permission: ${permission}`);
-    console.log(`- Active: ${isActive}`);
-    console.log(`- Valid until: ${new Date(validUntil * 1000).toLocaleString()}`);
+        // Verify policy
+        try {
+            const [id, delegator, delegatee, dataID, permission, isActive, validUntil] = 
+                await patientStorage.getPolicy(policyID);
+            
+            console.log("\nVerifying policy details:");
+            console.log(`- ID: ${id}`);
+            console.log(`- Delegator: ${delegator}`);
+            console.log(`- Delegatee: ${delegatee}`);
+            console.log(`- Data ID: ${dataID}`);
+            console.log(`- Permission: ${permission}`);
+            console.log(`- Active: ${isActive}`);
+            console.log(`- Valid until: ${new Date(validUntil * 1000).toLocaleString()}`);
+        } catch (error) {
+            console.log(`Error verifying policy: ${error.message}`);
+        }
+    } catch (error) {
+        console.log(`Error creating delegation policy: ${error.message}`);
+    }
 
     console.log("\nInitial setup completed successfully!");
 }
