@@ -1,0 +1,12 @@
+# Override GitHub language detection
+*.sol linguist-language=Solidity
+*.js linguist-detectable=false
+*.py linguist-detectable=false
+
+# Mark test and utility scripts as non-production code
+scripts/* linguist-generated=true
+graphs/* linguist-generated=true
+results/* linguist-generated=true
+
+# Ensure Solidity is detected as primary language
+contracts/*.sol linguist-language=Solidity
