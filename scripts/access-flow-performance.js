@@ -49,74 +49,171 @@ async function measureTime(func) {
   return { result, timeMs: end - start };
 }
 
-// Helper function for concurrent requests with proper error handling
-async function runConcurrentRequests(func, count, batchSize = config.batchProcessing.batchSize) {
+// Enhanced measurement utilities
+async function measureWithPrecision(operation, options = {}) {
+  const {
+    includeGas = true,
+    trackConfirmation = true,
+    retries = 3
+  } = options;
+
+  let results = {
+    computationTime: 0,    // Pure JS execution time
+    networkTime: 0,        // Network round trip time
+    confirmationTime: 0,   // Block confirmation time
+    gasUsed: 0,           // Gas used by transaction
+    success: false,        // Whether operation succeeded
+    error: null           // Error if operation failed
+  };
+
   try {
-    if (count <= batchSize) {
-      const promises = [];
-      for (let i = 0; i < count; i++) {
-        promises.push(func(i));
+    const start = performance.now();
+    const tx = await operation();
+    const networkEnd = performance.now();
+    
+    results.networkTime = networkEnd - start;
+
+    if (trackConfirmation && tx.wait) {
+      const receipt = await tx.wait();
+      const confirmEnd = performance.now();
+      
+      results.confirmationTime = confirmEnd - networkEnd;
+      if (includeGas) {
+        results.gasUsed = receipt.gasUsed.toNumber();
       }
-      const start = performance.now();
-      const results = await Promise.all(promises);
-      const end = performance.now();
-      
-      const totalTime = end - start;
-      const avgTime = totalTime / count;
-      const throughput = (count * 1000) / totalTime;
-      
-      return { totalTime, avgTime, throughput, results, error: null };
-    } else {
-      // Process in batches
-      let totalResults = [];
-      let totalTime = 0;
-      const batches = Math.ceil(count / batchSize);
-      
-      for (let i = 0; i < batches; i++) {
-        const currentBatchSize = Math.min(batchSize, count - i * batchSize);
-        console.log(`  Processing batch ${i+1}/${batches}: ${currentBatchSize} requests`);
-        
-        const { totalTime: batchTime, results: batchResults } = await runConcurrentRequests(
-          func, 
-          currentBatchSize,
-          currentBatchSize
-        );
-        
-        totalTime += batchTime;
-        totalResults = totalResults.concat(batchResults);
-        
-        // Wait between batches
-        if (i < batches - 1) {
-          await new Promise(resolve => setTimeout(resolve, config.batchProcessing.delayBetweenBatches));
-        }
-      }
-      
-      const avgTime = totalTime / count;
-      const throughput = (count * 1000) / totalTime;
-      
-      return { totalTime, avgTime, throughput, results: totalResults, error: null };
     }
+
+    results.computationTime = results.networkTime - (results.confirmationTime || 0);
+    results.success = true;
   } catch (error) {
-    console.error(`Error in concurrent requests: ${error.message}`);
-    return {
-      totalTime: 0,
-      avgTime: 0,
-      throughput: 0,
-      results: [],
-      error: error.message
-    };
+    results.error = error;
+    if (retries > 0) {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      return measureWithPrecision(operation, { ...options, retries: retries - 1 });
+    }
+  }
+
+  return results;
+}
+
+// Token bucket rate limiter for accurate request rates
+class TokenBucket {
+  constructor(rate, burstSize) {
+    this.tokens = burstSize;
+    this.rate = rate;
+    this.burstSize = burstSize;
+    this.lastFill = Date.now();
+  }
+
+  async tryConsume() {
+    this._refill();
+    if (this.tokens >= 1) {
+      this.tokens -= 1;
+      return true;
+    }
+    return false;
+  }
+
+  _refill() {
+    const now = Date.now();
+    const timePassed = (now - this.lastFill) / 1000;
+    this.tokens = Math.min(this.burstSize, this.tokens + timePassed * this.rate);
+    this.lastFill = now;
   }
 }
 
+// Enhanced concurrent request handler
+async function runConcurrentRequests(operation, rate, duration = 10000) {
+  const rateLimiter = new TokenBucket(rate, Math.max(10, rate / 5));
+  const results = {
+    attempts: 0,
+    successful: 0,
+    failed: 0,
+    latencies: [],
+    gasUsed: [],
+    errors: [],
+    startTime: Date.now()
+  };
+
+  const requests = [];
+
+  while (Date.now() - results.startTime < duration) {
+    if (await rateLimiter.tryConsume()) {
+      results.attempts++;
+      
+      const promise = measureWithPrecision(operation)
+        .then(result => {
+          if (result.success) {
+            results.successful++;
+            results.latencies.push(result.networkTime);
+            if (result.gasUsed) {
+              results.gasUsed.push(result.gasUsed);
+            }
+          } else {
+            results.failed++;
+            results.errors.push(result.error);
+          }
+        });
+
+      requests.push(promise);
+      
+      // Clean up completed requests periodically
+      if (requests.length >= 100) {
+        await Promise.race([
+          Promise.all(requests),
+          new Promise(resolve => setTimeout(resolve, 100))
+        ]);
+      }
+    }
+    
+    // Small delay to prevent overwhelming the event loop
+    await new Promise(resolve => setTimeout(resolve, 1));
+  }
+
+  // Wait for remaining requests
+  await Promise.all(requests);
+
+  const totalTime = Date.now() - results.startTime;
+  const successfulRequests = results.successful;
+  
+  if (successfulRequests === 0) {
+    return {
+      throughput: 0,
+      successRate: 0,
+      avgLatency: 0,
+      p95Latency: 0,
+      avgGasUsed: 0,
+      errors: results.errors.length,
+      totalTime
+    };
+  }
+
+  return {
+    throughput: (successfulRequests * 1000) / totalTime,
+    successRate: (successfulRequests / results.attempts) * 100,
+    avgLatency: results.latencies.reduce((a, b) => a + b, 0) / successfulRequests,
+    p95Latency: results.latencies.sort((a, b) => a - b)[Math.floor(results.latencies.length * 0.95)] || 0,
+    avgGasUsed: results.gasUsed.length ? results.gasUsed.reduce((a, b) => a + b, 0) / results.gasUsed.length : 0,
+    errors: results.errors.length,
+    totalTime
+  };
+}
+
 async function main() {
-  // Initialize results structure
+  // Initialize enhanced results structure
   let results = {
     description: "Access flow performance evaluation",
     testDate: new Date().toISOString(),
     iterations: config.iterations.default,
+    environment: {
+      nodeVersion: process.version,
+      hardhatVersion: require('hardhat/package.json').version,
+      networkInfo: await ethers.provider.getNetwork()
+    },
     accessFlowBreakdown: {
       description: "Detailed timing breakdown of the complete access flow",
-      data: []
+      data: [],
+      averages: {}
     },
     accessPolicyOperations: {
       description: "Timing of access policy operations",
@@ -125,25 +222,42 @@ async function main() {
         delegation: [],
         verification: [],
         enforcement: []
-      }
+      },
+      averages: {},
+      gasUsage: {}
     },
     systemResponsiveness: {
       description: "System responsiveness under different loads",
       data: {
         accessRequest: {
           requestRates: [],
-          latency: [],
-          throughput: []
+          latency: {
+            avg: [],
+            p95: []
+          },
+          throughput: [],
+          successRate: [],
+          gasUsed: []
         },
         policyVerification: {
           requestRates: [],
-          latency: [],
-          throughput: []
+          latency: {
+            avg: [],
+            p95: []
+          },
+          throughput: [],
+          successRate: [],
+          errors: []
         },
         enforcement: {
           requestRates: [],
-          latency: [],
-          throughput: []
+          latency: {
+            avg: [],
+            p95: []
+          },
+          throughput: [],
+          successRate: [],
+          gasUsed: []
         }
       }
     }
@@ -528,32 +642,31 @@ async function main() {
           continue;
         }
         
-        const { totalTime, avgTime, throughput, error } = await runConcurrentRequests(
-          async (index) => {
-            try {
-              return await ehrManager.connect(doctor).getPatientData(
-                patient.address,
-                "vital-signs",
-                proofResult.zkProof
-              );
-            } catch (e) {
-              return null; // Fail gracefully for measurement
-            }
+        const testResults = await runConcurrentRequests(
+          async () => {
+            return await ehrManager.connect(doctor).getPatientData(
+              patient.address,
+              "vital-signs",
+              proofResult.zkProof
+            );
           },
           rate
         );
         
-        if (!error) {
-          results.systemResponsiveness.data.accessRequest.requestRates.push(rate);
-          results.systemResponsiveness.data.accessRequest.latency.push(avgTime);
-          results.systemResponsiveness.data.accessRequest.throughput.push(throughput);
-          
-          console.log(`  Total time: ${totalTime.toFixed(2)} ms`);
-          console.log(`  Average latency: ${avgTime.toFixed(2)} ms per request`);
-          console.log(`  Throughput: ${throughput.toFixed(2)} tx/s`);
-        } else {
-          console.error(`  Failed at ${rate} RPS:`, error);
-          break;
+        console.log(`  Total time: ${testResults.totalTime.toFixed(2)} ms`);
+        console.log(`  Average latency: ${testResults.avgLatency.toFixed(2)} ms per request`);
+        console.log(`  P95 latency: ${testResults.p95Latency.toFixed(2)} ms`);
+        console.log(`  Throughput: ${testResults.throughput.toFixed(2)} tx/s`);
+        console.log(`  Success rate: ${testResults.successRate.toFixed(2)}%`);
+        
+        // Store results
+        results.systemResponsiveness.data.accessRequest.requestRates.push(rate);
+        results.systemResponsiveness.data.accessRequest.latency.avg.push(testResults.avgLatency);
+        results.systemResponsiveness.data.accessRequest.latency.p95.push(testResults.p95Latency);
+        results.systemResponsiveness.data.accessRequest.throughput.push(testResults.throughput);
+        results.systemResponsiveness.data.accessRequest.successRate.push(testResults.successRate);
+        if (testResults.avgGasUsed) {
+          results.systemResponsiveness.data.accessRequest.gasUsed.push(testResults.avgGasUsed);
         }
         
         await new Promise(resolve => setTimeout(resolve, config.timing.cooldownPeriod));
@@ -570,25 +683,26 @@ async function main() {
       console.log(`\nTesting with ${rate} concurrent policy verifications...`);
       
       try {
-        const { totalTime, avgTime, throughput, error } = await runConcurrentRequests(
-          async (index) => {
+        const testResults = await runConcurrentRequests(
+          async () => {
             return await dlacManager.hasRole(doctor.address, "DOCTOR");
           },
           rate
         );
         
-        if (!error) {
-          results.systemResponsiveness.data.policyVerification.requestRates.push(rate);
-          results.systemResponsiveness.data.policyVerification.latency.push(avgTime);
-          results.systemResponsiveness.data.policyVerification.throughput.push(throughput);
-          
-          console.log(`  Total time: ${totalTime.toFixed(2)} ms`);
-          console.log(`  Average latency: ${avgTime.toFixed(2)} ms per request`);
-          console.log(`  Throughput: ${throughput.toFixed(2)} tx/s`);
-        } else {
-          console.error(`  Failed at ${rate} RPS:`, error);
-          break;
-        }
+        console.log(`  Total time: ${testResults.totalTime.toFixed(2)} ms`);
+        console.log(`  Average latency: ${testResults.avgLatency.toFixed(2)} ms per request`);
+        console.log(`  P95 latency: ${testResults.p95Latency.toFixed(2)} ms`);
+        console.log(`  Throughput: ${testResults.throughput.toFixed(2)} tx/s`);
+        console.log(`  Success rate: ${testResults.successRate.toFixed(2)}%`);
+        
+        // Store results
+        results.systemResponsiveness.data.policyVerification.requestRates.push(rate);
+        results.systemResponsiveness.data.policyVerification.latency.avg.push(testResults.avgLatency);
+        results.systemResponsiveness.data.policyVerification.latency.p95.push(testResults.p95Latency);
+        results.systemResponsiveness.data.policyVerification.throughput.push(testResults.throughput);
+        results.systemResponsiveness.data.policyVerification.successRate.push(testResults.successRate);
+        results.systemResponsiveness.data.policyVerification.errors.push(testResults.errors);
         
         await new Promise(resolve => setTimeout(resolve, config.timing.cooldownPeriod));
       } catch (error) {
@@ -604,24 +718,27 @@ async function main() {
       console.log(`\nTesting with ${rate} concurrent enforcement checks...`);
       
       try {
-        const { totalTime, avgTime, throughput, error } = await runConcurrentRequests(
-          async (index) => {
+        const testResults = await runConcurrentRequests(
+          async () => {
             return await dlacManager.hasPermission(doctor.address, "view_data");
           },
           rate
         );
         
-        if (!error) {
-          results.systemResponsiveness.data.enforcement.requestRates.push(rate);
-          results.systemResponsiveness.data.enforcement.latency.push(avgTime);
-          results.systemResponsiveness.data.enforcement.throughput.push(throughput);
-          
-          console.log(`  Total time: ${totalTime.toFixed(2)} ms`);
-          console.log(`  Average latency: ${avgTime.toFixed(2)} ms per request`);
-          console.log(`  Throughput: ${throughput.toFixed(2)} tx/s`);
-        } else {
-          console.error(`  Failed at ${rate} RPS:`, error);
-          break;
+        console.log(`  Total time: ${testResults.totalTime.toFixed(2)} ms`);
+        console.log(`  Average latency: ${testResults.avgLatency.toFixed(2)} ms per request`);
+        console.log(`  P95 latency: ${testResults.p95Latency.toFixed(2)} ms`);
+        console.log(`  Throughput: ${testResults.throughput.toFixed(2)} tx/s`);
+        console.log(`  Success rate: ${testResults.successRate.toFixed(2)}%`);
+        
+        // Store results
+        results.systemResponsiveness.data.enforcement.requestRates.push(rate);
+        results.systemResponsiveness.data.enforcement.latency.avg.push(testResults.avgLatency);
+        results.systemResponsiveness.data.enforcement.latency.p95.push(testResults.p95Latency);
+        results.systemResponsiveness.data.enforcement.throughput.push(testResults.throughput);
+        results.systemResponsiveness.data.enforcement.successRate.push(testResults.successRate);
+        if (testResults.avgGasUsed) {
+          results.systemResponsiveness.data.enforcement.gasUsed.push(testResults.avgGasUsed);
         }
         
         await new Promise(resolve => setTimeout(resolve, config.timing.cooldownPeriod));
@@ -643,6 +760,24 @@ async function main() {
   );
   
   console.log("\nAccess flow performance testing complete!");
+}
+
+// Helper function to calculate detailed averages
+function calculateDetailedAverages(data) {
+  const phases = ['requestPhase', 'verificationPhase', 'enforcementPhase', 'responsePhase'];
+  const averages = {};
+  
+  for (const phase of phases) {
+    averages[phase] = {
+      computationTime: data.reduce((sum, item) => sum + item[phase].computationTime, 0) / data.length,
+      networkTime: data.reduce((sum, item) => sum + item[phase].networkTime, 0) / data.length,
+      confirmationTime: data.reduce((sum, item) => sum + (item[phase].confirmationTime || 0), 0) / data.length,
+      gasUsed: data.reduce((sum, item) => sum + (item[phase].gasUsed || 0), 0) / data.length,
+      total: data.reduce((sum, item) => sum + item[phase].networkTime + (item[phase].confirmationTime || 0), 0) / data.length
+    };
+  }
+  
+  return averages;
 }
 
 main()

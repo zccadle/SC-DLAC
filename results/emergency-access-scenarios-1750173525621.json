@@ -1,0 +1,1421 @@
+{
+  "description": "Comprehensive emergency access scenario testing",
+  "testDate": "2025-06-17T15:18:15.632Z",
+  "emergencyDelegation": {
+    "description": "Emergency delegation policy creation and validation",
+    "data": [
+      {
+        "testName": "Patient creates emergency delegation for paramedic",
+        "success": true,
+        "duration": 79.06669999999986,
+        "gasUsed": 191498,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:17.270Z",
+        "result": {
+          "hash": "0x03e81d61d4720836f9d87bd24c1f66bc597451814a335cb480d6beba24478490",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x90d207491f01460aa1c0c0e2d7b6f1982d27139c839e45a04a7cf6850c7d82c8",
+          "blockNumber": 4409,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b7400"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b73f9"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b7401"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x02ec0a"
+          },
+          "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 121,
+          "data": "0x39e1a6bb00000000000000000000000015d34aaf54267db7d7c367839aaf71a00a2c6a65000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000015180000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+          "r": "0x60b19fabb1f313405ff8004b759edacbfd879cfe2a8f768031ee3925c28da9b2",
+          "s": "0x0ae9eb26f84ad2b77644fc9e3b1e04feb57a99d5002d6cd1079ecbfdcf114b37",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "testName": "Patient creates comprehensive emergency delegation",
+        "success": true,
+        "duration": 64.38729999999987,
+        "gasUsed": 191606,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:18.342Z",
+        "result": {
+          "hash": "0x3b46b8d654b94923b4d03dab2c0bf32bf3c538d6405d60a14d9ea3d2ff84b0be",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0xed228620bc42015965e5bcc9de0c79d20d265128380142e8f2bb79286b3d914d",
+          "blockNumber": 4410,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b7400"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b73f9"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b7401"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x02ec76"
+          },
+          "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 122,
+          "data": "0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a300000000000000000000000000000000000000000000000000000000000000000f6d65646963616c2d686973746f72790000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000",
+          "r": "0x9551d16f3a4227b312ba5e5f415b5503ae33581ae2593e122017e95b825de7cf",
+          "s": "0x798d6748893df3ae085bea82216a1ce308d0f567d597a7212984137a38c8e30c",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "testName": "Patient creates limited emergency delegation",
+        "success": true,
+        "duration": 67.55400000000009,
+        "gasUsed": 191486,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:19.418Z",
+        "result": {
+          "hash": "0x7d508093fa67a5e7883b9244cfaebf112f0f5db513b7ecdc70c8ec6775a04643",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x4ccbfa126f765c3267ce44e01a770379d94fdcb44281a30acbd60534718a7c73",
+          "blockNumber": 4411,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b7400"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b73f9"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b7401"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x02ebfe"
+          },
+          "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 123,
+          "data": "0x39e1a6bb000000000000000000000000976ea74026e726554db657fa54763abd0c3a0aa9000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000005460000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+          "r": "0xa0c5b7225580e8beb0ac8e3ea973c9e88d1a567800aeaa8a235229677c66c4e0",
+          "s": "0x3f97aeffde023e685573ee106a199ce12920a89d7c5d792e3edbe002a305e8aa",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 3,
+      "successfulTests": 3,
+      "failedTests": 0,
+      "successRate": 100,
+      "averageLatency": 70.33599999999994,
+      "minLatency": 64.38729999999987,
+      "maxLatency": 79.06669999999986,
+      "totalGasUsed": 574590,
+      "averageGasPerTest": 191530
+    }
+  },
+  "emergencyAccess": {
+    "description": "Emergency access request and granting scenarios",
+    "data": [
+      {
+        "testName": "Paramedic requests emergency access with valid delegation",
+        "success": true,
+        "duration": 159.9381999999996,
+        "gasUsed": 619285,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:20.583Z",
+        "result": {
+          "hash": "0xe71ebc91204e678c3dae9daae3a1680875594619b35add70b3f748f1089a5bdc",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x1cf9f71a9534371fabb83e193bec84a1a9384808a740b3c6036b5ad10cfdceca",
+          "blockNumber": 4413,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b7400"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b73f9"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b7401"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x098142"
+          },
+          "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 163,
+          "data": "0xbd700f3300000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000002b50617469656e7420666f756e6420756e636f6e7363696f7573206174206163636964656e74207363656e6500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000206556e3b8c0f4cf66492b6861db7e7f53636b463d5cfbfbdf6160bc6b7957fdaf",
+          "r": "0x83456c7636d8c252156c952de156713e3ff826e25071342548fd2eee7addd7bc",
+          "s": "0x13f16918d4035eb4883c33b52546dd73a4014e657e2231c39cbd38ed54efb663",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "testName": "Emergency doctor requests critical access",
+        "success": true,
+        "duration": 142.77219999999943,
+        "gasUsed": 619441,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:22.729Z",
+        "result": {
+          "hash": "0x2b72afb5b12cbf16ff2b1592b0cbf21050bc779a417c83fa8c993aafe8e6ac3b",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0xd558139dbd7785bb6fb6ffa7a0c61a7a606640a62fdb53c98070df230541edbc",
+          "blockNumber": 4415,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b7400"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b73f9"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b7401"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x0981de"
+          },
+          "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 112,
+          "data": "0xbd700f3300000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000003950617469656e7420696e2063617264696163206172726573742c206e65656420696d6d656469617465206d65646963616c20686973746f7279000000000000000000000000000000000000000000000000000000000000000000000000000020f0604800af121c253ca0b8d0c2840774b68d9ad7c0b2e467477ba3c90aa10243",
+          "r": "0x936b38dcb2874ac0eff39496429615d76d62c845fe237483a14114aec1945e22",
+          "s": "0x1848b9cd4ba5823c66587a4fafe983567c30f9a86cbb960ddd808b25d938a9c9",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "testName": "Specialist requests time-limited access",
+        "success": true,
+        "duration": 156.4258000000009,
+        "gasUsed": 619213,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:24.886Z",
+        "result": {
+          "hash": "0xbdcb1b9c4286a12de4c3614c5701f42e2a5c4d720014f1f017bc002394016865",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x6d3f39148a0e324efbc1c32e0a1c85519927c081627f896cfba6893b59e23449",
+          "blockNumber": 4417,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b7400"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b73f9"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x0ba43b7401"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x0980f9"
+          },
+          "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 43,
+          "data": "0xbd700f3300000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000030000000000000000000000000000000000000000000000000000000000000025436f6e73756c746174696f6e20666f7220636f6d706c6578206361726469616320636173650000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020f705dd502eb42e968b9c06e24a1e4893e4b50fbc135d7c504804f1b08dd2592b",
+          "r": "0xb1ac204c8625a78588a78bd77a8c9e5f79bdfd6494febda3f5658140ad9864aa",
+          "s": "0x71d062330741decaecc5e90bc8eb664c65fb3c0c70d4c9087d865ec9099b1442",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 3,
+      "successfulTests": 3,
+      "failedTests": 0,
+      "successRate": 100,
+      "averageLatency": 153.04539999999997,
+      "minLatency": 142.77219999999943,
+      "maxLatency": 159.9381999999996,
+      "totalGasUsed": 1857939,
+      "averageGasPerTest": 619313
+    }
+  },
+  "timeBasedExpiry": {
+    "description": "Time-based emergency access expiry testing",
+    "data": [
+      {
+        "testName": "Access data immediately after granting",
+        "success": true,
+        "duration": 78.65540000000146,
+        "gasUsed": 0,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:27.142Z",
+        "result": ""
+      },
+      {
+        "testName": "Check emergency access status before expiry",
+        "success": true,
+        "duration": 20.983299999999872,
+        "gasUsed": 0,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:28.170Z",
+        "result": [
+          true,
+          {
+            "type": "BigNumber",
+            "hex": "0x6852e941"
+          },
+          "Short-term emergency access test",
+          {
+            "type": "BigNumber",
+            "hex": "0x04"
+          }
+        ]
+      },
+      {
+        "testName": "Attempt access after expiry",
+        "success": true,
+        "duration": 80.3747000000003,
+        "gasUsed": 0,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:29.264Z",
+        "result": ""
+      },
+      {
+        "testName": "Check emergency access status after expiry",
+        "success": true,
+        "duration": 19.84389999999985,
+        "gasUsed": 0,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:30.284Z",
+        "result": [
+          true,
+          {
+            "type": "BigNumber",
+            "hex": "0x6852e941"
+          },
+          "Short-term emergency access test",
+          {
+            "type": "BigNumber",
+            "hex": "0x04"
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "totalTests": 4,
+      "successfulTests": 4,
+      "failedTests": 0,
+      "successRate": 100,
+      "averageLatency": 49.96432500000037,
+      "minLatency": 19.84389999999985,
+      "maxLatency": 80.3747000000003,
+      "totalGasUsed": 0,
+      "averageGasPerTest": 0
+    }
+  },
+  "concurrentEmergency": {
+    "description": "Concurrent emergency access scenarios",
+    "data": [
+      {
+        "testName": "Multiple providers request access simultaneously",
+        "success": true,
+        "duration": 194.72310000000107,
+        "gasUsed": 0,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:31.550Z",
+        "result": [
+          {
+            "hash": "0x0a25c8be0200c509d04de896b095f49ab9547f87d1af9a24cc8ea7fa047fec74",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x9ba54eaee2f2dff0a5500ad9489e92f735f39262344923f41886255d4f09d35a",
+            "blockNumber": 4433,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x0980c9"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 169,
+            "data": "0xbd700f3300000000000000000000000023618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000022436f6e63757272656e7420656d657267656e637920616363657373207465737420310000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020a42b6718dc3cdceaa138624e0d00c98df1dbda0d899c12fda959eb20cdcf9c26",
+            "r": "0xf4d37333dab0cbede596c24df06637f19c66aad5265e4ad9cb0c6856c562a4cb",
+            "s": "0x7ad2142dfa3dd9af794703d0ff06b05e530437460f588f290112bbd4332b14c3",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x865a856d1f83b64c2b7bdfd144ce50b44ad3bb131d5585e1cfbff7260dd2b7cc",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0xa294e6b99b2d6eb9d5b370d3718e26475f8d1eb3a1e8fd8f709bfd5e0a6f114b",
+            "blockNumber": 4434,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x0980d5"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 114,
+            "data": "0xbd700f3300000000000000000000000023618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000090000000000000000000000000000000000000000000000000000000000000022436f6e63757272656e7420656d657267656e637920616363657373207465737420320000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020df96032cfb24191415d32c19975c12f9d2dc41a1ac41058686d481284fedb99d",
+            "r": "0x6521932c9336071ddaa0b98035a0303204fe8d4091cd046910092ce6ea5e94f0",
+            "s": "0x4dc3727e106efda0173917dba76d7a9d971c0fc97020d86664edc849760b92a0",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x232456b90a1d45c72584f579441c436bcef9ebfebc0ed63066d90fee9c881b14",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0xe5550f37f38196e6e8ea3da3b9544fe9492d1adb519e021d0ca6887437371022",
+            "blockNumber": 4435,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x0980d5"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 45,
+            "data": "0xbd700f3300000000000000000000000023618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000022436f6e63757272656e7420656d657267656e637920616363657373207465737420330000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020de5d7a08beea4e058ab94e57e266eb2713d2c798306261efbc2635456d51a11b",
+            "r": "0x3847c0a5241e4fa2cce9e2ff16e66c90df52576c5396a6b748b6a0460f4daaf8",
+            "s": "0x0741c96e22113be76ca750f96b0b0adc4f3925be34d709c64c1c62d81b222e16",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          }
+        ]
+      },
+      {
+        "testName": "Multiple providers access data concurrently",
+        "success": true,
+        "duration": 73.28610000000117,
+        "gasUsed": 0,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:33.637Z",
+        "result": [
+          "",
+          "",
+          ""
+        ]
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 2,
+      "failedTests": 0,
+      "successRate": 100,
+      "averageLatency": 134.00460000000112,
+      "minLatency": 73.28610000000117,
+      "maxLatency": 194.72310000000107,
+      "totalGasUsed": 0,
+      "averageGasPerTest": 0
+    }
+  },
+  "emergencyRevocation": {
+    "description": "Emergency access revocation scenarios",
+    "data": [
+      {
+        "testName": "Patient revokes paramedic emergency access",
+        "success": true,
+        "duration": 80.1336999999985,
+        "gasUsed": 202191,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:35.726Z",
+        "result": {
+          "hash": "0x6980d6b63c4d3d1d7627abcbd698166342c558cd4ce196eb795262872ee8a65a",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x2cf77d1acde8968195a287791adc9e1321de76e94631eadf21ea1c76a6b9313f",
+          "blockNumber": 4439,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x0334a9"
+          },
+          "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 67,
+          "data": "0x64853fbb00000000000000000000000015d34aaf54267db7d7c367839aaf71a00a2c6a65",
+          "r": "0xad697a94c89502eeea04e3ec1bb202f08029a29264f764317574d7d06bfb847a",
+          "s": "0x2af427bddf0d35d20eb15dcd4f6ba2762d9d454d8e915c305329d7d3025e46e3",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "testName": "Verify access denied after revocation",
+        "success": true,
+        "duration": 64.54069999999774,
+        "gasUsed": 0,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:36.798Z",
+        "result": ""
+      },
+      {
+        "testName": "Patient revokes all remaining emergency access",
+        "success": true,
+        "duration": 52.22400000000198,
+        "gasUsed": 0,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:37.855Z",
+        "result": [
+          {
+            "hash": "0x37319a423ba93aaf86c1245c8c68bc94bd0be601f10ec8303bb140ef09b380d4",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x9402cb93794afc91e4cb7a1714833aab3ff18f689797bd85516c474492181d84",
+            "blockNumber": 4441,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x0334a9"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 68,
+            "data": "0x64853fbb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc",
+            "r": "0x0851c3ab02ee260ad252c6c31921e1f45452196be26160faf8dc1b6dd4ad75b7",
+            "s": "0x482c79bb0141685368a2ad89a71278f643aeb2ff528be1a8318502f83924541c",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x4c663a81e9f886282c04f7f153e1c6e877c038b096c036597f8e0b22ef6586e1",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x72dd908b7fb0262772455d858d081d76a5ff035d044c6dd25fdc571bdc64c67d",
+            "blockNumber": 4442,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x0334a9"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 69,
+            "data": "0x64853fbb000000000000000000000000976ea74026e726554db657fa54763abd0c3a0aa9",
+            "r": "0x83299a19e238e515f46e3456fac1dab706f2196e71ca550d38e7e732d20b8176",
+            "s": "0x4638a9316a553e3f934e265ab1426d2c9809c2093c0fb0ff418243baa4484ce8",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "totalTests": 3,
+      "successfulTests": 3,
+      "failedTests": 0,
+      "successRate": 100,
+      "averageLatency": 65.6327999999994,
+      "minLatency": 52.22400000000198,
+      "maxLatency": 80.1336999999985,
+      "totalGasUsed": 202191,
+      "averageGasPerTest": 67397
+    }
+  },
+  "massEmergencyEvent": {
+    "description": "Mass emergency event simulation (e.g., natural disaster)",
+    "data": [
+      {
+        "testName": "Mass emergency delegation creation",
+        "success": true,
+        "duration": 190.72139999999854,
+        "gasUsed": 0,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:39.052Z",
+        "result": [
+          {
+            "hash": "0xcff2e0ab2ac781fe970016631a08561f35f92bda0232ccbcb467015dbf24f981",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x60ed249742584721ffb3aca11fd8ee410ea939ec756b7a8b60e4a5fdea81c032",
+            "blockNumber": 4444,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ebfe"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 125,
+            "data": "0x39e1a6bb00000000000000000000000015d34aaf54267db7d7c367839aaf71a00a2c6a65000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a300000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+            "r": "0xc8d27bc41d6801a1d78d7876a80439eff64e80c15e0221ffa68a34fef7786e69",
+            "s": "0x5b7adf49dbed8067d27f1158913c602c9005a0fee294f65e587f2e42f48c0c91",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x9b0551d555d1bdca37d32139efa23c4802de5d12941787923ffed21c3beba66f",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x93def51af116c9f10f57e372515f09d08ea79d68f9c48a42c67052cc7b6088e8",
+            "blockNumber": 4443,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ebfe"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 124,
+            "data": "0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a300000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+            "r": "0x77111159622276a776b2ccdf1ccc66966d4083c5cda2b0e5158a918b411eb0b8",
+            "s": "0x049ae38d9d6c78dc7d376096ae7e67c3cb27466b5bad17491c0d01c762b812af",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0xa3a4ab6053bd0f59da9f4c732cb93a4d5745edf314aaadc1532acd4bf7165493",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x31fb6e839513560614193056eee21443edfc3ffda7783d124366eb0d00bfa553",
+            "blockNumber": 4445,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ebfe"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 126,
+            "data": "0x39e1a6bb000000000000000000000000976ea74026e726554db657fa54763abd0c3a0aa9000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a300000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+            "r": "0x015e432f7b2c0c1a8f269aa5e8758dc53beb89b4817fc5687d85bf44b34952e2",
+            "s": "0x39486d3d77b8ac3faca618494ebacc54bf14133082eac3f44a54b341aa43c202",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x149befd4d1aa41398eac721e02bade0c8e80326ebdd4108e2902f905224d8566",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x774a2b258e3b4ea6a701385f5ac68bb3fafbacf30cde4851654bb9a6474f93ac",
+            "blockNumber": 4448,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ebfe"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 28,
+            "data": "0x39e1a6bb00000000000000000000000015d34aaf54267db7d7c367839aaf71a00a2c6a65000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a300000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+            "r": "0x0993671423edb8def6dc18c9f01814a49cfbd284276a1432098008222c11eabd",
+            "s": "0x116576361fb674bdf6d39e211c275bec776c0ece6ccf3163693237bd3dc8e634",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0xe32338d17d6f6b52096f36f3241a813f22bbf4c0db2dd05dfa2fe50568e4fe71",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x26786659c551a57deca9dda31ff51423434eba0aa4e32f251a53f2a0916fd643",
+            "blockNumber": 4446,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ebfe"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 26,
+            "data": "0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a300000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+            "r": "0x3cd3c291bfdcad6c248abc2553e47f1cf56609f76e8f5cfcffef4459b57104bf",
+            "s": "0x0c60a1ef7952c04d2b7f7b0e25a5a83cb4778589fc90ca191266ab5b66ef87cd",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x24c20e721d3b679e30af469a0c1a14cf183a643258bb0d8c0cc62269847b804c",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0xc9467ab3bbc2ea2730f8c2e62b8cbda688ce1bc0c8f45abc94fd032306d94f42",
+            "blockNumber": 4447,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ebfe"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 27,
+            "data": "0x39e1a6bb000000000000000000000000976ea74026e726554db657fa54763abd0c3a0aa9000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a300000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+            "r": "0x5ef56675572d6898812ddd93e41909b23e717ee2e1940406d9df6850e30fd95c",
+            "s": "0x0d9699dad0a510dcea541926fc1fe73e202043cc46790d6b9a9eb2b1d5a088b8",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x82849414b2f4d8f8ef1d3e7c23765303090594684df553509d42850644ba973a",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0xfc0582a46438bb9d81819faf3d83a1ce47fb14e2e0fea09895abf5cfaeac0f06",
+            "blockNumber": 4449,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ebfe"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 70,
+            "data": "0x39e1a6bb00000000000000000000000015d34aaf54267db7d7c367839aaf71a00a2c6a65000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a300000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+            "r": "0xa704daaf1f8d4d4ca15c264c2eff3677e0a406d38f514aacf2ede747bd98adab",
+            "s": "0x003da41c57d0b67464bdaa6d0ee47157d90a6b424c985fa51bf04a6da1052cd3",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x0cb899a2c048a80a14fcadf6e06179d7e24aa2d2918e7537bad31d35313f2f30",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0xe7c648c21bbe9a8ad4a33b7206d05341f21470df7999bcd0b74660416e85fa34",
+            "blockNumber": 4451,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ebfe"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 72,
+            "data": "0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a300000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+            "r": "0x8a3ec1d53421858a59fb114016758d7185c497db36d75c741ef69b6b677eb58d",
+            "s": "0x3436824867a5837706ea6bb8603674acb5e127fab1df558b421016861a2593ce",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x56d11d821b98f62849cbfed64d3d8e459a3cd7873b999ef5d9fe58a01b247ee7",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x9ee8972a9cf163fe66a15265a949751e53c505daf739bd231a5387c5a958983c",
+            "blockNumber": 4450,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ebfe"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 71,
+            "data": "0x39e1a6bb000000000000000000000000976ea74026e726554db657fa54763abd0c3a0aa9000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a300000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+            "r": "0x1708e503d8b837da2917e5bffbc5bd45ffab29352081e15b6df53bf3935664a3",
+            "s": "0x0ec02b181a07e7537443944398e0b1ca77959264fb54695abe331cfb489e42bb",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          }
+        ]
+      },
+      {
+        "testName": "Mass emergency access requests",
+        "success": true,
+        "duration": 562.2307000000001,
+        "gasUsed": 0,
+        "error": null,
+        "timestamp": "2025-06-17T15:18:42.617Z",
+        "result": [
+          {
+            "hash": "0x5b53339cf11fcdd1b75a93eb0b0a1f3316ea33750d4db9a5c39d54e39c9ed8a9",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x5357fee969523ee77d8a8211707c9dbdb74bf5df8dcb2d97f5c469a0bf1329e0",
+            "blockNumber": 4453,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x059ebf"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 173,
+            "data": "0xbd700f3300000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000002a4d61737320656d657267656e6379206576656e74202d206d756c7469706c652063617375616c746965730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000201e8c86fc483d536fe563c4157752a1b5754cb4bdb5fc42affb402e84bfa219d2",
+            "r": "0x080f1b14d4c1e8805cdddfde9c4830f2ae7230933c9f325e3fdefcab01f8e908",
+            "s": "0x58e2e63a92626bff0c8b821a2ba9a7b5fda4110435b43db1bf1ae0b008c4874e",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0xabaab12b929a153289ca94ff07b5daebebc56ce0ebdcfc8521691012c8dccf93",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0xd42b00da76cf00cee045f37e1de944fa87d21725ceb1d0484cbda27b8a40b091",
+            "blockNumber": 4455,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x05b4d6"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 117,
+            "data": "0xbd700f3300000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000b000000000000000000000000000000000000000000000000000000000000002a4d61737320656d657267656e6379206576656e74202d206d756c7469706c652063617375616c74696573000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020f1d5e42db7f4d138955128562145c25dfb047a945a313c70673827b148dec881",
+            "r": "0x4efe4dacd270524b42617040809367127557aed2f7639e7d1a43a1dfa1448ed8",
+            "s": "0x212dc39dad37d37d1a4f2b952be6f0f64532937e975a62f14bd3eebc17cbf40c",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x960f90e0b564f56889e02971c7ae27e9cf636b33296aef9ec7f0e07f70b55fd4",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x9451a31b694201977a4753c36cb284aed30b20cb1c8237befc9e17711f314fc1",
+            "blockNumber": 4457,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x059eb3"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 48,
+            "data": "0xbd700f3300000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000d000000000000000000000000000000000000000000000000000000000000002a4d61737320656d657267656e6379206576656e74202d206d756c7469706c652063617375616c7469657300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000017503aea49a61b9202f95af8074281e2e714fa3b76beb76fc1668b8ffe570",
+            "r": "0xe02cc928195d19d588acc1dbf4b0aafc75110381032e2d154360954e9f268faf",
+            "s": "0x090c9ae4ee555178bbee212631fc3aeaf38614c63859865f8e9de28a95dde781",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x70d4ab752e0c2ee9c0e628fccfb57f2a5777ba8a2b5371448c3cbb3d9bfd6a47",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x907f994f8b511690423038ef0efb212e80ad57db9dd9d2c3be9ab9d639b89145",
+            "blockNumber": 4459,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x05e232"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 175,
+            "data": "0xbd700f3300000000000000000000000014dc79964da2c08b23698b3d3cc7ca32193d9955000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002a4d61737320656d657267656e6379206576656e74202d206d756c7469706c652063617375616c74696573000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020405715adf12bee19d7dfa5f8f9aec6076c7a5fc34c0f15e249bdc5a98469be29",
+            "r": "0x5e8b80755d8ffe32b78803e9bf330883f2ec99a1ceb238eab4ff108f4b7a52ff",
+            "s": "0x4ea9c78169056f4800cc26ccd63b0c06dcd0d65bfb568363b5665dc811124b2b",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x71d5923b2af518521ffc6334aa591533c96a49c49e62c850011e98e2df47e0f4",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x5034809b4feca087de402dbda2c9d6f45f0e2f7a943a38f017abe9c48a7008c8",
+            "blockNumber": 4461,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x098136"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 119,
+            "data": "0xbd700f3300000000000000000000000014dc79964da2c08b23698b3d3cc7ca32193d9955000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000002a4d61737320656d657267656e6379206576656e74202d206d756c7469706c652063617375616c746965730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000207c365a44e2c627fbc50854825cfae8e15289795890ee8793a6a8d7aa1cdbefdf",
+            "r": "0x2ac86d0bf73e528c23c34375a7abeb45c5751a134dadb2543b01bc8ae4272ae7",
+            "s": "0x0737eb68ddc8785076f5f4de70ba61fb05223efc0898f4fef9fe769e678fbbf0",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0xc395cc8eb4c850b938b2bf877843ba6966e9467c38fc64543185aa90d44527b3",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x83cddb64a09307ad068dc1a589c0c02f331366e3051d4f0f016ae78448ca6b1b",
+            "blockNumber": 4463,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x098136"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 50,
+            "data": "0xbd700f3300000000000000000000000014dc79964da2c08b23698b3d3cc7ca32193d9955000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000f000000000000000000000000000000000000000000000000000000000000002a4d61737320656d657267656e6379206576656e74202d206d756c7469706c652063617375616c74696573000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020c5b408bcdc63ab8d38f5109ffa1b5e58825e78f3e8e65398fe151a945d8fa125",
+            "r": "0xc84071510e14e05f30044e8cdb6bc094ebdd9771babb8cf953d83f9458070425",
+            "s": "0x7e9f519e044c179d5ecefc67adbdff30e130ea6d20685e3711bd37971c967568",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x2911c4bb1427f5c1f93133508550e64ffc70d49ab754db06e5b6d4dd7c2c2c7c",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x2e52580b1fff291a1a4b0d2f8a3c8eeaa7e976d473ba38bb9d4847f32f932d9a",
+            "blockNumber": 4465,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x05ed3e"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 177,
+            "data": "0xbd700f3300000000000000000000000023618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000011000000000000000000000000000000000000000000000000000000000000002a4d61737320656d657267656e6379206576656e74202d206d756c7469706c652063617375616c74696573000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020ce1a7e7f59f823c56306c435b68c4b0dda7032d564c7fccbaef1fdf1aae46939",
+            "r": "0x90c23db097dbabd8ef8bc7fd7820f58db426aa56d8d674151d6ebf19418acb2c",
+            "s": "0x1bcf740988142d85b3c1990275f24bc154ae808ad2dc97c4f9d52b87f5fea2a9",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x776b63bf4a71d40f7a49ba42d22666fa3c8098b82b6b4188b5ea021909187f4f",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x5ca0883aaf44ea69334a32cddc206a3b54e67071cedd844e5c84d0d6bb9368b4",
+            "blockNumber": 4467,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x05f83c"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 121,
+            "data": "0xbd700f3300000000000000000000000023618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000013000000000000000000000000000000000000000000000000000000000000002a4d61737320656d657267656e6379206576656e74202d206d756c7469706c652063617375616c74696573000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020af9cfd0d00cd85ac33361910b59149eb7bf84ed622dc25478343c6d3c098450a",
+            "r": "0x0b4bed18a5609a335b2daa345f099d476dafec6da24fc72755a97e42d12cb85b",
+            "s": "0x6dfe7387daeac947ffaa109637b5687250500d081313fe12e32e5e82a92bcae9",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x13a90cb978b34775e624904b2bdccc936f4b274af958688843eed05f9fd52e1e",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x939aeb5654c7fec801907a22b5c09d58b27edb74421590c22a4895479f71e603",
+            "blockNumber": 4469,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x05ed3e"
+            },
+            "to": "0x30426D33a78afdb8788597D5BFaBdADc3Be95698",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 52,
+            "data": "0xbd700f3300000000000000000000000023618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000012000000000000000000000000000000000000000000000000000000000000002a4d61737320656d657267656e6379206576656e74202d206d756c7469706c652063617375616c74696573000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020f1580913ef5e9184938a0f9b9fd8e1ce0152548d85efa315980a08246cf88b41",
+            "r": "0x496727ced70250860f8a9e46dd76a42e207657a23680450d9d15b98ddec54e81",
+            "s": "0x0d98f51281841b046fd0ecfca944d29d7dc2fd6adc12c749afe3261157a134f0",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 2,
+      "failedTests": 0,
+      "successRate": 100,
+      "averageLatency": 376.4760499999993,
+      "minLatency": 190.72139999999854,
+      "maxLatency": 562.2307000000001,
+      "totalGasUsed": 0,
+      "averageGasPerTest": 0
+    }
+  },
+  "emergencyEscalation": {
+    "description": "Emergency access escalation scenarios",
+    "data": [],
+    "metrics": {}
+  }
+}
