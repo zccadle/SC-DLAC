@@ -1,8 +1,25 @@
-# SL-DLAC: Secure Healthcare Access Control System
+# SC-DLAC: Smart Contract-based Delegated Access Control System
 
-## Overview
+## Research Overview
 
-SL-DLAC (Secure Ledger - Decentralized Lifecycle Access Control) is an advanced blockchain-based healthcare data management system that implements secure, policy-driven access control for medical records. The system provides a comprehensive framework for managing patient data access in both routine healthcare operations and critical emergency scenarios while maintaining the highest standards of privacy, security, and regulatory compliance.
+This repository contains the implementation of **SC-DLAC** (Smart Contract-based Delegated Access Control System), a novel blockchain-based solution for secure access control in emergency medical services. This work is being conducted as part of ongoing research at Korea University's **Intelligent Blockchain Engineering Laboratory (IBEL)**, extending from a summer internship collaboration.
+
+### Research Context
+
+SC-DLAC addresses critical challenges in emergency medical services where timely access to patient Electronic Health Records (EHRs) can be life-saving, while ensuring compliance with privacy regulations like GDPR. This research is being prepared for academic publication and represents cutting-edge work in blockchain-enabled healthcare systems.
+
+**Research Team:**
+- **Dongguk Lee** - BSc Computer Science, University College London (UCL) - Lead Implementation
+- **Prof. Mpyana Mwamba Merlec** - Korea University IBEL - Research Supervisor  
+- **Prof. Hoh Peter In** - Korea University IBEL - Principal Investigator
+
+### Repository Purpose
+
+This GitHub repository serves as the complete implementation and testing framework for the SC-DLAC system, including:
+- Smart contract implementations
+- Comprehensive testing and performance evaluation suite
+- Publication-ready performance visualizations and metrics
+- Research documentation and experimental results
 
 ## 🏥 Key Features
 
@@ -322,24 +339,32 @@ We welcome contributions to the SL-DLAC project. Please see our [Contributing Gu
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Contributors
+## 👥 Research Team
 
-- **Dongguk Lee** - Lead Developer & Architect - University College London
-- **Mpyana Mwamba Merlec** - Research Collaborator - Korea University
+- **Dongguk Lee** - Lead Implementation & Development - University College London
+- **Prof. Mpyana Mwamba Merlec** - Research Supervisor - Korea University IBEL
+- **Prof. Hoh Peter In** - Principal Investigator - Korea University IBEL
 
 ## 📞 Contact
 
 **Dongguk Lee**  
 📧 zccadle@ucl.ac.uk  
 🏫 University College London  
-💼 Healthcare Blockchain Research
+🔬 Korea University IBEL Research Collaboration
+
+**Academic Supervision:**  
+📧 mlecjm@korea.ac.kr (Prof. M. M. Merlec)  
+📧 hoh_in@korea.ac.kr (Prof. H. P. In)
 
 ---
 
 ## 🏆 Acknowledgments
 
-This project represents cutting-edge research in healthcare blockchain technology, combining advanced cryptographic techniques with practical healthcare requirements to create a secure, efficient, and compliant medical data management system.
+This research is conducted at Korea University's **Intelligent Blockchain Engineering Laboratory (IBEL)** and is supported by the National Research Foundation of Korea (NRF), under Grant No. NRF–2021R1A2C2012476, "Blockchain Technology Research for Personal Data Right Assurance."
 
-**Built with:** Solidity, Hardhat, OpenZeppelin, Node.js, Python
-**Tested on:** Ethereum, Sepolia Testnet
-**Performance Validated:** 1000+ concurrent users, 95.74% security score
+The work represents cutting-edge research in blockchain-enabled emergency medical services, combining smart contract automation, decentralized identity management, and zero-knowledge proofs to address real-world healthcare challenges.
+
+**Research Institution:** Korea University IBEL  
+**Implementation Platform:** Ethereum/Solidity, Hardhat, OpenZeppelin  
+**Academic Status:** In preparation for peer-reviewed publication  
+**Performance Validation:** 95.74% security score, sub-100ms response times

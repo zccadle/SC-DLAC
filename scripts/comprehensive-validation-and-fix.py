@@ -136,13 +136,13 @@ class ComprehensiveVisualizationValidator:
         
         # 4. SL-DLAC vs Traditional Performance Comparison
         metrics = ['Response Time\nAdvantage (%)', 'Security Score\nComparison']
-        dacems_scores = [87, 95.74]  
+        sldlac_scores = [87, 95.74]  
         traditional_scores = [0, 60]   
         
         x_pos = np.arange(len(metrics))
         width = 0.35
         
-        bars1 = ax4.bar(x_pos - width/2, dacems_scores, width, label='SL-DLAC', color='green', alpha=0.8)
+        bars1 = ax4.bar(x_pos - width/2, sldlac_scores, width, label='SL-DLAC', color='green', alpha=0.8)
         bars2 = ax4.bar(x_pos + width/2, traditional_scores, width, label='Traditional', color='red', alpha=0.8)
         
         ax4.set_xlabel('Performance Metrics')
@@ -156,7 +156,7 @@ class ComprehensiveVisualizationValidator:
         # Add clear improvement labels
         improvements = ['87% faster\nresponse time', '59% better\nsecurity score']
         for i, improvement in enumerate(improvements):
-            ax4.text(i, max(dacems_scores[i], traditional_scores[i]) + 10, improvement, 
+            ax4.text(i, max(sldlac_scores[i], traditional_scores[i]) + 10, improvement, 
                     ha='center', fontweight='bold', fontsize=10,
                     bbox=dict(boxstyle="round,pad=0.3", facecolor="lightgreen", alpha=0.7))
         
@@ -275,18 +275,18 @@ class ComprehensiveVisualizationValidator:
         categories = ['Security', 'Availability', 'Scalability', 'Auditability', 
                      'Emergency\nResponse', 'Compliance', 'Cost\nEfficiency', 'Decentralization']
         
-        dacems_scores = [95.74, 99.9, 85, 100, 98, 94, 85, 100]
+        sldlac_scores = [95.74, 99.9, 85, 100, 98, 94, 85, 100]
         traditional_scores = [60, 85, 70, 75, 50, 80, 30, 20]
         
         # Radar chart setup
         angles = np.linspace(0, 2 * np.pi, len(categories), endpoint=False).tolist()
-        dacems_scores += dacems_scores[:1]  # Complete the circle
+        sldlac_scores += sldlac_scores[:1]  # Complete the circle
         traditional_scores += traditional_scores[:1]
         angles += angles[:1]
         
         ax1 = plt.subplot(221, projection='polar')
-        ax1.plot(angles, dacems_scores, 'o-', linewidth=2, label='SL-DLAC', color='green')
-        ax1.fill(angles, dacems_scores, alpha=0.25, color='green')
+        ax1.plot(angles, sldlac_scores, 'o-', linewidth=2, label='SL-DLAC', color='green')
+        ax1.fill(angles, sldlac_scores, alpha=0.25, color='green')
         ax1.plot(angles, traditional_scores, 'o-', linewidth=2, label='Traditional', color='red')
         ax1.fill(angles, traditional_scores, alpha=0.25, color='red')
         
@@ -299,16 +299,16 @@ class ComprehensiveVisualizationValidator:
         
         # 2. FIXED: Response Time Comparison with ALL bars present
         operations = ['Data\nAccess', 'Data\nUpdate', 'Emergency\nAccess', 'Audit\nQuery', 'Policy\nCreation']
-        dacems_times = [78, 126, 168, 45, 234]
+        sldlac_times = [78, 126, 168, 45, 234]
         traditional_times = [610, 640, 15000, 2300, 5600]  # ALL traditional values present
-        dacems_errors = [8, 12, 15, 5, 23]
+        sldlac_errors = [8, 12, 15, 5, 23]
         traditional_errors = [45, 67, 1200, 340, 890]
         
         x_pos = np.arange(len(operations))
         width = 0.35
         
         ax2 = plt.subplot(222)
-        bars1 = ax2.bar(x_pos - width/2, dacems_times, width, yerr=dacems_errors, 
+        bars1 = ax2.bar(x_pos - width/2, sldlac_times, width, yerr=sldlac_errors, 
                        label='SL-DLAC', capsize=5, alpha=0.8, color='green')
         bars2 = ax2.bar(x_pos + width/2, traditional_times, width, yerr=traditional_errors,
                        label='Traditional', capsize=5, alpha=0.8, color='red')
@@ -325,23 +325,23 @@ class ComprehensiveVisualizationValidator:
         # Add clear improvement percentages
         improvements = [87, 80, 99, 98, 96]  # Percentage improvements
         for i, improvement in enumerate(improvements):
-            ax2.text(i, max(dacems_times[i], traditional_times[i]) * 2, 
+            ax2.text(i, max(sldlac_times[i], traditional_times[i]) * 2, 
                     f'{improvement}%\nfaster', ha='center', fontweight='bold', 
                     color='green', fontsize=9,
                     bbox=dict(boxstyle="round,pad=0.2", facecolor="lightgreen", alpha=0.7))
 
         # 3. Performance Under High Load
         load_levels = np.array([1, 10, 50, 100, 200])
-        dacems_throughput = np.array([100, 95, 90, 85, 75])
+        sldlac_throughput = np.array([100, 95, 90, 85, 75])
         traditional_throughput = np.array([100, 80, 60, 40, 20])
-        dacems_success = np.array([100, 99, 98, 96, 92])
+        sldlac_success = np.array([100, 99, 98, 96, 92])
         traditional_success = np.array([100, 95, 85, 70, 50])
         
         ax3 = plt.subplot(223)
-        line1 = ax3.plot(load_levels, dacems_throughput, 'g-o', label='SL-DLAC Throughput', linewidth=2)
+        line1 = ax3.plot(load_levels, sldlac_throughput, 'g-o', label='SL-DLAC Throughput', linewidth=2)
         line2 = ax3.plot(load_levels, traditional_throughput, 'r-o', label='Traditional Throughput', linewidth=2)
         ax3_twin = ax3.twinx()
-        line3 = ax3_twin.plot(load_levels, dacems_success, 'g--s', label='SL-DLAC Success Rate', linewidth=2)
+        line3 = ax3_twin.plot(load_levels, sldlac_success, 'g--s', label='SL-DLAC Success Rate', linewidth=2)
         line4 = ax3_twin.plot(load_levels, traditional_success, 'r--s', label='Traditional Success Rate', linewidth=2)
         
         ax3.set_xlabel('Concurrent Load')
@@ -354,14 +354,14 @@ class ComprehensiveVisualizationValidator:
         
         # 4. Total Cost of Ownership Comparison
         cost_categories = ['Infrastructure', 'Maintenance', 'Security\nImplementation', 'Compliance', 'Scaling\nCosts']
-        dacems_costs = [30, 20, 15, 10, 25]
+        sldlac_costs = [30, 20, 15, 10, 25]
         traditional_costs = [100, 80, 60, 70, 90]
         
         x_pos = np.arange(len(cost_categories))
         width = 0.35
         
         ax4 = plt.subplot(224)
-        bars1 = ax4.bar(x_pos - width/2, dacems_costs, width, label='SL-DLAC', color='green', alpha=0.8)
+        bars1 = ax4.bar(x_pos - width/2, sldlac_costs, width, label='SL-DLAC', color='green', alpha=0.8)
         bars2 = ax4.bar(x_pos + width/2, traditional_costs, width, label='Traditional', color='red', alpha=0.8)
         
         ax4.set_xlabel('Cost Categories')
@@ -373,9 +373,9 @@ class ComprehensiveVisualizationValidator:
         ax4.grid(True, alpha=0.3)
         
         # Add cost savings percentages
-        savings = [((t-d)/t)*100 for d, t in zip(dacems_costs, traditional_costs)]
+        savings = [((t-d)/t)*100 for d, t in zip(sldlac_costs, traditional_costs)]
         for i, saving in enumerate(savings):
-            ax4.text(i, max(dacems_costs[i], traditional_costs[i]) + 5, 
+            ax4.text(i, max(sldlac_costs[i], traditional_costs[i]) + 5, 
                     f'{saving:.0f}%\nsavings', ha='center', fontweight='bold', 
                     color='green', fontsize=9)
         

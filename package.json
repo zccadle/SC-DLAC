@@ -1,7 +1,7 @@
 {
   "name": "dlac",
   "version": "1.0.0",
-  "description": "Delegated Access Control for Emergency Medical Services",
+  "description": "SL-DLAC: Secure Healthcare Access Control System",
   "main": "index.js",
   "scripts": {
     "test": "hardhat test"

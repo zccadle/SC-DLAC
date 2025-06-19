@@ -178,7 +178,7 @@ plt.rcParams['figure.titlesize'] = 14
    - Graceful degradation patterns
 
 5. **Comparative Analysis** (NEW):
-   - DACEMS vs Traditional systems
+   - SL-DLAC vs Traditional systems
    - Performance advantages (87% faster)
    - Security improvements (95.74% vs 60%)
    - Cost efficiency analysis
@@ -294,4 +294,4 @@ The evolution from the old testing approach to the current validated publication
 7. **Security-first approach vs performance-only focus**
 8. **Reproducible results vs one-time snapshots**
 
-This comprehensive approach ensures that DACEMS evaluation meets the highest standards of academic research and provides actionable insights for real-world implementation.
+This comprehensive approach ensures that SL-DLAC evaluation meets the highest standards of academic research and provides actionable insights for real-world implementation.
