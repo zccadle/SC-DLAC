@@ -1,0 +1,3 @@
+OperationType,AvgLatency(ms),MinLatency(ms),MaxLatency(ms),P95Latency(ms),AvgGasUsed
+BasicVerification,8.93,6.42,16.12,16.12,N/A
+DelegatedVerification,0.00,0.00,0.00,0.00,N/A

@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-  console.log("Starting deployment of DACEMS with delegation support...");
+  console.log("Starting deployment of SL-DLAC with delegation support...");
 
   // Get the deployer account
   const [deployer] = await ethers.getSigners();

@@ -1,0 +1,119 @@
+{
+  "description": "ZK Proof Performance Measurements",
+  "testDate": "2025-03-15T00:32:00.450Z",
+  "zkProofLifecycle": {
+    "description": "ZK Proof Lifecycle Performance under different request rates",
+    "data": [
+      {
+        "requestRate": 1,
+        "avgLatency": 41.00920000000019,
+        "throughput": 24.356975837879943,
+        "signingTime": 0.43440000000009604,
+        "generationTime": 1.824500000000171,
+        "verificationTime": 0.24949999999989814,
+        "validationTime": 38.50080000000003,
+        "totalTestTime": 41.05600000000004
+      },
+      {
+        "requestRate": 2,
+        "avgLatency": 48.22929999999997,
+        "throughput": 3.3387337351499404,
+        "signingTime": 0.36659999999983484,
+        "generationTime": 2.211749999999938,
+        "verificationTime": 0.3879500000002736,
+        "validationTime": 45.26299999999992,
+        "totalTestTime": 599.0294999999996
+      },
+      {
+        "requestRate": 4,
+        "avgLatency": 39.805874999999105,
+        "throughput": 4.355245626598446,
+        "signingTime": 0.3271999999997206,
+        "generationTime": 1.488999999999578,
+        "verificationTime": 0.37077499999986685,
+        "validationTime": 37.61889999999994,
+        "totalTestTime": 918.4326999999994
+      },
+      {
+        "requestRate": 8,
+        "avgLatency": 34.62096250000059,
+        "throughput": 6.830822138113922,
+        "signingTime": 0.31070000000045184,
+        "generationTime": 1.4134875000004286,
+        "verificationTime": 0.24666249999972933,
+        "validationTime": 32.65011249999998,
+        "totalTestTime": 1171.1621000000014
+      },
+      {
+        "requestRate": 16,
+        "avgLatency": 35.68962499999907,
+        "throughput": 10.217670874260959,
+        "signingTime": 0.385618749999594,
+        "generationTime": 1.1030250000003434,
+        "verificationTime": 0.27691249999998035,
+        "validationTime": 33.92406874999915,
+        "totalTestTime": 1565.9146
+      },
+      {
+        "requestRate": 32,
+        "avgLatency": 35.634865625000316,
+        "throughput": 14.70958002769997,
+        "signingTime": 0.30608125000003383,
+        "generationTime": 0.9647031250002556,
+        "verificationTime": 0.18177812500016444,
+        "validationTime": 34.18230312499986,
+        "totalTestTime": 2175.4530000000013
+      },
+      {
+        "requestRate": 64,
+        "avgLatency": 35.558903124999915,
+        "throughput": 18.501641659337057,
+        "signingTime": 0.2797781250000071,
+        "generationTime": 0.8642781250003964,
+        "verificationTime": 0.1590562499997077,
+        "validationTime": 34.255790624999804,
+        "totalTestTime": 3459.152500000004
+      },
+      {
+        "requestRate": 128,
+        "avgLatency": 778.6392234375003,
+        "throughput": 126.2147553923526,
+        "signingTime": 0.21001718749977272,
+        "generationTime": 1.43059687500039,
+        "verificationTime": 0.3597289062501545,
+        "validationTime": 776.6388804687499,
+        "totalTestTime": 1014.1445000000022
+      },
+      {
+        "requestRate": 256,
+        "avgLatency": 1483.3452410156247,
+        "throughput": 139.61409138113117,
+        "signingTime": 0.1599722656250151,
+        "generationTime": 1.0933820312496323,
+        "verificationTime": 0.3010347656249337,
+        "validationTime": 1481.7908519531259,
+        "totalTestTime": 1833.6258000000016
+      },
+      {
+        "requestRate": 512,
+        "avgLatency": 2636.847758203126,
+        "throughput": 147.94893935347574,
+        "signingTime": 0.19252753906241082,
+        "generationTime": 1.294070898437667,
+        "verificationTime": 0.3569425781251425,
+        "validationTime": 2635.0042171875007,
+        "totalTestTime": 3460.653400000003
+      },
+      {
+        "requestRate": 1024,
+        "avgLatency": 4796.851822363283,
+        "throughput": 161.09018284648178,
+        "signingTime": 0.19761474609370566,
+        "generationTime": 1.3328068359371201,
+        "verificationTime": 0.3726302734373945,
+        "validationTime": 4794.9487705078145,
+        "totalTestTime": 6356.6878
+      }
+    ]
+  }
+}

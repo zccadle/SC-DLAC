@@ -1,0 +1,87 @@
+{
+  "timestamp": "2025-04-01T21:26:30.690Z",
+  "system": {
+    "os": "win32",
+    "release": "10.0.26100",
+    "cpus": 16,
+    "totalMem": "16 GB"
+  },
+  "policyVerification": {
+    "maxThroughput": {
+      "rate": 256,
+      "throughput": 44.69719644816921
+    },
+    "avgBasicVerificationLatency": 10.572919999999977,
+    "avgDelegatedVerificationLatency": "N/A",
+    "successRateAt1024": 96.08695652173913
+  },
+  "accessFlow": {
+    "maxThroughput": {
+      "rate": 10000,
+      "throughput": 72.67093162734906
+    },
+    "avgRequestTime": 31.626100000000406,
+    "avgVerificationTime": 20.010733333333366,
+    "avgEnforcementTime": 6.9964666666664925,
+    "avgTotalTime": 72.9338333333335
+  },
+  "zkproof": {
+    "maxThroughput": {
+      "rate": 1024,
+      "throughput": 161.09018284648178
+    },
+    "avgSigningTime": 0.43440000000009604,
+    "avgGenerationTime": 1.824500000000171,
+    "avgVerificationTime": 0.24949999999989814,
+    "avgValidationTime": 38.50080000000003,
+    "avgTotalTime": 41.00920000000019
+  },
+  "encryption": {
+    "aes256": {
+      "smallData": {
+        "sizeKB": 1,
+        "encryptionTimeMs": 0.049319999999715945,
+        "decryptionTimeMs": 0.020060000000194124,
+        "minEncryptionTimeMs": 0.03169999999954598,
+        "maxEncryptionTimeMs": 0.07019999999920401,
+        "minDecryptionTimeMs": 0.016400000000430737,
+        "maxDecryptionTimeMs": 0.022800000000643195
+      },
+      "largeData": {
+        "sizeKB": 131072,
+        "encryptionTimeMs": 375.37971999999934,
+        "decryptionTimeMs": 578.903560000001,
+        "minEncryptionTimeMs": 322.0043000000005,
+        "maxEncryptionTimeMs": 481.96640000000116,
+        "minDecryptionTimeMs": 529.0889000000025,
+        "maxDecryptionTimeMs": 718.5953000000009
+      }
+    },
+    "aes192": {
+      "smallData": {
+        "sizeKB": 1,
+        "encryptionTimeMs": 0.07870000000111758,
+        "decryptionTimeMs": 0.03930000000036671,
+        "minEncryptionTimeMs": 0.040600000000267755,
+        "maxEncryptionTimeMs": 0.13180000000284053,
+        "minDecryptionTimeMs": 0.01840000000083819,
+        "maxDecryptionTimeMs": 0.10019999999713036
+      },
+      "largeData": {
+        "sizeKB": 131072,
+        "encryptionTimeMs": 325.9665199999996,
+        "decryptionTimeMs": 530.706260000002,
+        "minEncryptionTimeMs": 292.76840000000084,
+        "maxEncryptionTimeMs": 351.3768000000018,
+        "minDecryptionTimeMs": 511.0460000000021,
+        "maxDecryptionTimeMs": 545.0504000000001
+      }
+    },
+    "aes512": "N/A"
+  },
+  "dataIntensity": {
+    "intensiveAvg": 113.89530833333352,
+    "nonIntensiveAvg": 78.17991666666785,
+    "ratio": 1.4568358881596633
+  }
+}
