@@ -1,0 +1,354 @@
+{
+  "description": "Interoperability and integration testing for SC-DLAC",
+  "testDate": "2025-07-18T16:47:19.731Z",
+  "crossContractCommunication": {
+    "description": "Cross-contract communication and integration tests",
+    "data": [
+      {
+        "testName": "contract_integration_flow",
+        "success": true,
+        "duration": 21.863708,
+        "error": null,
+        "timestamp": "2025-07-18T16:47:19.942Z",
+        "interopMetrics": {
+          "score": 100,
+          "contractsIntegrated": 4,
+          "flowCompleted": true,
+          "auditCaptured": true
+        }
+      },
+      {
+        "testName": "multi_contract_state_consistency",
+        "success": true,
+        "duration": 12.384334,
+        "error": null,
+        "timestamp": "2025-07-18T16:47:19.954Z",
+        "interopMetrics": {
+          "score": 100,
+          "stateConsistent": true,
+          "rolesPropagated": true
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 2,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 2,
+        "min": 12384334,
+        "max": 21863708,
+        "mean": 17124021,
+        "median": 17124021,
+        "stdDev": 4739687,
+        "p25": 14754177.5,
+        "p50": 17124021,
+        "p75": 19493864.5,
+        "p90": 20915770.6,
+        "p95": 21389739.299999997,
+        "p99": 21768914.259999998,
+        "p999": 21854228.626000002,
+        "meanMs": 17.124021,
+        "medianMs": 17.124021,
+        "p95Ms": 21.3897393,
+        "p99Ms": 21.76891426
+      },
+      "interoperabilityScore": 100
+    }
+  },
+  "standardsCompliance": {
+    "description": "Healthcare standards compliance tests (HL7 FHIR simulation)",
+    "data": [
+      {
+        "testName": "fhir_resource_mapping",
+        "success": true,
+        "duration": 18.617,
+        "error": null,
+        "timestamp": "2025-07-18T16:47:19.973Z",
+        "interopMetrics": {
+          "score": 100,
+          "fhirCompatible": true,
+          "resourceTypeSupported": [
+            "Patient",
+            "Observation"
+          ],
+          "dataIntegrity": true
+        }
+      },
+      {
+        "testName": "hl7_message_format",
+        "success": true,
+        "duration": 13.9495,
+        "error": null,
+        "timestamp": "2025-07-18T16:47:19.987Z",
+        "interopMetrics": {
+          "score": 100,
+          "hl7Compatible": true,
+          "messageTypesSupported": [
+            "ADT",
+            "ORM",
+            "ORU"
+          ],
+          "encodingSupported": [
+            "JSON",
+            "XML"
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 2,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 2,
+        "min": 13949500,
+        "max": 18617000,
+        "mean": 16283250,
+        "median": 16283250,
+        "stdDev": 2333750,
+        "p25": 15116375,
+        "p50": 16283250,
+        "p75": 17450125,
+        "p90": 18150250,
+        "p95": 18383625,
+        "p99": 18570325,
+        "p999": 18612332.5,
+        "meanMs": 16.28325,
+        "medianMs": 16.28325,
+        "p95Ms": 18.383625,
+        "p99Ms": 18.570325
+      },
+      "interoperabilityScore": 100
+    }
+  },
+  "apiCompatibility": {
+    "description": "API compatibility and versioning tests",
+    "data": [
+      {
+        "testName": "api_versioning_support",
+        "success": true,
+        "duration": 0.082125,
+        "error": null,
+        "timestamp": "2025-07-18T16:47:19.987Z",
+        "interopMetrics": {
+          "score": 100,
+          "versionsSupported": 3,
+          "backwardCompatible": true,
+          "deprecationPolicy": true
+        }
+      },
+      {
+        "testName": "rest_api_standards",
+        "success": true,
+        "duration": 0.025417,
+        "error": null,
+        "timestamp": "2025-07-18T16:47:19.987Z",
+        "interopMetrics": {
+          "score": 80,
+          "restCompliant": true,
+          "httpMethodsSupported": [
+            "GET",
+            "POST",
+            "PUT"
+          ],
+          "contentTypesSupported": [
+            "application/json",
+            "application/xml"
+          ],
+          "authenticationMethods": [
+            "Bearer Token",
+            "DID-Auth"
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 2,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 2,
+        "min": 25417,
+        "max": 82125,
+        "mean": 53771,
+        "median": 53771,
+        "stdDev": 28354,
+        "p25": 39594,
+        "p50": 53771,
+        "p75": 67948,
+        "p90": 76454.20000000001,
+        "p95": 79289.6,
+        "p99": 81557.92,
+        "p999": 82068.29200000002,
+        "meanMs": 0.053771,
+        "medianMs": 0.053771,
+        "p95Ms": 0.0792896,
+        "p99Ms": 0.08155791999999999
+      },
+      "interoperabilityScore": 90
+    }
+  },
+  "dataFormatInterop": {
+    "description": "Data format interoperability tests",
+    "data": [
+      {
+        "testName": "data_serialization_formats",
+        "success": true,
+        "duration": 34.613584,
+        "error": null,
+        "timestamp": "2025-07-18T16:47:20.022Z",
+        "interopMetrics": {
+          "score": 100,
+          "formatsSupported": 3,
+          "encodingFlexibility": true,
+          "dataValidation": true
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 1,
+      "successfulTests": 1,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 1,
+        "min": 34613584,
+        "max": 34613584,
+        "mean": 34613584,
+        "median": 34613584,
+        "stdDev": 0,
+        "p25": 34613584,
+        "p50": 34613584,
+        "p75": 34613584,
+        "p90": 34613584,
+        "p95": 34613584,
+        "p99": 34613584,
+        "p999": 34613584,
+        "meanMs": 34.613584,
+        "medianMs": 34.613584,
+        "p95Ms": 34.613584,
+        "p99Ms": 34.613584
+      },
+      "interoperabilityScore": 100
+    }
+  },
+  "externalSystemIntegration": {
+    "description": "External system integration capability tests",
+    "data": [
+      {
+        "testName": "external_system_auth",
+        "success": false,
+        "duration": 11.591042,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Role does not exist'\", method=\"estimateGas\", transaction={\"from\":\"0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266\",\"to\":\"0x07882Ae1ecB7429a84f1D53048d35c4bB2056877\",\"data\":\"0x25a00cbc00000000000000000000000015d34aaf54267db7d7c367839aaf71a00a2c6a6500000000000000000000000000000000000000000000000000000000000000c01732f5ba8b8546dd9888dd8e05762a3a8fb1f749d641348725198d0b3247a85e00000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000e100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f45585445524e414c5f53595354454d000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000336469643a657468723a30783135643334414166353432363744423744376333363738333941416637314130306132433641363500000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Role does not exist'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Role does not exist'\",\"data\":\"0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013526f6c6520646f6573206e6f7420657869737400000000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "timestamp": "2025-07-18T16:47:20.033Z"
+      },
+      {
+        "testName": "webhook_integration",
+        "success": true,
+        "duration": 0.018458,
+        "error": null,
+        "timestamp": "2025-07-18T16:47:20.033Z",
+        "interopMetrics": {
+          "score": 100,
+          "webhookSupported": true,
+          "eventsSupported": 5,
+          "retryMechanism": true,
+          "eventFiltering": true
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 1,
+      "failedTests": 1,
+      "successRate": 50,
+      "timingStats": {
+        "count": 1,
+        "min": 18458,
+        "max": 18458,
+        "mean": 18458,
+        "median": 18458,
+        "stdDev": 0,
+        "p25": 18458,
+        "p50": 18458,
+        "p75": 18458,
+        "p90": 18458,
+        "p95": 18458,
+        "p99": 18458,
+        "p999": 18458,
+        "meanMs": 0.018458,
+        "medianMs": 0.018458,
+        "p95Ms": 0.018458,
+        "p99Ms": 0.018458
+      },
+      "interoperabilityScore": 100
+    }
+  },
+  "chainInteroperability": {
+    "description": "Cross-chain interoperability readiness tests",
+    "data": [
+      {
+        "testName": "cross_chain_identity",
+        "success": true,
+        "duration": 0.018375,
+        "error": null,
+        "timestamp": "2025-07-18T16:47:20.033Z",
+        "interopMetrics": {
+          "score": 100,
+          "multichainDIDSupport": true,
+          "chainsSupported": [
+            "Ethereum",
+            "Polygon",
+            "BSC",
+            "Avalanche"
+          ],
+          "bridgeReady": true
+        }
+      },
+      {
+        "testName": "cross_chain_data_format",
+        "success": true,
+        "duration": 0.117167,
+        "error": null,
+        "timestamp": "2025-07-18T16:47:20.034Z",
+        "interopMetrics": {
+          "score": 95,
+          "crossChainDataFormat": true,
+          "hashingCompatible": true,
+          "signaturePortable": true,
+          "relayerSupport": true
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 2,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 2,
+        "min": 18375,
+        "max": 117167,
+        "mean": 67771,
+        "median": 67771,
+        "stdDev": 49396,
+        "p25": 43073,
+        "p50": 67771,
+        "p75": 92469,
+        "p90": 107287.8,
+        "p95": 112227.4,
+        "p99": 116179.08,
+        "p999": 117068.20800000001,
+        "meanMs": 0.067771,
+        "medianMs": 0.067771,
+        "p95Ms": 0.11222739999999999,
+        "p99Ms": 0.11617908
+      },
+      "interoperabilityScore": 97.5
+    }
+  }
+}

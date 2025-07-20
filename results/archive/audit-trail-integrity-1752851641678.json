@@ -1,0 +1,1156 @@
+{
+  "description": "Comprehensive audit trail integrity and completeness testing",
+  "testDate": "2025-07-18T15:13:34.911Z",
+  "auditCompleteness": {
+    "description": "Verification that all system operations are properly audited",
+    "data": [
+      {
+        "testName": "Patient record creation generates audit",
+        "success": true,
+        "duration": 10.906791999999996,
+        "gasUsed": 325846,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 1,
+        "auditComplianceRate": 0,
+        "timestamp": "2025-07-18T15:13:35.142Z",
+        "result": {
+          "hash": "0x46dd5b5697903de537b556270dab8248b28868b5ef8615c44c5f15c64fab3b46",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0xb15b46639284d533cbfd869f9d7bde247a22993b3e327b056585013f768a336c",
+          "blockNumber": 166,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca0a"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x050544"
+          },
+          "to": "0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 37,
+          "data": "0x7eb3a98200000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906",
+          "r": "0x6284ab7056942065355780168c985977a3ec8d8b2800381e3403ddc19c24f850",
+          "s": "0x655a25a284f5c7edb4765be5b1c3a11728d37e952bf908f1efe49b0390a68721",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "testName": "Patient data update generates audit",
+        "success": true,
+        "duration": 34.05854199999999,
+        "gasUsed": 253921,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 1,
+        "auditComplianceRate": 0,
+        "timestamp": "2025-07-18T15:13:36.178Z",
+        "result": {
+          "hash": "0x15dced582f86f210e075bb9dbeb52aef3bcbee9b99bb49d8f69a3d50fd33a41e",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x1ac9e8e41d6299bd1f0cad61da770fe4f5a78e44180114977088ee0aa7671dc7",
+          "blockNumber": 168,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca0a"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x03eb80"
+          },
+          "to": "0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 39,
+          "data": "0xc7d7421c00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011486561727420726174653a20373562706d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020f917d8e7a8ec4fe95357b07e188c839e7c7bf4a1bf0d085023d091d28fdce48d",
+          "r": "0x429e14794f77df66c67218bfd30b6875ef7a9ab407336e2161d5bf96de0eba39",
+          "s": "0x436efad426351f5b672b6a2505e2ebeb518b11673b593cda9102195c7c6ddf1b",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "testName": "Patient data access generates audit",
+        "success": true,
+        "duration": 24.503625000000284,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:37.204Z",
+        "result": "Heart rate: 75bpm"
+      },
+      {
+        "testName": "Emergency delegation policy creation",
+        "success": true,
+        "duration": 19.796749999999975,
+        "gasUsed": 191498,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:38.225Z",
+        "result": {
+          "hash": "0xc46371e243e2550f283c2f8111f0278446daad76ce302b69e2a96406ed1bd5b0",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x770f6a0a6326c34967a429ee122774cb3837e7d4221288c2be5e5980d5ce6439",
+          "blockNumber": 170,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca0a"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x02ec0a"
+          },
+          "to": "0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 9,
+          "data": "0x39e1a6bb00000000000000000000000015d34aaf54267db7d7c367839aaf71a00a2c6a65000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000015180000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+          "r": "0xb68bff4135b032bc31e0aaa5a7e802c884effcf25f93603a9fe5282677f18fb6",
+          "s": "0x2a19d4bdf58614044672b1fe3e2bcf02b12bd167d9087b4b2a14f3c86aa1798c",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "testName": "Emergency access request generates audit",
+        "success": true,
+        "duration": 39.29779099999996,
+        "gasUsed": 529716,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 1,
+        "auditComplianceRate": 0,
+        "timestamp": "2025-07-18T15:13:39.266Z",
+        "result": {
+          "hash": "0x006f67919663d9560c37200f38f0053509cec61b7541ddf4c41f5ac47691078a",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x46b77f129b43cb55c2ea3a18ef35e356c2dc9dda03f28cca36ddd6ef193e3f44",
+          "blockNumber": 172,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca0a"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x082154"
+          },
+          "to": "0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 21,
+          "data": "0xbd700f3300000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000014456d657267656e637920617564697420746573740000000000000000000000000000000000000000000000000000000000000000000000000000000000000020746c968c6e6acf218801f042a17426170d949190dd579d1beea2d09539bbc037",
+          "r": "0x3f480a109b3a3171f48dc49b8752df0679503a4f8a407a2101ecbc2474ec2f2d",
+          "s": "0x14f6c5431ef8c52fd59179f0d11b017c14aa20f03c5921c83bc6ae691f96fc19",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 5,
+      "successfulTests": 5,
+      "failedTests": 0,
+      "successRate": 100,
+      "averageLatency": 25.71270000000004,
+      "minLatency": 10.906791999999996,
+      "maxLatency": 39.29779099999996,
+      "totalGasUsed": 1300981,
+      "averageGasPerTest": 260196.2,
+      "auditComplianceRate": 100
+    }
+  },
+  "auditIntegrity": {
+    "description": "Audit log tamper resistance and integrity validation",
+    "data": [
+      {
+        "testName": "Verify audit entry hash integrity",
+        "success": true,
+        "duration": 0.12754099999983737,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:40.316Z",
+        "result": {
+          "isValid": false
+        }
+      },
+      {
+        "testName": "Attempt to retrieve non-existent audit entry",
+        "success": false,
+        "duration": 0.3800419999997757,
+        "gasUsed": 0,
+        "error": "auditLogger.getAuditEntry is not a function",
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:41.318Z",
+        "result": null
+      },
+      {
+        "testName": "Verify audit entry immutability",
+        "success": true,
+        "duration": 120.51450000000023,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:42.440Z",
+        "result": {
+          "consistent": true
+        }
+      },
+      {
+        "testName": "Verify audit counter integrity",
+        "success": true,
+        "duration": 11.61700000000019,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:43.453Z",
+        "result": {
+          "currentCount": 4
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 4,
+      "successfulTests": 3,
+      "failedTests": 1,
+      "successRate": 75,
+      "averageLatency": 33.15977075000001,
+      "minLatency": 0.12754099999983737,
+      "maxLatency": 120.51450000000023,
+      "totalGasUsed": 0,
+      "averageGasPerTest": 0,
+      "auditComplianceRate": 100
+    }
+  },
+  "auditRetrieval": {
+    "description": "Audit log retrieval performance and accuracy",
+    "data": [
+      {
+        "testName": "Retrieve single audit entry",
+        "success": true,
+        "duration": 12.989165999999386,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:49.796Z",
+        "result": [
+          "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+          "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+          "update_data",
+          "Updated vital-signs",
+          {
+            "type": "BigNumber",
+            "hex": "0x687a65cd"
+          },
+          false
+        ]
+      },
+      {
+        "testName": "Retrieve patient access records",
+        "success": true,
+        "duration": 10.176666999999725,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:50.309Z",
+        "result": [
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "create_record",
+            "New patient record created",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65cb"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated vital-signs",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65cd"
+            },
+            false
+          ],
+          [
+            "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "emergency_access",
+            "Emergency audit test",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65d1"
+            },
+            true
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated medical-history",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65d3"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-0",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65da"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-1",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65dc"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-2",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65de"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-3",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65e0"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-4",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65e2"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-5",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65e4"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-6",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65e6"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-7",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65e8"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-8",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65ea"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-9",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65ec"
+            },
+            false
+          ]
+        ]
+      },
+      {
+        "testName": "Retrieve provider access records",
+        "success": true,
+        "duration": 48.362583000000086,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:50.859Z",
+        "result": [
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "create_record",
+            "New patient record created",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65cb"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated vital-signs",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65cd"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated medical-history",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65d3"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-0",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65da"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-1",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65dc"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-2",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65de"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-3",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65e0"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-4",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65e2"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-5",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65e4"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-6",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65e6"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-7",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65e8"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-8",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65ea"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-9",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65ec"
+            },
+            false
+          ]
+        ]
+      },
+      {
+        "testName": "Get total audit entry count",
+        "success": true,
+        "duration": 7.634333000001789,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:51.368Z",
+        "result": {
+          "type": "BigNumber",
+          "hex": "0x0e"
+        }
+      },
+      {
+        "testName": "Batch retrieval of multiple entries",
+        "success": true,
+        "duration": 19.225291999999172,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:51.889Z",
+        "result": [
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "create_record",
+            "New patient record created",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65cb"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated vital-signs",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65cd"
+            },
+            false
+          ],
+          [
+            "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "emergency_access",
+            "Emergency audit test",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65d1"
+            },
+            true
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated medical-history",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65d3"
+            },
+            false
+          ],
+          [
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated test-category-0",
+            {
+              "type": "BigNumber",
+              "hex": "0x687a65da"
+            },
+            false
+          ]
+        ]
+      }
+    ],
+    "metrics": {
+      "totalTests": 5,
+      "successfulTests": 5,
+      "failedTests": 0,
+      "successRate": 100,
+      "averageLatency": 19.67760820000003,
+      "minLatency": 7.634333000001789,
+      "maxLatency": 48.362583000000086,
+      "totalGasUsed": 0,
+      "averageGasPerTest": 0,
+      "auditComplianceRate": 100
+    }
+  },
+  "auditFiltering": {
+    "description": "Audit log filtering and search functionality",
+    "data": [
+      {
+        "testName": "Filter emergency access records",
+        "success": true,
+        "duration": 5.11962499999936,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:52.435Z",
+        "result": {
+          "totalRecords": 15,
+          "emergencyRecords": 2
+        }
+      },
+      {
+        "testName": "Filter by provider address",
+        "success": false,
+        "duration": 1.5576660000006086,
+        "gasUsed": 0,
+        "error": "auditLogger.getProviderAccessRecords is not a function",
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:53.438Z",
+        "result": null
+      },
+      {
+        "testName": "Search for specific action types",
+        "success": false,
+        "duration": 13.010916999999608,
+        "gasUsed": 0,
+        "error": "Cannot read properties of undefined (reading 'includes')",
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:54.452Z",
+        "result": null
+      }
+    ],
+    "metrics": {
+      "totalTests": 3,
+      "successfulTests": 1,
+      "failedTests": 2,
+      "successRate": 33.33333333333333,
+      "averageLatency": 6.562735999999859,
+      "minLatency": 1.5576660000006086,
+      "maxLatency": 13.010916999999608,
+      "totalGasUsed": 0,
+      "averageGasPerTest": 0,
+      "auditComplianceRate": 100
+    }
+  },
+  "auditStorage": {
+    "description": "Audit log storage optimization and scalability",
+    "data": [
+      {
+        "testName": "Measure storage cost per audit entry",
+        "success": true,
+        "duration": 31.727499999997235,
+        "gasUsed": 254089,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:55.486Z",
+        "result": {
+          "hash": "0x979f6ebdeaddb02cb4da31c870fe713f750445ebc4e8e39d98cf8e39e3eabcda",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x9d1bf1be0e6de24269af01ec6c6cfa8d8b331ee51659750ba8f2ca61e35e3cc9",
+          "blockNumber": 200,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca0a"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x03ec2b"
+          },
+          "to": "0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 64,
+          "data": "0xc7d7421c00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000c73746f726167652d746573740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001e53746f72616765206f7074696d697a6174696f6e207465737420646174610000000000000000000000000000000000000000000000000000000000000000002009c5273d693e827c6f75e704484d51547f9a0d8ca40cbc2026ced9be3db4a811",
+          "r": "0x5ed7900b8321893f137ad606e093a6a36fca0f355e5bb1f794e9572f6980f3c3",
+          "s": "0x53705caeb5a720d68a5d021f87bb1fc3bf84e894d8775bdeb585afed5279376e",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "testName": "Batch audit operations efficiency",
+        "success": true,
+        "duration": 77.82254100000137,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:56.565Z",
+        "result": [
+          {
+            "hash": "0xc9060d4357fc3a9f36aa8230ae339741d1147523ce7c9e71a03d4f17d22b39bd",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x82cf72e5a2a6b103fe8d6b99ec5313110b0d1c17c3dfd283e624755852294e8a",
+            "blockNumber": 202,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca0a"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x03eb8c"
+            },
+            "to": "0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 66,
+            "data": "0xc7d7421c00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000c62617463682d746573742d300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001142617463682074657374206461746120300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020dd42b025adc357d5f30818f756b9f8cc5a67171e827c8c59b803786cadba7e0d",
+            "r": "0x1f994d128b8788b9c4edfca343002b7b100bd1c0f9ee27b9d2c4da54c3c24e5c",
+            "s": "0x1f5d54033e5287075fdcd9634046b24d68fd1f55db34bb7a7e2c3ee9e12bec4f",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x0fca12c5847600036fbabef7a337435e27cff625c8651385c4e301ee11244ff9",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0xf7bacf92be5cc9c48743db8de88170b7e08e63bae1f095961f1e852c1de331d1",
+            "blockNumber": 204,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca0a"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x03eb8c"
+            },
+            "to": "0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 68,
+            "data": "0xc7d7421c00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000c62617463682d746573742d310000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001142617463682074657374206461746120310000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020c77358c5cc0362d0e885c178969889bd1cd75d5e72c0b0cf36311d7c32338023",
+            "r": "0xca42b7c83f823adaf738852563d98bb6327787dc6e3005fa048ddebe86714869",
+            "s": "0x4b239cd45f5ffc6283c391d394f6ecd6ea01a0df7c234080f58e7e64615e7105",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x48f4853047b5c35f4f19002fe86bb89ab96b31c6fca966ad414d64d36dd4069f",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x325508cd9172fed5b9f464dce8a0476c83d88d8f3b4c068f07c9e4881f61f1d0",
+            "blockNumber": 206,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca0a"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x03eb8c"
+            },
+            "to": "0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 70,
+            "data": "0xc7d7421c00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000c62617463682d746573742d320000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001142617463682074657374206461746120320000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020d0570813750ecc22067f19d93ea934dd86a584ab593015a37368782f62415961",
+            "r": "0xa0070e2842e6a3cf5a29fb6a42a86fb3185f4c61b1d7252e66839af0c2e6d20f",
+            "s": "0x02211d725da6282806bda80d0f1e107e1d8d1645d62f878f0b5ef98d797f4617",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x8fe17eede48b39fd3bb26837c7fff81b0c9ba897ecbf587e010cb45d6797d76a",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0xcc667ebcb35c85bff8acfd598c7a651e7231a446dafc86511a6ed4beb6876357",
+            "blockNumber": 208,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca0a"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x03eb8c"
+            },
+            "to": "0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 72,
+            "data": "0xc7d7421c00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000c62617463682d746573742d3300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011426174636820746573742064617461203300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000209f292626e9461e3f19a91319fe4e6c146a829938ec3e5042e001d99453298071",
+            "r": "0x97ae79697ec4c240291e485397e1dc201c9dce51a298e500333e1db7f2b1fcfd",
+            "s": "0x376969b0064d9ad0b968f351ce09bf6bdb3cfac284ec3e2c23e41242fedd8914",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0xfbc3e9fc66ad7c5f0ee8f9e5c977a5a021b7c1c0d4f0146580a2009d10fade27",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x00925aa39aa10342ef09345f6c2ab9810e260c3fd92105a19ba6d226436b5ef3",
+            "blockNumber": 210,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca0a"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x03eb8c"
+            },
+            "to": "0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 74,
+            "data": "0xc7d7421c00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000c62617463682d746573742d34000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000114261746368207465737420646174612034000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002001d88031fcc20c1cacef3dcf6b6317447d88e4b19511195df35169678529e17d",
+            "r": "0xf045e45b1f30d9f86cf10b9e83573ea00d952612a1fdb55c1131475a0c1c2f3c",
+            "s": "0x5d370b1b4dfc18ca067b676b8b0388b535af83db3db3c3bfa983a685939b6d27",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          }
+        ]
+      },
+      {
+        "testName": "Audit log growth measurement",
+        "success": true,
+        "duration": 70.8346249999995,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:57.637Z",
+        "result": {
+          "initialCount": 21,
+          "finalCount": 24,
+          "growth": 3
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 3,
+      "successfulTests": 3,
+      "failedTests": 0,
+      "successRate": 100,
+      "averageLatency": 60.12822199999937,
+      "minLatency": 31.727499999997235,
+      "maxLatency": 77.82254100000137,
+      "totalGasUsed": 254089,
+      "averageGasPerTest": 84696.33333333333,
+      "auditComplianceRate": 100
+    }
+  },
+  "complianceReporting": {
+    "description": "Compliance reporting and audit trail generation",
+    "data": [
+      {
+        "testName": "Generate comprehensive audit report",
+        "success": true,
+        "duration": 0.8339999999989232,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:58.638Z",
+        "result": {
+          "totalEntries": 0,
+          "emergencyAccess": 0,
+          "regularAccess": 0,
+          "uniqueProviders": 0,
+          "uniquePatients": 0,
+          "actionBreakdown": {},
+          "timeRange": {
+            "startTime": 1752765238,
+            "endTime": 1752851638
+          },
+          "entries": []
+        }
+      },
+      {
+        "testName": "Validate audit trail completeness",
+        "success": false,
+        "duration": 17.4934170000015,
+        "gasUsed": 0,
+        "error": "auditLogger.getProviderAccessRecords is not a function",
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:13:59.658Z",
+        "result": null
+      },
+      {
+        "testName": "Emergency access compliance report",
+        "success": true,
+        "duration": 16.975666999998793,
+        "gasUsed": 0,
+        "error": null,
+        "auditCount": 0,
+        "expectedAuditCount": 0,
+        "auditComplianceRate": 100,
+        "timestamp": "2025-07-18T15:14:00.676Z",
+        "result": {
+          "totalAccess": 24,
+          "emergencyAccess": 2,
+          "regularAccess": 22,
+          "emergencyRatio": 0.08333333333333333
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 3,
+      "successfulTests": 2,
+      "failedTests": 1,
+      "successRate": 66.66666666666666,
+      "averageLatency": 11.767694666666406,
+      "minLatency": 0.8339999999989232,
+      "maxLatency": 17.4934170000015,
+      "totalGasUsed": 0,
+      "averageGasPerTest": 0,
+      "auditComplianceRate": 100
+    }
+  }
+}

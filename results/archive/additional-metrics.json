@@ -1,0 +1,35 @@
+{
+  "accessPolicyOperations": {
+    "description": "Performance of access policy operations",
+    "registration": [
+      {
+        "iteration": 0,
+        "timeMs": 11.752899999999954
+      },
+      {
+        "iteration": 1,
+        "timeMs": 27.327800000000025
+      },
+      {
+        "iteration": 2,
+        "timeMs": 41.68450000000007
+      },
+      {
+        "iteration": 3,
+        "timeMs": 27.748799999999846
+      },
+      {
+        "iteration": 4,
+        "timeMs": 28.726699999999937
+      }
+    ],
+    "delegation": [],
+    "verification": [],
+    "authorization": []
+  },
+  "dataPolicyPerformance": {
+    "description": "Performance comparison of data-intensive vs non-intensive policies",
+    "dataIntensive": [],
+    "nonDataIntensive": []
+  }
+}

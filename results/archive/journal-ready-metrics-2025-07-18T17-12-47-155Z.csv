@@ -1,0 +1,17 @@
+Metric,Value,Unit,Category
+Attack Prevention Rate,97.87,Percentage,Security
+Average System Latency,18.02,Milliseconds,Performance
+Maximum Throughput,50.70,Transactions per Second,Performance
+P95 Latency,16.49,Milliseconds,Performance
+P99 Latency,18.34,Milliseconds,Performance
+Emergency Access Reliability,100.00,Percentage,Emergency Access
+Average Emergency Response Time,36.27,Milliseconds,Emergency Access
+Audit Coverage,100.00,Percentage,Audit & Compliance
+Audit Integrity Score,100.00,Percentage,Audit & Compliance
+Workflow Completion Rate,94.87,Percentage,Healthcare Workflows
+Fault Tolerance Score,100.00,Percentage,System Resilience
+Fault Recovery Rate,100.00,Percentage,System Resilience
+Max Concurrent Users,19,Count,Scalability
+Performance Degradation,94.74,Percentage,Scalability
+Overall Test Success Rate,75.00,Percentage,Execution
+Total Test Duration,5.35,Minutes,Execution

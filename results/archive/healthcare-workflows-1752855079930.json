@@ -1,0 +1,643 @@
+{
+  "description": "Real-world healthcare workflow simulations and performance analysis",
+  "testDate": "2025-07-18T16:10:55.150Z",
+  "hospitalAdmission": {
+    "description": "Complete patient admission workflow from ER to discharge",
+    "data": [
+      {
+        "stepName": "Patient arrives at ER - Initial triage",
+        "success": false,
+        "duration": 5.8792080000000055,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized logger'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x7eb3a98200000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized logger'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized logger'\",\"data\":\"0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013556e617574686f72697a6564206c6f6767657200000000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "patient1",
+          "nurse1"
+        ],
+        "timestamp": "2025-07-18T16:10:55.506Z",
+        "result": null
+      },
+      {
+        "stepName": "ER physician initial assessment",
+        "success": false,
+        "duration": 42.44262500000002,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xc7d7421c00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001400000000000000000000000000000000000000000000000000000000000000012696e697469616c2d6173736573736d656e740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004f4368657374207061696e2c2073686f72746e657373206f66206272656174682e20506f737369626c652063617264696163206576656e742e2041646d697420666f72206f62736572766174696f6e2e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000208e5bf8783e80613812d603b6ae13ef8a1fea2fcc01c7b6b809d1d35486d0a177\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "erDoctor",
+          "patient1"
+        ],
+        "timestamp": "2025-07-18T16:10:56.050Z",
+        "result": null
+      },
+      {
+        "stepName": "Vital signs monitoring setup",
+        "success": false,
+        "duration": 25.532833999999866,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xc7d7421c00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000120000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e73000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002d496e697469616c3a2048522039352c204250203134352f39302c204f32203934252c2054656d702039392e31460000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000203820e2208a71b5134da4b16413cc634570bc2a75bc4a3cc4946c8dcaf86cbecd\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "nurse1",
+          "patient1"
+        ],
+        "timestamp": "2025-07-18T16:10:56.578Z",
+        "result": null
+      },
+      {
+        "stepName": "Cardiology consultation request",
+        "success": false,
+        "duration": 12.914459000000079,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x70997970C51812dc3A010C7d01b50e0d17dc79C8\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a3000000000000000000000000000000000000000000000000000000000000000012696e697469616c2d6173736573736d656e740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "erDoctor",
+          "cardiologist"
+        ],
+        "timestamp": "2025-07-18T16:10:57.392Z",
+        "result": null
+      },
+      {
+        "stepName": "Cardiologist emergency access",
+        "success": false,
+        "duration": 18.354125000000295,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\", method=\"estimateGas\", transaction={\"from\":\"0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xbd700f3300000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000002643617264696f6c6f677920636f6e73756c746174696f6e20666f72206368657374207061696e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002037824a7a59a10cea60a440a7ed3aba74233cbdc17d94c77c361727b6af7b7376\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000184e6f7420617574686f72697a656420627920706f6c6963790000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "cardiologist",
+          "patient1"
+        ],
+        "timestamp": "2025-07-18T16:10:57.911Z",
+        "result": null
+      },
+      {
+        "stepName": "Cardiologist assessment and orders",
+        "success": false,
+        "duration": 16.377042000000074,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xc7d7421c00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000160000000000000000000000000000000000000000000000000000000000000001063617264696f6c6f67792d6e6f74657300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006e454b472073686f777320535420656c65766174696f6e7320696e206c656164732049492c204949492c206156462e205265636f6d6d656e642063617468206c61622061637469766174696f6e2e205374617274206475616c20616e7469706c6174656c657420746865726170792e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020fa4496597ce7c893255fd0de7e1618ccaec6d78ff2927cd1ea49e5147b4b3b64\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "cardiologist",
+          "patient1"
+        ],
+        "timestamp": "2025-07-18T16:10:58.429Z",
+        "result": null
+      },
+      {
+        "stepName": "Radiology imaging orders",
+        "success": false,
+        "duration": 12.157917000000452,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x70997970C51812dc3A010C7d01b50e0d17dc79C8\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x39e1a6bb000000000000000000000000976ea74026e726554db657fa54763abd0c3a0aa9000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000015180000000000000000000000000000000000000000000000000000000000000001063617264696f6c6f67792d6e6f7465730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "cardiologist",
+          "radiologist"
+        ],
+        "timestamp": "2025-07-18T16:10:59.642Z",
+        "result": null
+      },
+      {
+        "stepName": "Transfer to cardiac unit",
+        "success": false,
+        "duration": 17.206208999999944,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0xa0Ee7A142d267C1f36714E4a8F75612F20a79720\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xc7d7421c00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000140000000000000000000000000000000000000000000000000000000000000000e7472616e736665722d6e6f746573000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005750617469656e74207472616e7366657272656420746f206361726469616320756e69742e20537461626c6520636f6e646974696f6e2e20436f6e74696e756f7573206d6f6e69746f72696e6720696e697469617465642e0000000000000000000000000000000000000000000000000000000000000000000000000000000020e49ceab26cdc4daff8d3d22420f6f702d7199e89998d60cc8042834fb37f2177\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "nurse2",
+          "patient1"
+        ],
+        "timestamp": "2025-07-18T16:11:00.160Z",
+        "result": null
+      }
+    ],
+    "metrics": {
+      "totalSteps": 8,
+      "successfulSteps": 0,
+      "failedSteps": 8,
+      "successRate": 0,
+      "averageStepLatency": 18.858052375000092,
+      "minStepLatency": 5.8792080000000055,
+      "maxStepLatency": 42.44262500000002,
+      "totalGasUsed": 0,
+      "averageGasPerStep": 0,
+      "participantCount": 6,
+      "workflowComplexity": 1.3333333333333333
+    }
+  },
+  "emergencyResponse": {
+    "description": "Emergency response scenarios (trauma, cardiac, stroke)",
+    "data": [
+      {
+        "stepName": "Ambulance dispatch and patient assessment",
+        "success": false,
+        "duration": 11.775166999999783,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized logger'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x7eb3a9820000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized logger'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized logger'\",\"data\":\"0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013556e617574686f72697a6564206c6f6767657200000000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "paramedic1",
+          "patient2"
+        ],
+        "timestamp": "2025-07-18T16:11:00.774Z",
+        "result": null
+      },
+      {
+        "stepName": "Pre-hospital emergency delegation",
+        "success": false,
+        "duration": 10.270457999999962,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x39e1a6bb000000000000000000000000bcd4042de499d14e55001ccbb24a551f3b954096000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000151800000000000000000000000000000000000000000000000000000000000000010656d657267656e63792d766974616c7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "patient2",
+          "paramedic1"
+        ],
+        "timestamp": "2025-07-18T16:11:01.286Z",
+        "result": null
+      },
+      {
+        "stepName": "Paramedic emergency access request",
+        "success": false,
+        "duration": 26.074791999999434,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\", method=\"estimateGas\", transaction={\"from\":\"0xBcd4042DE499D14e55001CcbB24a551F3b954096\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xbd700f330000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000284d6f746f722076656869636c65206163636964656e74202d206d756c7469706c6520747261756d6100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000203f590d83bdfd3023af20b6237d91ca0005b93f0704c6c0e1cd3ce4904c096831\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000184e6f7420617574686f72697a656420627920706f6c6963790000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "paramedic1",
+          "patient2"
+        ],
+        "timestamp": "2025-07-18T16:11:01.814Z",
+        "result": null
+      },
+      {
+        "stepName": "Field assessment and stabilization",
+        "success": false,
+        "duration": 24.30066699999952,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized access'\", method=\"estimateGas\", transaction={\"from\":\"0xBcd4042DE499D14e55001CcbB24a551F3b954096\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xc7d7421c0000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000016000000000000000000000000000000000000000000000000000000000000000106669656c642d6173736573736d656e740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000634d5641207769746820726f6c6c6f7665722e20436f6e7363696f75732062757420616c74657265642e2053757370656374656420696e7465726e616c20626c656564696e672e204956206163636573732078322c20324c204e532072756e6e696e672e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020417f445bbd6836c51ef760bb6a5046602edfb820d125877911e7f6c02be32292\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized access'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized access'\",\"data\":\"0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013556e617574686f72697a65642061636365737300000000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "paramedic1",
+          "patient2"
+        ],
+        "timestamp": "2025-07-18T16:11:02.339Z",
+        "result": null
+      },
+      {
+        "stepName": "Hospital pre-arrival notification",
+        "success": false,
+        "duration": 8.730999999999767,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x39e1a6bb00000000000000000000000015d34aaf54267db7d7c367839aaf71a00a2c6a65000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a30000000000000000000000000000000000000000000000000000000000000000106669656c642d6173736573736d656e7400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "paramedic1",
+          "erDoctor"
+        ],
+        "timestamp": "2025-07-18T16:11:03.349Z",
+        "result": null
+      },
+      {
+        "stepName": "ER trauma team activation",
+        "success": false,
+        "duration": 21.255999999999403,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xbd700f330000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000027547261756d61207465616d2061637469766174696f6e202d204c6576656c203120747261756d610000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000209cb4e8b419a99f0c05ea1c821cc3abb0ed93ff17958fa3b3f2ea19e028a072eb\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000184e6f7420617574686f72697a656420627920706f6c6963790000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "erDoctor",
+          "patient2"
+        ],
+        "timestamp": "2025-07-18T16:11:03.872Z",
+        "result": null
+      },
+      {
+        "stepName": "Multi-specialist emergency consultation",
+        "success": false,
+        "duration": 5.818208999999115,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000001518000000000000000000000000000000000000000000000000000000000000000106669656c642d6173736573736d656e740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "erDoctor",
+          "cardiologist",
+          "radiologist"
+        ],
+        "timestamp": "2025-07-18T16:11:04.379Z",
+        "result": null
+      },
+      {
+        "stepName": "Concurrent specialist assessments",
+        "success": false,
+        "duration": 18.628249999999753,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\", method=\"estimateGas\", transaction={\"from\":\"0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xbd700f330000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000002543617264696163206173736573736d656e7420666f7220747261756d612070617469656e740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020c5be1b379d7f106bc6fda907005039e50a77f107be363f1ba8b18ed471d2ea93\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000184e6f7420617574686f72697a656420627920706f6c6963790000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "cardiologist",
+          "radiologist"
+        ],
+        "timestamp": "2025-07-18T16:11:04.899Z",
+        "result": null
+      }
+    ],
+    "metrics": {
+      "totalSteps": 8,
+      "successfulSteps": 0,
+      "failedSteps": 8,
+      "successRate": 0,
+      "averageStepLatency": 15.856817874999592,
+      "minStepLatency": 5.818208999999115,
+      "maxStepLatency": 26.074791999999434,
+      "totalGasUsed": 0,
+      "averageGasPerStep": 0,
+      "participantCount": 5,
+      "workflowComplexity": 1.6
+    }
+  },
+  "consultationWorkflow": {
+    "description": "Multi-specialist consultation and care coordination",
+    "data": [
+      {
+        "stepName": "Primary care referral initialization",
+        "success": false,
+        "duration": 7.004374999998618,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized logger'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x7eb3a98200000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized logger'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized logger'\",\"data\":\"0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013556e617574686f72697a6564206c6f6767657200000000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "erDoctor",
+          "patient3"
+        ],
+        "timestamp": "2025-07-18T16:11:05.708Z",
+        "result": null
+      },
+      {
+        "stepName": "Patient consent for multi-specialist access",
+        "success": false,
+        "duration": 5.148624999999811,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x90F79bf6EB2c4f870365E785982E1f101E93b906\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000003f480000000000000000000000000000000000000000000000000000000000000000e726566657272616c2d6e6f746573000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "patient3",
+          "cardiologist",
+          "radiologist"
+        ],
+        "timestamp": "2025-07-18T16:11:06.214Z",
+        "result": null
+      },
+      {
+        "stepName": "Cardiology specialist access",
+        "success": false,
+        "duration": 28.57329099999879,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\", method=\"estimateGas\", transaction={\"from\":\"0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xbd700f3300000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000235370656369616c697a65642063617264696f6c6f677920636f6e73756c746174696f6e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020acbf3f2d7ebe3f298bdad7b48f9ee40a639ba6302c001a84f8be39cf1f7571d1\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000184e6f7420617574686f72697a656420627920706f6c6963790000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "cardiologist",
+          "patient3"
+        ],
+        "timestamp": "2025-07-18T16:11:06.745Z",
+        "result": null
+      },
+      {
+        "stepName": "Cardiologist detailed assessment",
+        "success": false,
+        "duration": 16.920665999999983,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xc7d7421c00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000160000000000000000000000000000000000000000000000000000000000000001363617264696f6c6f67792d64657461696c65640000000000000000000000000000000000000000000000000000000000000000000000000000000000000000664563686f2073686f7773204546203335252c206d6f646572617465204d522e205265636f6d6d656e642063617264696163206361746820616e6420706f737369626c6520696e74657276656e74696f6e2e2053746172742041434520696e68696269746f722e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002018a862d174a4fa4fbb3691c7d58d59e142b8e347185fa699ce586f14ac06b619\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "cardiologist",
+          "patient3"
+        ],
+        "timestamp": "2025-07-18T16:11:07.263Z",
+        "result": null
+      },
+      {
+        "stepName": "Radiology imaging coordination",
+        "success": false,
+        "duration": 24.57341699999961,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\", method=\"estimateGas\", transaction={\"from\":\"0x976EA74026E726554dB657fA54763abd0C3a0aa9\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xbd700f3300000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001e4361726469616320696d6167696e6720696e746572707265746174696f6e00000000000000000000000000000000000000000000000000000000000000000020383b403d97b96cbca22336ae3c0d812887269201eb9980522a0d20a0a05548d5\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000184e6f7420617574686f72697a656420627920706f6c6963790000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "radiologist",
+          "patient3"
+        ],
+        "timestamp": "2025-07-18T16:11:08.787Z",
+        "result": null
+      },
+      {
+        "stepName": "Cross-specialist consultation",
+        "success": false,
+        "duration": 24.805749999999534,
+        "gasUsed": 0,
+        "error": "call revert exception; VM Exception while processing transaction: reverted with reason string \"Patient record not found\" [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (method=\"getPatientData(address,string,bytes)\", data=\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\", errorArgs=[\"Patient record not found\"], errorName=\"Error\", errorSignature=\"Error(string)\", reason=\"Patient record not found\", code=CALL_EXCEPTION, version=abi/5.8.0)",
+        "participants": [
+          "cardiologist",
+          "radiologist"
+        ],
+        "timestamp": "2025-07-18T16:11:09.314Z",
+        "result": null
+      }
+    ],
+    "metrics": {
+      "totalSteps": 6,
+      "successfulSteps": 0,
+      "failedSteps": 6,
+      "successRate": 0,
+      "averageStepLatency": 17.837687333332724,
+      "minStepLatency": 5.148624999999811,
+      "maxStepLatency": 28.57329099999879,
+      "totalGasUsed": 0,
+      "averageGasPerStep": 0,
+      "participantCount": 4,
+      "workflowComplexity": 1.5
+    }
+  },
+  "interHospitalTransfer": {
+    "description": "Patient transfer between healthcare facilities",
+    "data": [
+      {
+        "stepName": "Transfer request initiation",
+        "success": false,
+        "duration": 18.655040999999983,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xc7d7421c00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000016000000000000000000000000000000000000000000000000000000000000000107472616e736665722d7265717565737400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007250617469656e74207265717569726573207370656369616c697a656420636172646961632073757267657279206e6f7420617661696c61626c65206174207468697320666163696c6974792e205265636f6d6d656e64207472616e7366657220746f20636172646961632063656e7465722e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020303472d600ca0c2bb9d0f9aca6333275eb8e5d049441eefb4e913dadcdef2d54\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "erDoctor",
+          "patient1"
+        ],
+        "timestamp": "2025-07-18T16:11:10.033Z",
+        "result": null
+      },
+      {
+        "stepName": "Receiving hospital access delegation",
+        "success": false,
+        "duration": 13.213916999999128,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x70997970C51812dc3A010C7d01b50e0d17dc79C8\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000005460000000000000000000000000000000000000000000000000000000000000000107472616e736665722d7265717565737400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "patient1",
+          "cardiologist"
+        ],
+        "timestamp": "2025-07-18T16:11:10.549Z",
+        "result": null
+      },
+      {
+        "stepName": "Medical records transfer",
+        "success": false,
+        "duration": 21.656833000000915,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\", method=\"estimateGas\", transaction={\"from\":\"0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xbd700f3300000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000002c496e7465722d686f73706974616c207472616e73666572202d20726563656976696e6720666163696c6974790000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002085106aa015d464fdb5384c0a68b5eda1383f78edcad8f580d6976f158fb549f1\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000184e6f7420617574686f72697a656420627920706f6c6963790000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "cardiologist",
+          "patient1"
+        ],
+        "timestamp": "2025-07-18T16:11:11.072Z",
+        "result": null
+      },
+      {
+        "stepName": "Transport team handoff",
+        "success": false,
+        "duration": 10.449124999999185,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x70997970C51812dc3A010C7d01b50e0d17dc79C8\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x39e1a6bb00000000000000000000000071be63f3384f5fb98995898a86b02fb2426c5788000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000a8c000000000000000000000000000000000000000000000000000000000000000107472616e736665722d726571756573740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "paramedic2",
+          "patient1"
+        ],
+        "timestamp": "2025-07-18T16:11:12.283Z",
+        "result": null
+      },
+      {
+        "stepName": "Receiving facility admission",
+        "success": false,
+        "duration": 17.05620799999815,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xc7d7421c00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000160000000000000000000000000000000000000000000000000000000000000000f61646d697373696f6e2d6e6f7465730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006350617469656e742072656365697665642066726f6d206f75747369646520666163696c6974792e20537461626c6520666f72207472616e73706f72742e20526561647920666f7220636172646961632073757267657279206576616c756174696f6e2e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020de3d21e08b1ea813340d6e717657b310b394a237cefc63bb453c1dc7a6b8f9f4\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "cardiologist",
+          "patient1"
+        ],
+        "timestamp": "2025-07-18T16:11:12.801Z",
+        "result": null
+      }
+    ],
+    "metrics": {
+      "totalSteps": 5,
+      "successfulSteps": 0,
+      "failedSteps": 5,
+      "successRate": 0,
+      "averageStepLatency": 16.20622479999947,
+      "minStepLatency": 10.449124999999185,
+      "maxStepLatency": 21.656833000000915,
+      "totalGasUsed": 0,
+      "averageGasPerStep": 0,
+      "participantCount": 4,
+      "workflowComplexity": 1.25
+    }
+  },
+  "chronicCareManagement": {
+    "description": "Long-term chronic disease management workflows",
+    "data": [
+      {
+        "stepName": "Chronic care program enrollment",
+        "success": false,
+        "duration": 12.579916999999114,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xc7d7421c0000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000000116368726f6e69632d636172652d706c616e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000049456e726f6c6c656420696e206469616265746573206d616e6167656d656e742070726f6772616d2e20426173656c696e6520486241316320382e32252e20546172676574203c37252e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000208e01518400ff42be7611dca2c0b5182780ef5e3f07ae5899803fa7bccd840fb9\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "erDoctor",
+          "patient2"
+        ],
+        "timestamp": "2025-07-18T16:11:13.716Z",
+        "result": null
+      },
+      {
+        "stepName": "Care team access setup",
+        "success": false,
+        "duration": 6.171416999997746,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x39e1a6bb00000000000000000000000023618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000001e1338000000000000000000000000000000000000000000000000000000000000000116368726f6e69632d636172652d706c616e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "patient2",
+          "nurse1",
+          "pharmacist"
+        ],
+        "timestamp": "2025-07-18T16:11:14.223Z",
+        "result": null
+      },
+      {
+        "stepName": "Regular monitoring updates",
+        "success": false,
+        "duration": 12.853916000000027,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xc7d7421c0000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000140000000000000000000000000000000000000000000000000000000000000000f6d6f6e69746f72696e672d64617461000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000574d6f6e74686c7920636865636b3a2057656967687420737461626c652c204250203133352f38352c2070617469656e74207265706f72747320676f6f64206164686572656e636520746f206d656469636174696f6e732e0000000000000000000000000000000000000000000000000000000000000000000000000000000020c3c96aeeb533051b00c92dbeb89da616d67b5e80eb5399f29b624b35fd3acafc\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "nurse1",
+          "patient2"
+        ],
+        "timestamp": "2025-07-18T16:11:14.738Z",
+        "result": null
+      },
+      {
+        "stepName": "Medication management review",
+        "success": false,
+        "duration": 13.5344159999986,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\", method=\"estimateGas\", transaction={\"from\":\"0xFABB0ac9d68B0B445fB7357272Ff202C5651694a\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xbd700f330000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000244d656469636174696f6e2074686572617079206d616e6167656d656e742072657669657700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002049b0550b865a0c70980aae7dbe1865018ee082cc83642d85e911cae7cb29ae14\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000184e6f7420617574686f72697a656420627920706f6c6963790000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "pharmacist",
+          "patient2"
+        ],
+        "timestamp": "2025-07-18T16:11:15.352Z",
+        "result": null
+      }
+    ],
+    "metrics": {
+      "totalSteps": 4,
+      "successfulSteps": 0,
+      "failedSteps": 4,
+      "successRate": 0,
+      "averageStepLatency": 11.284916499998872,
+      "minStepLatency": 6.171416999997746,
+      "maxStepLatency": 13.5344159999986,
+      "totalGasUsed": 0,
+      "averageGasPerStep": 0,
+      "participantCount": 4,
+      "workflowComplexity": 1
+    }
+  },
+  "complianceWorkflows": {
+    "description": "HIPAA and regulatory compliance workflow testing",
+    "data": [
+      {
+        "stepName": "Audit trail generation for compliance",
+        "success": true,
+        "duration": 2.936666999998124,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "auditor"
+        ],
+        "timestamp": "2025-07-18T16:11:15.856Z",
+        "result": {
+          "type": "BigNumber",
+          "hex": "0x00"
+        }
+      },
+      {
+        "stepName": "Patient access history review",
+        "success": true,
+        "duration": 2.8121249999967404,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "auditor",
+          "patient1"
+        ],
+        "timestamp": "2025-07-18T16:11:16.361Z",
+        "result": []
+      },
+      {
+        "stepName": "Provider access pattern analysis",
+        "success": true,
+        "duration": 6.326583000001847,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "auditor",
+          "erDoctor"
+        ],
+        "timestamp": "2025-07-18T16:11:16.868Z",
+        "result": []
+      },
+      {
+        "stepName": "Emergency access compliance check",
+        "success": true,
+        "duration": 6.109290999997029,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "auditor"
+        ],
+        "timestamp": "2025-07-18T16:11:17.376Z",
+        "result": {
+          "totalAccess": 0,
+          "emergencyAccess": 0
+        }
+      }
+    ],
+    "metrics": {
+      "totalSteps": 4,
+      "successfulSteps": 4,
+      "failedSteps": 0,
+      "successRate": 100,
+      "averageStepLatency": 4.546166499998435,
+      "minStepLatency": 2.8121249999967404,
+      "maxStepLatency": 6.326583000001847,
+      "totalGasUsed": 0,
+      "averageGasPerStep": 0,
+      "participantCount": 3,
+      "workflowComplexity": 1.3333333333333333
+    }
+  },
+  "patientConsentManagement": {
+    "description": "Dynamic patient consent and privacy management",
+    "data": [
+      {
+        "stepName": "Initial consent setup",
+        "success": false,
+        "duration": 10.505292000001646,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x90F79bf6EB2c4f870365E785982E1f101E93b906\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x39e1a6bb00000000000000000000000015d34aaf54267db7d7c367839aaf71a00a2c6a65000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000278d00000000000000000000000000000000000000000000000000000000000000000c636f6e73656e742d746573740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "patient3"
+        ],
+        "timestamp": "2025-07-18T16:11:17.888Z",
+        "result": null
+      },
+      {
+        "stepName": "Consent modification - add specialist",
+        "success": false,
+        "duration": 7.837500000001455,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\", method=\"estimateGas\", transaction={\"from\":\"0x90F79bf6EB2c4f870365E785982E1f101E93b906\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000127500000000000000000000000000000000000000000000000000000000000000000c636f6e73656e742d74657374000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Patient record not found'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "patient3",
+          "cardiologist"
+        ],
+        "timestamp": "2025-07-18T16:11:18.398Z",
+        "result": null
+      },
+      {
+        "stepName": "Consent revocation test",
+        "success": false,
+        "duration": 14.796500000000378,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\", method=\"estimateGas\", transaction={\"from\":\"0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc\",\"to\":\"0x87006e75a5B6bE9D1bbF61AC8Cd84f05D9140589\",\"data\":\"0xbd700f3300000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000017436f6e73656e74206d616e6167656d656e74207465737400000000000000000000000000000000000000000000000000000000000000000000000000000000202dab14dcfb7567bed229e9e5eb397520eaeb2874b8276e0145e9f74f0c64ae29\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by policy'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000184e6f7420617574686f72697a656420627920706f6c6963790000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "participants": [
+          "patient3",
+          "cardiologist"
+        ],
+        "timestamp": "2025-07-18T16:11:18.914Z",
+        "result": null
+      },
+      {
+        "stepName": "Verify consent enforcement",
+        "success": false,
+        "duration": 13.25683299999946,
+        "gasUsed": 0,
+        "error": "call revert exception; VM Exception while processing transaction: reverted with reason string \"Patient record not found\" [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (method=\"getPatientData(address,string,bytes)\", data=\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001850617469656e74207265636f7264206e6f7420666f756e640000000000000000\", errorArgs=[\"Patient record not found\"], errorName=\"Error\", errorSignature=\"Error(string)\", reason=\"Patient record not found\", code=CALL_EXCEPTION, version=abi/5.8.0)",
+        "participants": [
+          "cardiologist",
+          "patient3"
+        ],
+        "timestamp": "2025-07-18T16:11:19.428Z",
+        "result": null
+      }
+    ],
+    "metrics": {
+      "totalSteps": 4,
+      "successfulSteps": 0,
+      "failedSteps": 4,
+      "successRate": 0,
+      "averageStepLatency": 11.599031250000735,
+      "minStepLatency": 7.837500000001455,
+      "maxStepLatency": 14.796500000000378,
+      "totalGasUsed": 0,
+      "averageGasPerStep": 0,
+      "participantCount": 2,
+      "workflowComplexity": 2
+    }
+  }
+}
