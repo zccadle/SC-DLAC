@@ -53,8 +53,11 @@ contract EnhancedRBAC {
         addRole("NURSE", "Nurse role");
         addRole("PARAMEDIC", "Paramedic role");
         addRole("DOCTOR", "Doctor role");
+        addRole("SPECIALIST", "Specialist doctor role");
+        addRole("PHARMACIST", "Pharmacist role");
         addRole("ADMIN", "Administrator role");
         addRole("AUDITOR", "Auditor role");
+        addRole("EXTERNAL_SYSTEM", "External healthcare system integration");
     }
 
     modifier onlyOwner() {
