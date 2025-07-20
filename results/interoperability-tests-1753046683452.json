@@ -1,0 +1,360 @@
+{
+  "description": "Interoperability and integration testing for SC-DLAC",
+  "testDate": "2025-07-20T21:24:43.156Z",
+  "crossContractCommunication": {
+    "description": "Cross-contract communication and integration tests",
+    "data": [
+      {
+        "testName": "contract_integration_flow",
+        "success": true,
+        "duration": 20.871208,
+        "error": null,
+        "timestamp": "2025-07-20T21:24:43.353Z",
+        "interopMetrics": {
+          "score": 100,
+          "contractsIntegrated": 4,
+          "flowCompleted": true,
+          "auditCaptured": true
+        }
+      },
+      {
+        "testName": "multi_contract_state_consistency",
+        "success": true,
+        "duration": 12.4215,
+        "error": null,
+        "timestamp": "2025-07-20T21:24:43.366Z",
+        "interopMetrics": {
+          "score": 100,
+          "stateConsistent": true,
+          "rolesPropagated": true
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 2,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 2,
+        "min": 12421500,
+        "max": 20871208,
+        "mean": 16646354,
+        "median": 16646354,
+        "stdDev": 4224854,
+        "p25": 14533927,
+        "p50": 16646354,
+        "p75": 18758781,
+        "p90": 20026237.2,
+        "p95": 20448722.6,
+        "p99": 20786710.92,
+        "p999": 20862758.292000003,
+        "meanMs": 16.646354,
+        "medianMs": 16.646354,
+        "p95Ms": 20.4487226,
+        "p99Ms": 20.78671092
+      },
+      "interoperabilityScore": 100
+    }
+  },
+  "standardsCompliance": {
+    "description": "Healthcare standards compliance tests (HL7 FHIR simulation)",
+    "data": [
+      {
+        "testName": "fhir_resource_mapping",
+        "success": true,
+        "duration": 20.532708,
+        "error": null,
+        "timestamp": "2025-07-20T21:24:43.386Z",
+        "interopMetrics": {
+          "score": 100,
+          "fhirCompatible": true,
+          "resourceTypeSupported": [
+            "Patient",
+            "Observation"
+          ],
+          "dataIntegrity": true
+        }
+      },
+      {
+        "testName": "hl7_message_format",
+        "success": true,
+        "duration": 15.488708,
+        "error": null,
+        "timestamp": "2025-07-20T21:24:43.402Z",
+        "interopMetrics": {
+          "score": 100,
+          "hl7Compatible": true,
+          "messageTypesSupported": [
+            "ADT",
+            "ORM",
+            "ORU"
+          ],
+          "encodingSupported": [
+            "JSON",
+            "XML"
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 2,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 2,
+        "min": 15488708,
+        "max": 20532708,
+        "mean": 18010708,
+        "median": 18010708,
+        "stdDev": 2522000,
+        "p25": 16749708,
+        "p50": 18010708,
+        "p75": 19271708,
+        "p90": 20028308,
+        "p95": 20280508,
+        "p99": 20482268,
+        "p999": 20527664,
+        "meanMs": 18.010708,
+        "medianMs": 18.010708,
+        "p95Ms": 20.280508,
+        "p99Ms": 20.482268
+      },
+      "interoperabilityScore": 100
+    }
+  },
+  "apiCompatibility": {
+    "description": "API compatibility and versioning tests",
+    "data": [
+      {
+        "testName": "api_versioning_support",
+        "success": true,
+        "duration": 0.080084,
+        "error": null,
+        "timestamp": "2025-07-20T21:24:43.402Z",
+        "interopMetrics": {
+          "score": 100,
+          "versionsSupported": 3,
+          "backwardCompatible": true,
+          "deprecationPolicy": true
+        }
+      },
+      {
+        "testName": "rest_api_standards",
+        "success": true,
+        "duration": 0.023375,
+        "error": null,
+        "timestamp": "2025-07-20T21:24:43.402Z",
+        "interopMetrics": {
+          "score": 80,
+          "restCompliant": true,
+          "httpMethodsSupported": [
+            "GET",
+            "POST",
+            "PUT"
+          ],
+          "contentTypesSupported": [
+            "application/json",
+            "application/xml"
+          ],
+          "authenticationMethods": [
+            "Bearer Token",
+            "DID-Auth"
+          ]
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 2,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 2,
+        "min": 23375,
+        "max": 80084,
+        "mean": 51729.5,
+        "median": 51729.5,
+        "stdDev": 28354.5,
+        "p25": 37552.25,
+        "p50": 51729.5,
+        "p75": 65906.75,
+        "p90": 74413.1,
+        "p95": 77248.54999999999,
+        "p99": 79516.91,
+        "p999": 80027.291,
+        "meanMs": 0.0517295,
+        "medianMs": 0.0517295,
+        "p95Ms": 0.07724854999999999,
+        "p99Ms": 0.07951691000000001
+      },
+      "interoperabilityScore": 90
+    }
+  },
+  "dataFormatInterop": {
+    "description": "Data format interoperability tests",
+    "data": [
+      {
+        "testName": "data_serialization_formats",
+        "success": true,
+        "duration": 34.152208,
+        "error": null,
+        "timestamp": "2025-07-20T21:24:43.436Z",
+        "interopMetrics": {
+          "score": 100,
+          "formatsSupported": 3,
+          "encodingFlexibility": true,
+          "dataValidation": true
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 1,
+      "successfulTests": 1,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 1,
+        "min": 34152208,
+        "max": 34152208,
+        "mean": 34152208,
+        "median": 34152208,
+        "stdDev": 0,
+        "p25": 34152208,
+        "p50": 34152208,
+        "p75": 34152208,
+        "p90": 34152208,
+        "p95": 34152208,
+        "p99": 34152208,
+        "p999": 34152208,
+        "meanMs": 34.152208,
+        "medianMs": 34.152208,
+        "p95Ms": 34.152208,
+        "p99Ms": 34.152208
+      },
+      "interoperabilityScore": 100
+    }
+  },
+  "externalSystemIntegration": {
+    "description": "External system integration capability tests",
+    "data": [
+      {
+        "testName": "external_system_auth",
+        "success": true,
+        "duration": 15.615708,
+        "error": null,
+        "timestamp": "2025-07-20T21:24:43.452Z",
+        "interopMetrics": {
+          "score": 100,
+          "externalAuthSupported": true,
+          "temporaryAccessGranted": true,
+          "accessControlGranular": true
+        }
+      },
+      {
+        "testName": "webhook_integration",
+        "success": true,
+        "duration": 0.037917,
+        "error": null,
+        "timestamp": "2025-07-20T21:24:43.452Z",
+        "interopMetrics": {
+          "score": 100,
+          "webhookSupported": true,
+          "eventsSupported": 5,
+          "retryMechanism": true,
+          "eventFiltering": true
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 2,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 2,
+        "min": 37917,
+        "max": 15615708,
+        "mean": 7826812.5,
+        "median": 7826812.5,
+        "stdDev": 7788895.5,
+        "p25": 3932364.75,
+        "p50": 7826812.5,
+        "p75": 11721260.25,
+        "p90": 14057928.9,
+        "p95": 14836818.45,
+        "p99": 15459930.09,
+        "p999": 15600130.209000003,
+        "meanMs": 7.8268125,
+        "medianMs": 7.8268125,
+        "p95Ms": 14.836818449999999,
+        "p99Ms": 15.45993009
+      },
+      "interoperabilityScore": 100
+    }
+  },
+  "chainInteroperability": {
+    "description": "Cross-chain interoperability readiness tests",
+    "data": [
+      {
+        "testName": "cross_chain_identity",
+        "success": true,
+        "duration": 0.026084,
+        "error": null,
+        "timestamp": "2025-07-20T21:24:43.452Z",
+        "interopMetrics": {
+          "score": 100,
+          "multichainDIDSupport": true,
+          "chainsSupported": [
+            "Ethereum",
+            "Polygon",
+            "BSC",
+            "Avalanche"
+          ],
+          "bridgeReady": true
+        }
+      },
+      {
+        "testName": "cross_chain_data_format",
+        "success": true,
+        "duration": 0.102625,
+        "error": null,
+        "timestamp": "2025-07-20T21:24:43.452Z",
+        "interopMetrics": {
+          "score": 95,
+          "crossChainDataFormat": true,
+          "hashingCompatible": true,
+          "signaturePortable": true,
+          "relayerSupport": true
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 2,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 2,
+        "min": 26084,
+        "max": 102625,
+        "mean": 64354.5,
+        "median": 64354.5,
+        "stdDev": 38270.5,
+        "p25": 45219.25,
+        "p50": 64354.5,
+        "p75": 83489.75,
+        "p90": 94970.90000000001,
+        "p95": 98797.95,
+        "p99": 101859.59,
+        "p999": 102548.459,
+        "meanMs": 0.0643545,
+        "medianMs": 0.0643545,
+        "p95Ms": 0.09879795,
+        "p99Ms": 0.10185959
+      },
+      "interoperabilityScore": 97.5
+    }
+  }
+}
