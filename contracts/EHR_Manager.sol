@@ -43,6 +43,7 @@ contract UpdatedPatientDataStorage {
     mapping(uint256 => Policy) private policies;
     uint256 private nextPolicyID = 1;
     uint256 public constant EMERGENCY_ACCESS_DURATION = 24 hours;
+    uint256 public constant BREAK_GLASS_ACCESS_DURATION = 4 hours;
 
     event PatientDataUpdated(address indexed patient, string category);
     event DelegatedEmergencyAccessGranted(
@@ -66,6 +67,12 @@ contract UpdatedPatientDataStorage {
         uint256 indexed policyID,
         bool isActive
     );
+    event BreakGlassAccessUsed(
+        address indexed provider,
+        address indexed patient,
+        string reason,
+        uint256 expiryTime
+    );
 
     constructor(
         address _rbacAddress,
@@ -80,13 +87,22 @@ contract UpdatedPatientDataStorage {
     }
 
     function createPatientRecord(address patient) public {
+        require(patient != address(0), "Invalid patient address");
         string memory providerDID = didRegistry.getDIDByAddress(msg.sender);
         require(bytes(providerDID).length > 0, "Provider DID not found");
         require(accessControl.hasPermission(msg.sender, "create_record"), "Unauthorized access");
         require(!patientRecords[patient].exists, "Patient record already exists");
 
         patientRecords[patient].exists = true;
-        patientRecords[patient].did = didRegistry.getDIDByAddress(patient);
+        
+        // Try to get patient DID, but don't fail if it doesn't exist
+        // Patient can create their DID later
+        try didRegistry.getDIDByAddress(patient) returns (string memory patientDID) {
+            patientRecords[patient].did = patientDID;
+        } catch {
+            // Patient DID will be empty until they create one
+            patientRecords[patient].did = "";
+        }
 
         auditLog.logAccess(
             msg.sender,
@@ -103,6 +119,7 @@ contract UpdatedPatientDataStorage {
         string memory permission,
         uint256 validityPeriod
     ) public returns (uint256) {
+        require(delegatee != address(0), "Invalid delegatee address");
         require(patientRecords[msg.sender].exists, "Patient record not found");
         
         uint256 policyID = nextPolicyID++;
@@ -164,6 +181,7 @@ contract UpdatedPatientDataStorage {
         bytes memory zkProof,
         uint256 policyID
     ) public {
+        require(patient != address(0), "Invalid patient address");
         string memory providerDID = didRegistry.getDIDByAddress(msg.sender);
         require(bytes(providerDID).length > 0, "Provider DID not found");
         
@@ -217,6 +235,7 @@ contract UpdatedPatientDataStorage {
         string memory encryptedData,
         bytes memory zkProof
     ) public {
+        require(patient != address(0), "Invalid patient address");
         string memory providerDID = didRegistry.getDIDByAddress(msg.sender);
         require(bytes(providerDID).length > 0, "Provider DID not found");
         
@@ -247,6 +266,7 @@ contract UpdatedPatientDataStorage {
         string memory category,
         bytes memory zkProof
     ) public view returns (string memory) {
+        require(patient != address(0), "Invalid patient address");
         string memory providerDID = didRegistry.getDIDByAddress(msg.sender);
         require(bytes(providerDID).length > 0, "Provider DID not found");
         
@@ -309,6 +329,80 @@ contract UpdatedPatientDataStorage {
             "revoke_emergency",
             "Emergency access revoked",
             false
+        );
+    }
+
+    function linkPatientDID() public {
+        require(patientRecords[msg.sender].exists, "Patient record not found");
+        require(bytes(patientRecords[msg.sender].did).length == 0, "DID already linked");
+        
+        string memory patientDID = didRegistry.getDIDByAddress(msg.sender);
+        require(bytes(patientDID).length > 0, "Patient DID not found");
+        
+        patientRecords[msg.sender].did = patientDID;
+        
+        auditLog.logAccess(
+            msg.sender,
+            msg.sender,
+            "link_did",
+            "Patient linked their DID",
+            false
+        );
+    }
+
+    function breakGlassEmergencyAccess(
+        address patient,
+        string memory reason,
+        bytes memory emergencyProof
+    ) public {
+        require(patient != address(0), "Invalid patient address");
+        // Verify the caller has a medical role (doctor, nurse, specialist)
+        require(
+            accessControl.hasRole(msg.sender, "DOCTOR") ||
+            accessControl.hasRole(msg.sender, "NURSE") ||
+            accessControl.hasRole(msg.sender, "SPECIALIST"),
+            "Not a medical professional"
+        );
+        
+        require(patientRecords[patient].exists, "Patient record not found");
+        require(bytes(reason).length >= 20, "Reason must be detailed");
+        
+        // Create temporary emergency access
+        uint256 expiryTime = block.timestamp + BREAK_GLASS_ACCESS_DURATION;
+        
+        // Create a temporary policy for break-glass access
+        uint256 policyID = nextPolicyID++;
+        Policy memory breakGlassPolicy = Policy({
+            policyID: policyID,
+            delegator: patient,
+            delegatee: msg.sender,
+            dataID: "all",
+            permission: "read",
+            isActive: true,
+            validUntil: expiryTime
+        });
+        
+        policies[policyID] = breakGlassPolicy;
+        
+        patientRecords[patient].emergencyAccess[msg.sender] = DelegatedEmergencyAccess({
+            policy: breakGlassPolicy,
+            granted: true,
+            expiryTime: expiryTime,
+            reason: string(abi.encodePacked("BREAK_GLASS: ", reason)),
+            accessProof: keccak256(emergencyProof),
+            isValid: true
+        });
+        
+        emit BreakGlassAccessUsed(msg.sender, patient, reason, expiryTime);
+        emit DelegatedEmergencyAccessGranted(msg.sender, patient, policyID, expiryTime);
+        
+        // Log with high priority for review
+        auditLog.logAccess(
+            msg.sender,
+            patient,
+            "break_glass_emergency",
+            reason,
+            true
         );
     }
 }
