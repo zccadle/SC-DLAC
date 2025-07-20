@@ -1,6 +1,0 @@
-Component,Average Latency (ms),Maximum Throughput (tx/s),Success Rate (%)
-Policy Verification,10.57,44.70,96.08695652173913
-Access Flow,72.93,72.67,100
-ZK Proof,41.01,161.09,100.00
-Data Intensive,113.90,N/A,N/A
-Non-Data Intensive,78.18,N/A,N/A
