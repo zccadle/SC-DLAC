@@ -3,6 +3,7 @@ const { ethers } = require("hardhat");
 const fs = require("fs");
 const path = require("path");
 const { performance } = require("perf_hooks");
+const HighPrecisionTimer = require("./utils/high-precision-timer");
 
 class EnhancedPerformanceFramework {
     constructor() {
@@ -62,12 +63,14 @@ class EnhancedPerformanceFramework {
 
     async measureOperation(operationName, operation, category, expectedLatency = null) {
         const memoryBefore = process.memoryUsage();
-        const start = performance.now();
+        const timer = new HighPrecisionTimer();
         
         let success = false;
         let gasUsed = 0;
         let error = null;
         let result = null;
+        
+        timer.start('operation');
         
         try {
             this.performanceCounters.totalOperations++;
@@ -85,8 +88,8 @@ class EnhancedPerformanceFramework {
             this.performanceCounters.failedOperations++;
         }
         
-        const end = performance.now();
-        const duration = end - start;
+        const timing = timer.end('operation');
+        const duration = timing.milliseconds;
         const memoryAfter = process.memoryUsage();
         
         this.performanceCounters.totalLatency += duration;
@@ -269,7 +272,18 @@ class EnhancedPerformanceFramework {
             const loadStart = performance.now();
             
             for (let i = 0; i < load; i++) {
-                promises.push(operation());
+                // Add slight delay between operations to avoid proof conflicts
+                promises.push(
+                    new Promise(async (resolve) => {
+                        await new Promise(r => setTimeout(r, i * 5));
+                        try {
+                            const result = await operation();
+                            resolve(result);
+                        } catch (error) {
+                            resolve({ error: error.message });
+                        }
+                    })
+                );
             }
             
             const results = await Promise.allSettled(promises);
@@ -366,22 +380,35 @@ class EnhancedPerformanceFramework {
         console.log(`\nProfiling memory usage for ${iterations} iterations`);
         
         const memorySnapshots = [];
+        const operationResults = [];
         
         for (let i = 0; i < iterations; i++) {
-            const before = process.memoryUsage();
+            // Measure each iteration as an operation
+            const result = await this.measureOperation(
+                `memory-profile-${i}`,
+                operation,
+                category
+            );
             
-            await operation();
+            operationResults.push(result);
             
-            const after = process.memoryUsage();
+            if (result.memoryUsage) {
+                memorySnapshots.push({
+                    iteration: i,
+                    heapUsed: result.memoryUsage.heapUsedAfter,
+                    heapTotal: result.memoryUsage.heapUsedAfter,
+                    external: result.memoryUsage.external,
+                    rss: result.memoryUsage.rss,
+                    heapDelta: result.memoryUsage.heapDelta,
+                    gasUsed: result.gasUsed,
+                    duration: result.duration
+                });
+            }
             
-            memorySnapshots.push({
-                iteration: i,
-                heapUsed: after.heapUsed,
-                heapTotal: after.heapTotal,
-                external: after.external,
-                rss: after.rss,
-                heapDelta: after.heapUsed - before.heapUsed
-            });
+            // Small delay between iterations
+            if (i % 10 === 0) {
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
             
             // Force garbage collection if available
             if (global.gc) {
@@ -390,19 +417,34 @@ class EnhancedPerformanceFramework {
         }
         
         const memoryProfile = {
-            operationType: 'memory_profile',
+            operationType: 'memory_profile_summary',
+            iterations: iterations,
+            successfulIterations: operationResults.filter(r => r.success).length,
+            failedIterations: operationResults.filter(r => !r.success).length,
             snapshots: memorySnapshots,
             summary: {
-                maxHeapUsed: Math.max(...memorySnapshots.map(s => s.heapUsed)),
-                minHeapUsed: Math.min(...memorySnapshots.map(s => s.heapUsed)),
-                avgHeapUsed: memorySnapshots.reduce((sum, s) => sum + s.heapUsed, 0) / memorySnapshots.length,
+                maxHeapUsed: memorySnapshots.length > 0 ? Math.max(...memorySnapshots.map(s => s.heapUsed)) : 0,
+                minHeapUsed: memorySnapshots.length > 0 ? Math.min(...memorySnapshots.map(s => s.heapUsed)) : 0,
+                avgHeapUsed: memorySnapshots.length > 0 ? memorySnapshots.reduce((sum, s) => sum + s.heapUsed, 0) / memorySnapshots.length : 0,
                 totalHeapDelta: memorySnapshots.reduce((sum, s) => sum + s.heapDelta, 0),
-                memoryLeaks: memorySnapshots.filter(s => s.heapDelta > 1000000).length // 1MB threshold
+                memoryLeaks: memorySnapshots.filter(s => s.heapDelta > 1000000).length, // 1MB threshold
+                avgDuration: operationResults.filter(r => r.success).reduce((sum, r) => sum + r.duration, 0) / (operationResults.filter(r => r.success).length || 1),
+                totalGasUsed: operationResults.reduce((sum, r) => sum + (r.gasUsed || 0), 0)
             },
             timestamp: new Date().toISOString()
         };
         
-        this.results[category].data.push(memoryProfile);
+        // Add as a special result
+        this.results[category].data.push({
+            operationName: 'memory_profile_complete',
+            success: operationResults.filter(r => r.success).length > 0,
+            duration: memoryProfile.summary.avgDuration,
+            gasUsed: memoryProfile.summary.totalGasUsed,
+            error: null,
+            memoryProfile: memoryProfile,
+            timestamp: new Date().toISOString()
+        });
+        
         return memoryProfile;
     }
 }
@@ -445,6 +487,9 @@ async function main() {
         zkpManager.address
     );
     await ehrManager.deployed();
+    
+    // Authorize EHR Manager to use AuditLogger
+    await auditLogger.authorizeLogger(ehrManager.address);
 
     // Set network info
     framework.results.environment.networkInfo = await ethers.provider.getNetwork();
@@ -497,12 +542,16 @@ async function main() {
     
     await framework.runScalabilityTest(
         async () => {
-            const proof = await setupProof(doctor);
+            // Generate unique proof for each scalability test operation
+            const uniqueProof = ethers.utils.randomBytes(32);
+            const uniqueProofHash = ethers.utils.keccak256(uniqueProof);
+            await zkpManager.connect(doctor).submitProof(uniqueProofHash);
+            
             return await ehrManager.connect(doctor).updatePatientData(
                 patient.address, 
                 `scalability-${Date.now()}-${Math.random()}`, 
                 "Scalability test data", 
-                proof
+                uniqueProof
             );
         },
         1, 20, 2, 'scalabilityAnalysis'
@@ -563,12 +612,16 @@ async function main() {
     
     await framework.profileMemoryUsage(
         async () => {
-            const proof = await setupProof(doctor);
+            // Generate unique proof for each memory test operation
+            const uniqueProof = ethers.utils.randomBytes(32);
+            const uniqueProofHash = ethers.utils.keccak256(uniqueProof);
+            await zkpManager.connect(doctor).submitProof(uniqueProofHash);
+            
             return await ehrManager.connect(doctor).updatePatientData(
                 patient.address, 
-                `memory-${Date.now()}`, 
+                `memory-${Date.now()}-${Math.random()}`, 
                 "Memory profiling test", 
-                proof
+                uniqueProof
             );
         },
         50,
@@ -591,13 +644,37 @@ async function main() {
                 framework.measureOperation(
                     `concurrent-${concurrency}-${i}`,
                     async () => {
-                        const proof = await setupProof(doctor);
-                        return await ehrManager.connect(doctor).updatePatientData(
-                            patient.address, 
-                            `concurrent-${concurrency}-${i}`, 
-                            `Concurrent test ${i}`, 
-                            proof
-                        );
+                        try {
+                            // Generate unique proof for each concurrent operation
+                            const uniqueProof = ethers.utils.randomBytes(32);
+                            const uniqueProofHash = ethers.utils.keccak256(uniqueProof);
+                            
+                            // Submit proof with slight delay to avoid nonce conflicts
+                            await new Promise(resolve => setTimeout(resolve, i * 10));
+                            await zkpManager.connect(doctor).submitProof(uniqueProofHash);
+                            
+                            return await ehrManager.connect(doctor).updatePatientData(
+                                patient.address, 
+                                `concurrent-${concurrency}-${i}`, 
+                                `Concurrent test ${i}`, 
+                                uniqueProof
+                            );
+                        } catch (error) {
+                            // If proof submission fails due to concurrency, retry once
+                            if (error.message.includes("Proof already used")) {
+                                const retryProof = ethers.utils.randomBytes(32);
+                                const retryProofHash = ethers.utils.keccak256(retryProof);
+                                await zkpManager.connect(doctor).submitProof(retryProofHash);
+                                
+                                return await ehrManager.connect(doctor).updatePatientData(
+                                    patient.address, 
+                                    `concurrent-${concurrency}-${i}-retry`, 
+                                    `Concurrent test ${i} (retry)`, 
+                                    retryProof
+                                );
+                            }
+                            throw error;
+                        }
                     },
                     'concurrentPerformance',
                     200 // Expected 200ms under load
@@ -630,72 +707,73 @@ async function main() {
     
     // Test repeated operations to analyze caching
     const cacheTestOperations = [
-        'hasPermission',
-        'getUserRole',
-        'getDIDByAddress',
-        'getPatientData'
+        {
+            name: 'hasPermission',
+            operation: async () => {
+                return await dlacManager.hasPermission(doctor.address, "view_data");
+            }
+        },
+        {
+            name: 'getUserRole',
+            operation: async () => {
+                return await dlacManager.getUserRole(doctor.address);
+            }
+        },
+        {
+            name: 'getDIDByAddress',
+            operation: async () => {
+                return await didManager.getDIDByAddress(doctor.address);
+            }
+        },
+        {
+            name: 'getPatientData',
+            operation: async () => {
+                const uniqueProof = ethers.utils.randomBytes(32);
+                const uniqueProofHash = ethers.utils.keccak256(uniqueProof);
+                await zkpManager.connect(doctor).submitProof(uniqueProofHash);
+                return await ehrManager.connect(doctor).getPatientData(
+                    patient.address, "medical-history", uniqueProof
+                );
+            }
+        }
     ];
     
-    for (const operation of cacheTestOperations) {
-        console.log(`  Testing cache efficiency for ${operation}`);
+    for (const test of cacheTestOperations) {
+        console.log(`  Testing cache efficiency for ${test.name}`);
         
-        // Cold cache (first call)
-        const coldStart = performance.now();
-        let coldResult;
-        switch (operation) {
-            case 'hasPermission':
-                coldResult = await dlacManager.hasPermission(doctor.address, "view_data");
-                break;
-            case 'getUserRole':
-                coldResult = await dlacManager.getUserRole(doctor.address);
-                break;
-            case 'getDIDByAddress':
-                coldResult = await didManager.getDIDByAddress(doctor.address);
-                break;
-            case 'getPatientData':
-                const proof1 = await setupProof(doctor);
-                coldResult = await ehrManager.connect(doctor).getPatientData(
-                    patient.address, "latency-1", proof1
-                );
-                break;
-        }
-        const coldEnd = performance.now();
+        // Cold cache (first call) - measure as operation
+        const coldResult = await framework.measureOperation(
+            `${test.name}-cold-cache`,
+            test.operation,
+            'cacheEfficiency'
+        );
         
-        // Warm cache (repeated calls)
-        const warmTimes = [];
-        for (let i = 0; i < 10; i++) {
-            const warmStart = performance.now();
-            switch (operation) {
-                case 'hasPermission':
-                    await dlacManager.hasPermission(doctor.address, "view_data");
-                    break;
-                case 'getUserRole':
-                    await dlacManager.getUserRole(doctor.address);
-                    break;
-                case 'getDIDByAddress':
-                    await didManager.getDIDByAddress(doctor.address);
-                    break;
-                case 'getPatientData':
-                    const proof2 = await setupProof(doctor);
-                    await ehrManager.connect(doctor).getPatientData(
-                        patient.address, "latency-1", proof2
-                    );
-                    break;
-            }
-            const warmEnd = performance.now();
-            warmTimes.push(warmEnd - warmStart);
+        // Warm cache (repeated calls) - measure each
+        const warmResults = [];
+        for (let i = 0; i < 5; i++) {
+            const warmResult = await framework.measureOperation(
+                `${test.name}-warm-cache-${i}`,
+                test.operation,
+                'cacheEfficiency'
+            );
+            warmResults.push(warmResult);
+            await new Promise(resolve => setTimeout(resolve, 50));
         }
         
+        // Calculate cache efficiency summary
+        const avgWarmLatency = warmResults.reduce((sum, r) => sum + r.duration, 0) / warmResults.length;
         const cacheAnalysis = {
-            operation,
-            coldCacheLatency: coldEnd - coldStart,
-            warmCacheLatency: warmTimes.reduce((sum, t) => sum + t, 0) / warmTimes.length,
-            cacheEfficiency: ((coldEnd - coldStart) - (warmTimes.reduce((sum, t) => sum + t, 0) / warmTimes.length)) / (coldEnd - coldStart) * 100,
-            improvementFactor: (coldEnd - coldStart) / (warmTimes.reduce((sum, t) => sum + t, 0) / warmTimes.length),
+            operation: test.name,
+            coldCacheLatency: coldResult.duration,
+            warmCacheLatency: avgWarmLatency,
+            cacheEfficiency: ((coldResult.duration - avgWarmLatency) / coldResult.duration) * 100,
+            improvementFactor: coldResult.duration / avgWarmLatency,
+            samples: warmResults.length + 1,
             timestamp: new Date().toISOString()
         };
         
         framework.results.cacheEfficiency.data.push(cacheAnalysis);
+        console.log(`    Cold: ${coldResult.duration.toFixed(2)}ms | Warm: ${avgWarmLatency.toFixed(2)}ms | Efficiency: ${cacheAnalysis.cacheEfficiency.toFixed(1)}%`);
     }
 
     // Test 6: Network Efficiency Analysis
@@ -769,30 +847,93 @@ async function main() {
     
     console.log(`  Baseline established - Avg Latency: ${framework.baseline.averageLatency.toFixed(2)}ms, Avg Gas: ${framework.baseline.averageGas}`);
 
-    // Calculate final metrics
-    for (const category of Object.keys(framework.results)) {
-        if (category === 'description' || category === 'testDate' || category === 'environment') continue;
+    // Calculate final metrics for each category
+    for (const [category, results] of Object.entries(framework.results)) {
+        if (category === 'description' || category === 'testDate' || category === 'environment' || category === 'overallSummary') continue;
         
-        const data = framework.results[category].data;
+        const data = results.data || [];
         if (data.length > 0) {
-            // Filter for operations that have performance data
-            const perfData = data.filter(d => d.duration !== undefined);
+            let totalOps = 0;
+            let successfulOps = 0;
+            let totalLatency = 0;
+            let totalGas = 0;
+            let latencies = [];
+            let performanceRatings = [];
+            let memoryEfficiencies = [];
             
-            if (perfData.length > 0) {
-                framework.results[category].metrics = {
-                    totalOperations: perfData.length,
-                    successfulOperations: perfData.filter(d => d.success).length,
-                    successRate: (perfData.filter(d => d.success).length / perfData.length) * 100,
-                    averageLatency: perfData.reduce((sum, d) => sum + d.duration, 0) / perfData.length,
-                    minLatency: Math.min(...perfData.map(d => d.duration)),
-                    maxLatency: Math.max(...perfData.map(d => d.duration)),
-                    latencyStdDev: framework.calculateStandardDeviation(perfData.map(d => d.duration)),
-                    totalGasUsed: perfData.reduce((sum, d) => sum + (d.gasUsed || 0), 0),
-                    averageGasUsed: perfData.reduce((sum, d) => sum + (d.gasUsed || 0), 0) / perfData.length,
-                    averagePerformanceRating: perfData.reduce((sum, d) => sum + (d.performanceRating || 0), 0) / perfData.length,
-                    memoryEfficiency: perfData.filter(d => d.memoryUsage && d.memoryUsage.heapDelta < 1000000).length / perfData.length * 100
-                };
-            }
+            data.forEach(item => {
+                // Handle standard operation results
+                if (item.success !== undefined) {
+                    totalOps++;
+                    if (item.success) successfulOps++;
+                }
+                if (item.duration !== undefined && item.duration > 0) {
+                    latencies.push(item.duration);
+                    totalLatency += item.duration;
+                }
+                if (item.gasUsed !== undefined && item.gasUsed > 0) {
+                    totalGas += item.gasUsed;
+                }
+                if (item.performanceRating !== undefined) {
+                    performanceRatings.push(item.performanceRating);
+                }
+                if (item.memoryUsage && item.memoryUsage.heapDelta !== undefined) {
+                    if (item.memoryUsage.heapDelta < 1000000) {
+                        memoryEfficiencies.push(100);
+                    } else {
+                        memoryEfficiencies.push(0);
+                    }
+                }
+                // Handle scalability test results
+                if (item.load !== undefined && item.successful !== undefined) {
+                    totalOps += item.load;
+                    successfulOps += item.successful;
+                    if (item.averageDuration > 0) {
+                        latencies.push(item.averageDuration);
+                    }
+                }
+                // Handle latency distribution results
+                if (item.samples !== undefined && item.successfulSamples !== undefined) {
+                    totalOps += item.samples;
+                    successfulOps += item.successfulSamples;
+                    if (item.latencyStatistics && item.latencyStatistics.mean > 0) {
+                        latencies.push(item.latencyStatistics.mean);
+                    }
+                }
+                // Handle concurrent performance results
+                if (item.concurrencyLevel !== undefined && item.successful !== undefined) {
+                    if (item.averageLatency > 0) {
+                        latencies.push(item.averageLatency);
+                    }
+                }
+                // Handle cache efficiency results
+                if (item.coldCacheLatency !== undefined && item.warmCacheLatency !== undefined) {
+                    latencies.push(item.coldCacheLatency);
+                    latencies.push(item.warmCacheLatency);
+                }
+            });
+            
+            // Calculate statistics
+            const avgLatency = latencies.length > 0 ? totalLatency / latencies.length : 0;
+            const minLatency = latencies.length > 0 ? Math.min(...latencies) : 0;
+            const maxLatency = latencies.length > 0 ? Math.max(...latencies) : 0;
+            const latencyStdDev = latencies.length > 1 ? Math.sqrt(
+                latencies.reduce((sum, lat) => sum + Math.pow(lat - avgLatency, 2), 0) / (latencies.length - 1)
+            ) : 0;
+            
+            results.metrics = {
+                totalOperations: totalOps || data.length,
+                successRate: totalOps > 0 ? (successfulOps / totalOps) * 100 : 0,
+                averageLatency: avgLatency,
+                minLatency: minLatency,
+                maxLatency: maxLatency,
+                latencyStdDev: latencyStdDev,
+                totalGasUsed: totalGas,
+                averagePerformanceRating: performanceRatings.length > 0 ? 
+                    performanceRatings.reduce((a, b) => a + b, 0) / performanceRatings.length : 0,
+                memoryEfficiency: memoryEfficiencies.length > 0 ?
+                    memoryEfficiencies.reduce((a, b) => a + b, 0) / memoryEfficiencies.length : 0
+            };
         }
     }
 

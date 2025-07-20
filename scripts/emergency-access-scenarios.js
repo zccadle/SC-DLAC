@@ -130,12 +130,27 @@ async function main() {
         zkpManager.address
     );
     await ehrManager.deployed();
+    
+    // Authorize EHR Manager to use AuditLogger
+    await auditLogger.authorizeLogger(ehrManager.address);
 
     // Get signers for various emergency roles
     const [owner, doctor, nurse, patient, paramedic, emergencyDoctor, specialist, patient2, patient3] = await ethers.getSigners();
 
     // Setup users and roles
     console.log("Setting up emergency access testing environment...");
+    
+    // Create signer mapping
+    const signerMap = {
+        doctor: doctor,
+        nurse: nurse,
+        patient: patient,
+        paramedic: paramedic,
+        emergencyDoctor: emergencyDoctor,
+        specialist: specialist,
+        patient2: patient2,
+        patient3: patient3
+    };
     
     const dids = {
         doctor: `did:ethr:${doctor.address}`,
@@ -150,7 +165,7 @@ async function main() {
 
     // Create DIDs
     for (const [role, did] of Object.entries(dids)) {
-        await didManager.connect(eval(role)).createDID(did, []);
+        await didManager.connect(signerMap[role]).createDID(did, []);
     }
 
     // Assign roles with emergency capabilities

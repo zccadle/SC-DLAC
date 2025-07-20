@@ -50,6 +50,9 @@ async function main() {
   await ehrManager.deployed();
   console.log("EHR_Manager deployed to:", ehrManager.address);
   
+  // Authorize EHR Manager to use AuditLogger
+  await auditLogger.authorizeLogger(ehrManager.address);
+  
   // Save deployment info
   const deploymentInfo = {
     network: "sepolia",

@@ -46,6 +46,9 @@ async function main() {
             );
             await patientStorage.deployed();
             
+            // Authorize EHR Manager to use AuditLogger
+            await auditLog.authorizeLogger(patientStorage.address);
+            
             deployedAddresses = {
                 zkpVerifier: zkpVerifier.address,
                 rbac: rbac.address,

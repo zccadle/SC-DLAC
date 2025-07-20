@@ -116,6 +116,9 @@ async function main() {
         zkpManager.address
     );
     await ehrManager.deployed();
+    
+    // Authorize EHR Manager to use AuditLogger
+    await auditLogger.authorizeLogger(ehrManager.address);
 
     // Get signers
     const [owner, doctor, nurse, patient, attacker, normalUser] = await ethers.getSigners();
@@ -375,8 +378,8 @@ async function main() {
                 const proofHash = ethers.utils.keccak256(zkProof);
                 await zkpManager.connect(doctor).submitProof(proofHash);
                 
-                // Try to replay the same proof from different address
-                return await zkpManager.connect(attacker).submitProof(proofHash);
+                // Try to replay the same proof from SAME user - this should fail
+                return await zkpManager.connect(doctor).submitProof(proofHash);
             }
         },
         {

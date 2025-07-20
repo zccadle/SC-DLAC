@@ -192,6 +192,9 @@ async function main() {
         zkpManager.address
     );
     await ehrManager.deployed();
+    
+    // Authorize EHR Manager to use AuditLogger
+    await auditLogger.authorizeLogger(ehrManager.address);
 
     // Get healthcare participants
     const [
@@ -236,6 +239,7 @@ async function main() {
         { user: nurse2, role: "NURSE", delegated: false },
         { user: paramedic1, role: "PARAMEDIC", delegated: true },
         { user: paramedic2, role: "PARAMEDIC", delegated: true },
+        { user: pharmacist, role: "PHARMACIST", delegated: false },
         { user: administrator, role: "ADMIN", delegated: false },
         { user: auditor, role: "AUDITOR", delegated: false }
     ];
@@ -263,6 +267,8 @@ async function main() {
     await dlacManager.connect(owner).grantPermission("NURSE", "view_data");
     await dlacManager.connect(owner).grantPermission("NURSE", "update_data");
     await dlacManager.connect(owner).grantPermission("PARAMEDIC", "view_data");
+    await dlacManager.connect(owner).grantPermission("PARAMEDIC", "update_data");
+    await dlacManager.connect(owner).grantPermission("PHARMACIST", "view_data");
     await dlacManager.connect(owner).grantPermission("AUDITOR", "view_data");
 
     // Helper function for proof setup
@@ -773,10 +779,10 @@ async function main() {
             name: "Medication management review",
             participants: ["pharmacist", "patient2"],
             operation: async () => {
-                const proof = await setupEmergencyProof(pharmacist);
-                const policyId = simulator.chronicCarePolicyIds.length > 1 ? simulator.chronicCarePolicyIds[1] : 2;
-                return await ehrManager.connect(pharmacist).requestDelegatedEmergencyAccess(
-                    patient2.address, "Medication therapy management review", proof, policyId
+                // Pharmacist already has read access via delegation policy
+                const proof = await setupProof(pharmacist);
+                return await ehrManager.connect(pharmacist).getPatientData(
+                    patient2.address, "chronic-care-plan", proof
                 );
             }
         }

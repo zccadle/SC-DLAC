@@ -52,6 +52,11 @@ async function main() {
   await patientStorage.deployed();
   console.log("UpdatedPatientDataStorage deployed to:", patientStorage.address);
 
+  // 7. Authorize PatientDataStorage to use AuditLog
+  console.log("\nAuthorizing PatientDataStorage to log to AuditLog...");
+  await auditLog.authorizeLogger(patientStorage.address);
+  console.log("Authorization complete");
+
   // Print all deployed contract addresses
   console.log("\nDeployment Summary:");
   console.log("--------------------");

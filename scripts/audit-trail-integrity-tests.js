@@ -52,10 +52,14 @@ class AuditTrailTestFramework {
         let result = null;
         let auditsBefore = 0;
         let auditsAfter = 0;
+        let auditContract = null;
 
         try {
-            // Count audits before operation
-            auditsBefore = this.auditEvents.length;
+            // Get reference to audit contract if needed
+            if (this.auditLogger) {
+                auditContract = this.auditLogger;
+                auditsBefore = (await auditContract.getAccessRecordCount()).toNumber();
+            }
             
             result = await operation();
             if (result && result.wait) {
@@ -69,7 +73,11 @@ class AuditTrailTestFramework {
                 ) || [];
                 
                 this.auditEvents.push(...auditLogs);
-                auditsAfter = this.auditEvents.length;
+            }
+            
+            // Get audit count after operation
+            if (auditContract) {
+                auditsAfter = (await auditContract.getAccessRecordCount()).toNumber();
             }
             
             success = true;
@@ -198,6 +206,9 @@ async function main() {
         zkpManager.address
     );
     await ehrManager.deployed();
+    
+    // Authorize EHR Manager to use AuditLogger
+    await auditLogger.authorizeLogger(ehrManager.address);
 
     // Get signers
     const [owner, doctor, nurse, patient, paramedic, auditor] = await ethers.getSigners();
@@ -266,6 +277,9 @@ async function main() {
     };
 
     console.log("Audit trail testing environment setup completed.");
+
+    // Set the auditLogger reference in the framework
+    framework.auditLogger = auditLogger;
 
     // Test 1: Audit Completeness - Verify all operations are audited
     console.log("\n1. Testing Audit Completeness...");
@@ -337,8 +351,6 @@ async function main() {
     );
 
     const proof2 = await setupProof(nurse);
-    const nurseProofHash = ethers.utils.keccak256(proof2);
-    await zkpManager.connect(nurse).submitProof(nurseProofHash);
 
     const integrityTests = [
         {
@@ -351,7 +363,17 @@ async function main() {
         {
             name: "Attempt to retrieve non-existent audit entry",
             operation: async () => {
-                return await auditLogger.getAuditEntry(9999);
+                try {
+                    await auditLogger.getAuditEntry(9999);
+                    // If we get here, the test failed - it should have thrown
+                    throw new Error("Expected error for non-existent entry");
+                } catch (error) {
+                    // This is expected - the contract should reject non-existent entries
+                    if (error.message.includes("Index out of bounds")) {
+                        return { success: true, errorHandled: true };
+                    }
+                    throw error;
+                }
             }
         },
         {
@@ -488,10 +510,10 @@ async function main() {
             operation: async () => {
                 const allRecords = await auditLogger.getPatientAccessRecords(patient.address);
                 const updateActions = allRecords.filter(record => 
-                    record.action.includes('update_data')
+                    record.accessType.includes('update_data')
                 ).length;
                 const emergencyActions = allRecords.filter(record => 
-                    record.action.includes('emergency_access')
+                    record.accessType.includes('emergency_access')
                 ).length;
                 return { updateActions, emergencyActions };
             }

@@ -613,6 +613,9 @@ async function main() {
         zkpManager.address
     );
     await ehrManager.deployed();
+    
+    // Authorize EHR Manager to use AuditLogger
+    await auditLogger.authorizeLogger(ehrManager.address);
 
     // Setup test environment
     const [owner, doctor, nurse, patient] = await ethers.getSigners();

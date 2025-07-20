@@ -83,6 +83,20 @@ class ComprehensiveTestRunner {
                 description: 'Comprehensive performance and scalability analysis',
                 priority: 'medium',
                 estimatedDuration: 450000 // 7.5 minutes
+            },
+            {
+                name: 'Privacy Compliance',
+                script: 'privacy-compliance-tests.js',
+                description: 'Privacy compliance and data protection testing',
+                priority: 'critical',
+                estimatedDuration: 300000 // 5 minutes
+            },
+            {
+                name: 'Interoperability',
+                script: 'interoperability-tests.js',
+                description: 'Interoperability and integration testing',
+                priority: 'high',
+                estimatedDuration: 350000 // 5.83 minutes
             }
         ];
     }
@@ -139,6 +153,10 @@ class ComprehensiveTestRunner {
                     if (!testResults.faultTolerance) testResults.faultTolerance = content;
                 } else if (file.includes('enhanced-comprehensive-performance')) {
                     if (!testResults.enhancedPerformance) testResults.enhancedPerformance = content;
+                } else if (file.includes('privacy-compliance-tests')) {
+                    if (!testResults.privacyCompliance) testResults.privacyCompliance = content;
+                } else if (file.includes('interoperability-tests')) {
+                    if (!testResults.interoperability) testResults.interoperability = content;
                 }
             } catch (error) {
                 console.warn(`⚠️ Could not parse ${file}: ${error.message}`);
@@ -345,15 +363,20 @@ class ComprehensiveTestRunner {
             }
 
             if (enhancedPerformance.latencyDistribution && enhancedPerformance.latencyDistribution.data) {
-                const latencyData = enhancedPerformance.latencyDistribution.data.find(d => d.operationType === 'latency_distribution');
-                if (latencyData) {
-                    journalMetrics.latencyDistribution.p50 = latencyData.median || 0;
-                    journalMetrics.latencyDistribution.p95 = latencyData.p95 || 0;
-                    journalMetrics.latencyDistribution.p99 = latencyData.p99 || 0;
-                    journalMetrics.latencyDistribution.mean = latencyData.mean || 0;
-                    journalMetrics.latencyDistribution.standardDeviation = latencyData.standardDeviation || 0;
-                    journalMetrics.latencyDistribution.distributionBuckets = latencyData.distribution || {};
-                }
+                // Aggregate latency data from all operation types
+                enhancedPerformance.latencyDistribution.data.forEach(opData => {
+                    if (opData.latencyStatistics) {
+                        // Collect raw latency values if available, or use statistics
+                        if (opData.latencyStatistics.p50) {
+                            journalMetrics.latencyDistribution.p50 = opData.latencyStatistics.p50;
+                            journalMetrics.latencyDistribution.p95 = opData.latencyStatistics.p95;
+                            journalMetrics.latencyDistribution.p99 = opData.latencyStatistics.p99;
+                            journalMetrics.latencyDistribution.mean = opData.latencyStatistics.mean;
+                            journalMetrics.latencyDistribution.standardDeviation = opData.latencyStatistics.standardDeviation;
+                            journalMetrics.latencyDistribution.distributionBuckets = opData.latencyStatistics.distributionBuckets || {};
+                        }
+                    }
+                });
             }
         }
 

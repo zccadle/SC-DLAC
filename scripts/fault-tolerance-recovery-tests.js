@@ -90,7 +90,7 @@ class FaultToleranceTestFramework {
 
         const testResult = {
             testName,
-            success,
+            success: expectedToFail ? !success : success, // If expected to fail, invert success
             duration,
             gasUsed,
             error,
@@ -179,6 +179,9 @@ async function main() {
             zkpManager.address
         );
         await ehrManager.deployed();
+        
+        // Authorize EHR Manager to use AuditLogger
+        await auditLogger.authorizeLogger(ehrManager.address);
         
         console.log("Contracts deployed successfully");
     } catch (error) {
