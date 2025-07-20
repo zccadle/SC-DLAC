@@ -1,0 +1,505 @@
+{
+  "description": "Comprehensive security testing for SL-DLAC",
+  "testDate": "2025-07-20T23:32:50.228Z",
+  "unauthorizedAccess": {
+    "description": "Tests for unauthorized access attempts",
+    "data": [
+      {
+        "testName": "Attacker tries to access patient data without role",
+        "success": false,
+        "duration": 8.813458000000026,
+        "gasUsed": 0,
+        "error": "call revert exception; VM Exception while processing transaction: reverted with reason string \"No DID found for address\" [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (method=\"getPatientData(address,string,bytes)\", data=\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000184e6f2044494420666f756e6420666f7220616464726573730000000000000000\", errorArgs=[\"No DID found for address\"], errorName=\"Error\", errorSignature=\"Error(string)\", reason=\"No DID found for address\", code=CALL_EXCEPTION, version=abi/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:32:50.437Z"
+      },
+      {
+        "testName": "Attacker tries to update patient data without permission",
+        "success": false,
+        "duration": 13.493249999999989,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'No DID found for address'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x91A1EeE63f300B8f41AE6AF67eDEa2e2ed8c3f79\",\"data\":\"0xc7d7421c00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e73000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e6d616c6963696f757320646174610000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020e397cf5dc7ad9773167510cd0461c16f5aabede7d91fe3a109c25d593206ca51\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'No DID found for address'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'No DID found for address'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000184e6f2044494420666f756e6420666f7220616464726573730000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:32:51.452Z"
+      },
+      {
+        "testName": "Attacker tries to create patient record without permission",
+        "success": false,
+        "duration": 11.957874999999603,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'No DID found for address'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x91A1EeE63f300B8f41AE6AF67eDEa2e2ed8c3f79\",\"data\":\"0x7eb3a9820000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'No DID found for address'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'No DID found for address'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000184e6f2044494420666f756e6420666f7220616464726573730000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:32:52.465Z"
+      },
+      {
+        "testName": "Attacker tries to assign roles without admin privileges",
+        "success": false,
+        "duration": 13.125750000000153,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x3C2BafebbB0c8c58f39A976e725cD20D611d01e9\",\"data\":\"0x25a00cbc0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc00000000000000000000000000000000000000000000000000000000000000c0f89606ba3e2455bc9584b6e5f3b1c8d836698f6aa2f8e15b5af6abc90471f8de00000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000001e133800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000541444d494e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000336469643a657468723a30783939363535303744316135356263433236393543353862613136464233376438313942304134646300000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001541646d696e206163636573732072657175697265640000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:32:53.478Z"
+      },
+      {
+        "testName": "Nurse tries to perform doctor-only operations",
+        "success": false,
+        "duration": 25.21387499999946,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized access'\", method=\"estimateGas\", transaction={\"from\":\"0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC\",\"to\":\"0x91A1EeE63f300B8f41AE6AF67eDEa2e2ed8c3f79\",\"data\":\"0xc7d7421c00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000013756e617574686f72697a656420757064617465000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020127049cd960edd71a4664a433b36efb0fb1e4b15a61f5f374402f447b6239c7e\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized access'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized access'\",\"data\":\"0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013556e617574686f72697a65642061636365737300000000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:32:54.505Z"
+      }
+    ],
+    "summary": {
+      "totalTests": 5,
+      "passed": 5,
+      "failed": 0,
+      "passRate": 100,
+      "averageTestTime": 14.520841599999846,
+      "totalGasUsed": 0
+    }
+  },
+  "roleEscalation": {
+    "description": "Role escalation attack simulation",
+    "data": [
+      {
+        "testName": "Nurse attempts to grant themselves doctor permissions",
+        "success": false,
+        "duration": 14.504583000000821,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\", method=\"estimateGas\", transaction={\"from\":\"0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC\",\"to\":\"0x3C2BafebbB0c8c58f39A976e725cD20D611d01e9\",\"data\":\"0x2808235f0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000054e55525345000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000b7570646174655f64617461000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001541646d696e206163636573732072657175697265640000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:32:55.522Z"
+      },
+      {
+        "testName": "Patient attempts to assign admin role to themselves",
+        "success": false,
+        "duration": 15.388832999999977,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\", method=\"estimateGas\", transaction={\"from\":\"0x90F79bf6EB2c4f870365E785982E1f101E93b906\",\"to\":\"0x3C2BafebbB0c8c58f39A976e725cD20D611d01e9\",\"data\":\"0x25a00cbc00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b90600000000000000000000000000000000000000000000000000000000000000c06f3a0cb5f7146b6843caeada1e4162203e70f5abf6824bc5f1498afd5609a2e000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000001e133800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000541444d494e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000336469643a657468723a30783930463739626636454232633466383730333635453738353938324531663130314539336239303600000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001541646d696e206163636573732072657175697265640000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:32:56.539Z"
+      },
+      {
+        "testName": "Doctor attempts to escalate to admin privileges",
+        "success": false,
+        "duration": 14.941291999999521,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\", method=\"estimateGas\", transaction={\"from\":\"0x70997970C51812dc3A010C7d01b50e0d17dc79C8\",\"to\":\"0x3C2BafebbB0c8c58f39A976e725cD20D611d01e9\",\"data\":\"0xdd517fae00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000b53555045525f41444d494e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001353757065722061646d696e6973747261746f7200000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001541646d696e206163636573732072657175697265640000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:32:57.556Z"
+      },
+      {
+        "testName": "Attacker tries to modify role permissions directly",
+        "success": false,
+        "duration": 16.40495799999917,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x3C2BafebbB0c8c58f39A976e725cD20D611d01e9\",\"data\":\"0x2808235f00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000841545441434b45520000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009766965775f646174610000000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001541646d696e206163636573732072657175697265640000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:32:58.573Z"
+      }
+    ],
+    "summary": {
+      "totalTests": 4,
+      "passed": 4,
+      "failed": 0,
+      "passRate": 100,
+      "averageTestTime": 15.309916499999872,
+      "totalGasUsed": 0
+    }
+  },
+  "didSpoofing": {
+    "description": "DID spoofing and impersonation attempts",
+    "data": [
+      {
+        "testName": "Attacker tries to create DID for existing address",
+        "success": false,
+        "duration": 10.664833999999246,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'DID already exists'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x5f246ADDCF057E0f778CD422e20e413be70f9a0c\",\"data\":\"0x87c00f9a000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000336469643a657468723a307837303939373937304335313831326463334130313043376430316235306530643137646337394338000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'DID already exists'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'DID already exists'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001244494420616c7265616479206578697374730000000000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:32:59.585Z"
+      },
+      {
+        "testName": "Attacker tries to modify another user's DID attributes",
+        "success": false,
+        "duration": 14.390290999999706,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Not the DID owner'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x5f246ADDCF057E0f778CD422e20e413be70f9a0c\",\"data\":\"0xf6374dfe000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000336469643a657468723a3078373039393739373043353138313264633341303130433764303162353065306431376463373943380000000000000000000000000000000000000000000000000000000000000000000000000000000000000000096d616c6963696f75730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000b636f6d70726f6d69736564000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Not the DID owner'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Not the DID owner'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000114e6f742074686520444944206f776e6572000000000000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:00.601Z"
+      },
+      {
+        "testName": "Attacker tries to add themselves as DID controller",
+        "success": false,
+        "duration": 13.133958000000348,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Not the DID owner'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x5f246ADDCF057E0f778CD422e20e413be70f9a0c\",\"data\":\"0x4ce7693e000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000336469643a657468723a3078393046373962663645423263346638373033363545373835393832453166313031453933623930360000000000000000000000000000000000000000000000000000000000000000000000000000000000000000336469643a657468723a30783135643334414166353432363744423744376333363738333941416637314130306132433641363500000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Not the DID owner'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Not the DID owner'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000114e6f742074686520444944206f776e6572000000000000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:01.615Z"
+      },
+      {
+        "testName": "Attacker tries to deactivate legitimate DID",
+        "success": false,
+        "duration": 14.31512499999917,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Not the DID owner'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0x5f246ADDCF057E0f778CD422e20e413be70f9a0c\",\"data\":\"0x3b253b23000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000336469643a657468723a30783343343443644464423661393030666132623538356464323939653033643132464134323933424300000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Not the DID owner'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Not the DID owner'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000114e6f742074686520444944206f776e6572000000000000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:02.631Z"
+      }
+    ],
+    "summary": {
+      "totalTests": 4,
+      "passed": 4,
+      "failed": 0,
+      "passRate": 100,
+      "averageTestTime": 13.126051999999618,
+      "totalGasUsed": 0
+    }
+  },
+  "cryptographicSecurity": {
+    "description": "Cryptographic primitive validation",
+    "data": [
+      {
+        "testName": "Valid ZK proof submission and validation",
+        "success": true,
+        "duration": 16.97187500000109,
+        "gasUsed": 0,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:03.649Z"
+      },
+      {
+        "testName": "Valid proof with role credential combination",
+        "success": true,
+        "duration": 24.369583000001512,
+        "gasUsed": 0,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:04.675Z"
+      },
+      {
+        "testName": "Valid proof for nurse with correct credentials",
+        "success": true,
+        "duration": 20.256584000000657,
+        "gasUsed": 0,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:05.697Z"
+      },
+      {
+        "testName": "Successful proof verification after multiple submissions",
+        "success": true,
+        "duration": 30.8806250000016,
+        "gasUsed": 0,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:06.730Z"
+      },
+      {
+        "testName": "Valid cryptographic hash consistency",
+        "success": true,
+        "duration": 1.3057079999998678,
+        "gasUsed": 0,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:07.731Z"
+      },
+      {
+        "testName": "ZK proof replay attack prevention",
+        "success": false,
+        "duration": 22.83745800000179,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Proof already used'\", method=\"estimateGas\", transaction={\"from\":\"0x70997970C51812dc3A010C7d01b50e0d17dc79C8\",\"to\":\"0xEC7cb8C3EBE77BA6d284F13296bb1372A8522c5F\",\"data\":\"0xbf08440895a1037696412d10b7601bbf282892884b3d0b24621a6f375acf0150604a97c9\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Proof already used'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Proof already used'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001250726f6f6620616c726561647920757365640000000000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:08.754Z"
+      },
+      {
+        "testName": "Invalid proof submission with zero hash",
+        "success": false,
+        "duration": 13.038625000001048,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Invalid proof: zero hash'\", method=\"estimateGas\", transaction={\"from\":\"0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65\",\"to\":\"0xEC7cb8C3EBE77BA6d284F13296bb1372A8522c5F\",\"data\":\"0xbf0844080000000000000000000000000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Invalid proof: zero hash'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Invalid proof: zero hash'\",\"data\":\"0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000018496e76616c69642070726f6f663a207a65726f20686173680000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:09.768Z"
+      },
+      {
+        "testName": "Proof validation with wrong address",
+        "success": true,
+        "duration": 19.84100000000035,
+        "gasUsed": 0,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:10.790Z"
+      },
+      {
+        "testName": "Invalid proof with malformed hash",
+        "success": false,
+        "duration": 6.323916999997891,
+        "gasUsed": 0,
+        "error": "invalid arrayify value (argument=\"value\", value=\"0xinvalidhash\", code=INVALID_ARGUMENT, version=bytes/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:11.797Z"
+      },
+      {
+        "testName": "Cross-user proof validation attack",
+        "success": true,
+        "duration": 20.86750000000029,
+        "gasUsed": 0,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:12.819Z"
+      }
+    ],
+    "summary": {
+      "totalTests": 10,
+      "passed": 10,
+      "failed": 0,
+      "passRate": 100,
+      "averageTestTime": 17.66928750000061,
+      "totalGasUsed": 0
+    }
+  },
+  "inputValidation": {
+    "description": "Input validation and boundary testing",
+    "data": [
+      {
+        "testName": "Valid DID creation with proper format",
+        "success": true,
+        "duration": 19.982083999999304,
+        "gasUsed": 227126,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:13.841Z"
+      },
+      {
+        "testName": "Valid patient data update with normal content",
+        "success": true,
+        "duration": 34.66925000000265,
+        "gasUsed": 257882,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:14.877Z"
+      },
+      {
+        "testName": "Valid patient data with medical terminology",
+        "success": true,
+        "duration": 37.199666000000434,
+        "gasUsed": 302519,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:15.916Z"
+      },
+      {
+        "testName": "Valid numeric data in patient records",
+        "success": true,
+        "duration": 32.192874999997,
+        "gasUsed": 302639,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:16.949Z"
+      },
+      {
+        "testName": "Valid special characters in medical data",
+        "success": true,
+        "duration": 34.80183300000135,
+        "gasUsed": 302455,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:17.986Z"
+      },
+      {
+        "testName": "Valid UTF-8 characters in patient notes",
+        "success": true,
+        "duration": 31.106917000000976,
+        "gasUsed": 302563,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:19.018Z"
+      },
+      {
+        "testName": "Valid long medical description",
+        "success": true,
+        "duration": 32.28874999999971,
+        "gasUsed": 416238,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:20.051Z"
+      },
+      {
+        "testName": "Valid empty data category update",
+        "success": true,
+        "duration": 34.885042000001704,
+        "gasUsed": 237498,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:21.087Z"
+      },
+      {
+        "testName": "Empty string DID creation (boundary test)",
+        "success": false,
+        "duration": 12.486667000001034,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Address already has a DID'\", method=\"estimateGas\", transaction={\"from\":\"0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc\",\"to\":\"0x5f246ADDCF057E0f778CD422e20e413be70f9a0c\",\"data\":\"0x87c00f9a0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Address already has a DID'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Address already has a DID'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000194164647265737320616c72656164792068617320612044494400000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:22.101Z"
+      },
+      {
+        "testName": "Extremely long DID creation (boundary test)",
+        "success": false,
+        "duration": 15.975916999996116,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Address already has a DID'\", method=\"estimateGas\", transaction={\"from\":\"0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc\",\"to\":\"0x5f246ADDCF057E0f778CD422e20e413be70f9a0c\",\"data\":\"0x87c00f9a0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000046000000000000000000000000000000000000000000000000000000000000003f16469643a657468723a616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161610000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Address already has a DID'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Address already has a DID'\",\"data\":\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000194164647265737320616c72656164792068617320612044494400000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:23.118Z"
+      },
+      {
+        "testName": "SQL injection attempt in patient data (security test)",
+        "success": true,
+        "duration": 32.71795800000109,
+        "gasUsed": 240734,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:24.152Z"
+      },
+      {
+        "testName": "Null address manipulation (boundary test)",
+        "success": false,
+        "duration": 11.596666000004916,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Invalid patient address'\", method=\"estimateGas\", transaction={\"from\":\"0x70997970C51812dc3A010C7d01b50e0d17dc79C8\",\"to\":\"0x91A1EeE63f300B8f41AE6AF67eDEa2e2ed8c3f79\",\"data\":\"0x7eb3a9820000000000000000000000000000000000000000000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Invalid patient address'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Invalid patient address'\",\"data\":\"0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000017496e76616c69642070617469656e742061646472657373000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:25.164Z"
+      }
+    ],
+    "summary": {
+      "totalTests": 12,
+      "passed": 12,
+      "failed": 0,
+      "passRate": 100,
+      "averageTestTime": 27.491968750000524,
+      "totalGasUsed": 2589654
+    }
+  },
+  "permissionBoundary": {
+    "description": "Permission boundary testing",
+    "data": [
+      {
+        "testName": "Doctor accesses patient data with valid permissions",
+        "success": true,
+        "duration": 19.31958300000406,
+        "gasUsed": 0,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:26.185Z"
+      },
+      {
+        "testName": "Doctor updates patient data with valid permissions",
+        "success": true,
+        "duration": 33.2095829999962,
+        "gasUsed": 257894,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:27.219Z"
+      },
+      {
+        "testName": "Nurse views patient data with valid permissions",
+        "success": true,
+        "duration": 22.43487499999901,
+        "gasUsed": 0,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:28.243Z"
+      },
+      {
+        "testName": "Doctor creates new patient record with valid permissions",
+        "success": true,
+        "duration": 23.510708000001614,
+        "gasUsed": 330040,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:29.268Z"
+      },
+      {
+        "testName": "Valid role assignment by admin",
+        "success": true,
+        "duration": 22.993125000000873,
+        "gasUsed": 192162,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:30.292Z"
+      },
+      {
+        "testName": "Valid permission grant by admin",
+        "success": true,
+        "duration": 23.58037499999773,
+        "gasUsed": 53481,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:31.317Z"
+      },
+      {
+        "testName": "Nurse attempts to update patient data (boundary violation)",
+        "success": false,
+        "duration": 25.58741700000246,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized access'\", method=\"estimateGas\", transaction={\"from\":\"0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC\",\"to\":\"0x91A1EeE63f300B8f41AE6AF67eDEa2e2ed8c3f79\",\"data\":\"0xc7d7421c00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000009646961676e6f73697300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000016556e617574686f72697a656420646961676e6f736973000000000000000000000000000000000000000000000000000000000000000000000000000000000020d7673dc2fbcb6519c8bd9ec67b47b0b965df3e3a18a121e996fd9069dcab6485\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized access'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized access'\",\"data\":\"0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013556e617574686f72697a65642061636365737300000000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:32.344Z"
+      },
+      {
+        "testName": "Patient attempts to access another patient's data",
+        "success": false,
+        "duration": 11.964749999999185,
+        "gasUsed": 0,
+        "error": "call revert exception; VM Exception while processing transaction: reverted with reason string \"Invalid role proof\" [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (method=\"getPatientData(address,string,bytes)\", data=\"0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000012496e76616c696420726f6c652070726f6f660000000000000000000000000000\", errorArgs=[\"Invalid role proof\"], errorName=\"Error\", errorSignature=\"Error(string)\", reason=\"Invalid role proof\", code=CALL_EXCEPTION, version=abi/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:33.357Z"
+      },
+      {
+        "testName": "Nurse attempts to create patient record (boundary violation)",
+        "success": false,
+        "duration": 9.806124999995518,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized access'\", method=\"estimateGas\", transaction={\"from\":\"0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC\",\"to\":\"0x91A1EeE63f300B8f41AE6AF67eDEa2e2ed8c3f79\",\"data\":\"0x7eb3a98200000000000000000000000015d34aaf54267db7d7c367839aaf71a00a2c6a65\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized access'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized access'\",\"data\":\"0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013556e617574686f72697a65642061636365737300000000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:34.368Z"
+      },
+      {
+        "testName": "Non-admin attempts role assignment (boundary violation)",
+        "success": false,
+        "duration": 17.097249999998894,
+        "gasUsed": 0,
+        "error": "cannot estimate gas; transaction may fail or may require manual gas limit [ See: https://links.ethers.org/v5-errors-UNPREDICTABLE_GAS_LIMIT ] (reason=\"Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\", method=\"estimateGas\", transaction={\"from\":\"0x70997970C51812dc3A010C7d01b50e0d17dc79C8\",\"to\":\"0x3C2BafebbB0c8c58f39A976e725cD20D611d01e9\",\"data\":\"0x25a00cbc00000000000000000000000015d34aaf54267db7d7c367839aaf71a00a2c6a6500000000000000000000000000000000000000000000000000000000000000c0530e85eedc641a7c9436f4c795ac97d8522f8d75797513b113cb985bfb10ef5d00000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000001e1338000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006444f43544f52000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000336469643a657468723a30783135643334414166353432363744423744376333363738333941416637314130306132433641363500000000000000000000000000\",\"accessList\":null}, error={\"name\":\"ProviderError\",\"_stack\":\"ProviderError: Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\\n    at HttpProvider.request (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/hardhat/src/internal/core/providers/http.ts:116:21)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\\n    at EthersProviderWrapper.send (/Users/dannylee/Desktop/codes/sc-dlac/SC-DLAC/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)\",\"code\":-32603,\"_isProviderError\":true,\"data\":{\"message\":\"Error: VM Exception while processing transaction: reverted with reason string 'Admin access required'\",\"data\":\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001541646d696e206163636573732072657175697265640000000000000000000000\"}}, code=UNPREDICTABLE_GAS_LIMIT, version=providers/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:35.386Z"
+      },
+      {
+        "testName": "User without role attempts data access (boundary violation)",
+        "success": false,
+        "duration": 12.771958000004815,
+        "gasUsed": 0,
+        "error": "call revert exception; VM Exception while processing transaction: reverted with reason string \"No DID found for address\" [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (method=\"getPatientData(address,string,bytes)\", data=\"0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000184e6f2044494420666f756e6420666f7220616464726573730000000000000000\", errorArgs=[\"No DID found for address\"], errorName=\"Error\", errorSignature=\"Error(string)\", reason=\"No DID found for address\", code=CALL_EXCEPTION, version=abi/5.8.0)",
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:36.400Z"
+      },
+      {
+        "testName": "Expired role access attempt (time boundary)",
+        "success": true,
+        "duration": 23.11937499999476,
+        "gasUsed": 0,
+        "error": null,
+        "securityPassed": true,
+        "timestamp": "2025-07-20T23:33:37.425Z"
+      }
+    ],
+    "summary": {
+      "totalTests": 12,
+      "passed": 12,
+      "failed": 0,
+      "passRate": 100,
+      "averageTestTime": 20.44959366666626,
+      "totalGasUsed": 833577
+    }
+  }
+}

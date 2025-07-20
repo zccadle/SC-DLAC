@@ -1,0 +1,295 @@
+{
+  "description": "Privacy compliance and data protection testing for SC-DLAC",
+  "testDate": "2025-07-20T23:38:38.420Z",
+  "zkpPrivacy": {
+    "description": "Zero-knowledge proof privacy preservation tests",
+    "data": [
+      {
+        "testName": "zkp_credential_privacy",
+        "success": true,
+        "duration": 8.758334,
+        "error": null,
+        "memoryDelta": 1081232,
+        "timestamp": "2025-07-20T23:38:38.607Z",
+        "privacyMetrics": {
+          "score": 100,
+          "proofExposed": false,
+          "hashOnly": true
+        }
+      },
+      {
+        "testName": "zkp_unlinkability",
+        "success": true,
+        "duration": 34.578833,
+        "error": null,
+        "memoryDelta": 3809104,
+        "timestamp": "2025-07-20T23:38:38.642Z",
+        "privacyMetrics": {
+          "score": 100,
+          "proofsUnlinkable": true,
+          "numberOfProofs": 5
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 2,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 2,
+        "min": 8758334,
+        "max": 34578833,
+        "mean": 21668583.5,
+        "median": 21668583.5,
+        "stdDev": 12910249.5,
+        "p25": 15213458.75,
+        "p50": 21668583.5,
+        "p75": 28123708.25,
+        "p90": 31996783.1,
+        "p95": 33287808.049999997,
+        "p99": 34320628.01,
+        "p999": 34553012.501,
+        "meanMs": 21.6685835,
+        "medianMs": 21.6685835,
+        "p95Ms": 33.287808049999995,
+        "p99Ms": 34.32062801
+      },
+      "privacyScore": 100
+    }
+  },
+  "dataMinimization": {
+    "description": "Data minimization and purpose limitation tests",
+    "data": [
+      {
+        "testName": "minimal_data_exposure",
+        "success": true,
+        "duration": 7.0705,
+        "error": null,
+        "memoryDelta": 770872,
+        "timestamp": "2025-07-20T23:38:38.649Z",
+        "privacyMetrics": {
+          "score": 100,
+          "onlyRequestedData": true,
+          "noMetadataLeak": true
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 1,
+      "successfulTests": 1,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 1,
+        "min": 7070500,
+        "max": 7070500,
+        "mean": 7070500,
+        "median": 7070500,
+        "stdDev": 0,
+        "p25": 7070500,
+        "p50": 7070500,
+        "p75": 7070500,
+        "p90": 7070500,
+        "p95": 7070500,
+        "p99": 7070500,
+        "p999": 7070500,
+        "meanMs": 7.0705,
+        "medianMs": 7.0705,
+        "p95Ms": 7.0705,
+        "p99Ms": 7.0705
+      },
+      "privacyScore": 100
+    }
+  },
+  "accessPatternPrivacy": {
+    "description": "Access pattern obfuscation and privacy tests",
+    "data": [
+      {
+        "testName": "access_pattern_obfuscation",
+        "success": true,
+        "duration": 803.968417,
+        "error": null,
+        "memoryDelta": -3069120,
+        "timestamp": "2025-07-20T23:38:39.453Z",
+        "privacyMetrics": {
+          "score": 50,
+          "timingVariance": 0.3385076367613029,
+          "resistsTimingAnalysis": false
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 1,
+      "successfulTests": 1,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 1,
+        "min": 803968417,
+        "max": 803968417,
+        "mean": 803968417,
+        "median": 803968417,
+        "stdDev": 0,
+        "p25": 803968417,
+        "p50": 803968417,
+        "p75": 803968417,
+        "p90": 803968417,
+        "p95": 803968417,
+        "p99": 803968417,
+        "p999": 803968417,
+        "meanMs": 803.968417,
+        "medianMs": 803.968417,
+        "p95Ms": 803.968417,
+        "p99Ms": 803.968417
+      },
+      "privacyScore": 50
+    }
+  },
+  "gdprCompliance": {
+    "description": "GDPR compliance verification tests",
+    "data": [
+      {
+        "testName": "right_to_access",
+        "success": true,
+        "duration": 12.491917,
+        "error": null,
+        "memoryDelta": 784000,
+        "timestamp": "2025-07-20T23:38:39.466Z",
+        "privacyMetrics": {
+          "score": 100,
+          "patientCanAccessData": true,
+          "dataPortability": true
+        }
+      },
+      {
+        "testName": "purpose_limitation",
+        "success": true,
+        "duration": 8.443083,
+        "error": null,
+        "memoryDelta": 711584,
+        "timestamp": "2025-07-20T23:38:39.475Z",
+        "privacyMetrics": {
+          "score": 100,
+          "purposeLimitation": true,
+          "dataUsageControl": true
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 2,
+      "successfulTests": 2,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 2,
+        "min": 8443083,
+        "max": 12491917,
+        "mean": 10467500,
+        "median": 10467500,
+        "stdDev": 2024417,
+        "p25": 9455291.5,
+        "p50": 10467500,
+        "p75": 11479708.5,
+        "p90": 12087033.6,
+        "p95": 12289475.3,
+        "p99": 12451428.66,
+        "p999": 12487868.166000001,
+        "meanMs": 10.4675,
+        "medianMs": 10.4675,
+        "p95Ms": 12.289475300000001,
+        "p99Ms": 12.45142866
+      },
+      "privacyScore": 100
+    }
+  },
+  "differentialPrivacy": {
+    "description": "Differential privacy mechanism tests",
+    "data": [
+      {
+        "testName": "statistical_privacy",
+        "success": true,
+        "duration": 126.479875,
+        "error": null,
+        "memoryDelta": 4125120,
+        "timestamp": "2025-07-20T23:38:39.601Z",
+        "privacyMetrics": {
+          "score": 95,
+          "differentialPrivacy": true,
+          "noiseAdded": true,
+          "epsilonValue": 0.1
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 1,
+      "successfulTests": 1,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 1,
+        "min": 126479875,
+        "max": 126479875,
+        "mean": 126479875,
+        "median": 126479875,
+        "stdDev": 0,
+        "p25": 126479875,
+        "p50": 126479875,
+        "p75": 126479875,
+        "p90": 126479875,
+        "p95": 126479875,
+        "p99": 126479875,
+        "p999": 126479875,
+        "meanMs": 126.479875,
+        "medianMs": 126.479875,
+        "p95Ms": 126.479875,
+        "p99Ms": 126.479875
+      },
+      "privacyScore": 95
+    }
+  },
+  "encryptionIntegrity": {
+    "description": "End-to-end encryption and data integrity tests",
+    "data": [
+      {
+        "testName": "end_to_end_encryption",
+        "success": true,
+        "duration": 8.164459,
+        "error": null,
+        "memoryDelta": 825232,
+        "timestamp": "2025-07-20T23:38:39.610Z",
+        "privacyMetrics": {
+          "score": 100,
+          "encryptionMaintained": true,
+          "noPlaintextStorage": true
+        }
+      }
+    ],
+    "metrics": {
+      "totalTests": 1,
+      "successfulTests": 1,
+      "failedTests": 0,
+      "successRate": 100,
+      "timingStats": {
+        "count": 1,
+        "min": 8164459.000000001,
+        "max": 8164459.000000001,
+        "mean": 8164459.000000001,
+        "median": 8164459.000000001,
+        "stdDev": 0,
+        "p25": 8164459.000000001,
+        "p50": 8164459.000000001,
+        "p75": 8164459.000000001,
+        "p90": 8164459.000000001,
+        "p95": 8164459.000000001,
+        "p99": 8164459.000000001,
+        "p999": 8164459.000000001,
+        "meanMs": 8.164459,
+        "medianMs": 8.164459,
+        "p95Ms": 8.164459,
+        "p99Ms": 8.164459
+      },
+      "privacyScore": 100
+    }
+  }
+}

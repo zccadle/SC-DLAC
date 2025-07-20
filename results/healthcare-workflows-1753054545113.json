@@ -1,0 +1,2190 @@
+{
+  "description": "Real-world healthcare workflow simulations and performance analysis",
+  "testDate": "2025-07-20T23:35:19.762Z",
+  "hospitalAdmission": {
+    "description": "Complete patient admission workflow from ER to discharge",
+    "data": [
+      {
+        "stepName": "Patient arrives at ER - Initial triage",
+        "success": true,
+        "duration": 8.482083000000046,
+        "gasUsed": 327240,
+        "error": null,
+        "participants": [
+          "patient1",
+          "nurse1"
+        ],
+        "timestamp": "2025-07-20T23:35:20.130Z",
+        "result": {
+          "hash": "0x8ed3c9a1834e714fa4be3aaa27b7407df6c60714be775faf1298ab8534250d79",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0xf58bdaae87758fe838c10814d75ff8d28bcea3782b3c62fa95eff1004e96b7bb",
+          "blockNumber": 5577,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x050ac4"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 228,
+          "data": "0x7eb3a98200000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8",
+          "r": "0xc95a7f54085bc74c466a0d4fa30cf7729506a86cb0bf36b855c3feae8b3cb29f",
+          "s": "0x43f834824f46009f3011f69ebe6b447eeb796354b745831d9b6da26181e9959c",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "ER physician initial assessment",
+        "success": true,
+        "duration": 30.987040999999977,
+        "gasUsed": 325402,
+        "error": null,
+        "participants": [
+          "erDoctor",
+          "patient1"
+        ],
+        "timestamp": "2025-07-20T23:35:20.664Z",
+        "result": {
+          "hash": "0x7ce1ab7aaa2102a754a2ab89bbb77552d6eb5e7f8af567c0e97dbd0e354d87af",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x721fdc4fbd8b00c9add66f7f520c8f542ea76157ce174d522f0c631a109fd08c",
+          "blockNumber": 5579,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x050108"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 230,
+          "data": "0xc7d7421c00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001400000000000000000000000000000000000000000000000000000000000000012696e697469616c2d6173736573736d656e740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004f4368657374207061696e2c2073686f72746e657373206f66206272656174682e20506f737369626c652063617264696163206576656e742e2041646d697420666f72206f62736572766174696f6e2e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002091715b1797c300c0e1c254c431c8d6b912bffbf3d11d235fb47075146be3930c",
+          "r": "0x602aecdf1d6c73942d2b1d11c8431b8656a5bd206a3fd1f81faaf075d9f48963",
+          "s": "0x041f148278cdd5cff6af89f8331ce96f5c36a887074374e6ee5f3ed5b3a73582",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Vital signs monitoring setup",
+        "success": true,
+        "duration": 29.876708000000008,
+        "gasUsed": 302591,
+        "error": null,
+        "participants": [
+          "nurse1",
+          "patient1"
+        ],
+        "timestamp": "2025-07-20T23:35:21.195Z",
+        "result": {
+          "hash": "0xf25fb924c32c26a4705effa43dc6be87b9c6af53ca19d4bf2db122f61109478b",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x6cabbb02704f1fea25cf484a9a3c28dffe643391b7eb8c6d0f146c25d1bbee2e",
+          "blockNumber": 5581,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x04a989"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 105,
+          "data": "0xc7d7421c00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000120000000000000000000000000000000000000000000000000000000000000000b766974616c2d7369676e73000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002d496e697469616c3a2048522039352c204250203134352f39302c204f32203934252c2054656d702039392e3146000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020cc3ff8585149c33dd369c0d5755c96f1001376af0bf143daf368855ae3cdfb0d",
+          "r": "0x9cb9afde8c2758027bf58d077ff594e5d0457f97d2693523fc27453c14e7a6dc",
+          "s": "0x30ef4c6385d3435df89675a0698f3545319fc6795a7b4487c0b1763604dece6d",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Cardiology consultation request",
+        "success": true,
+        "duration": 20.357959000000392,
+        "gasUsed": 191573,
+        "error": null,
+        "participants": [
+          "erDoctor",
+          "cardiologist"
+        ],
+        "timestamp": "2025-07-20T23:35:22.016Z",
+        "result": {
+          "hash": "0x199e7efad5df06872c5da748032abe15702d9658b381e6ffd531ec80ca6bb429",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0xb92a88a6e0daf93e8d600d6c6876fd6e703f06c593f5304089a5fac3be224a38",
+          "blockNumber": 5582,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x02ec55"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 3720,
+          "data": "0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a3000000000000000000000000000000000000000000000000000000000000000012696e697469616c2d6173736573736d656e740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000",
+          "r": "0x1a4097775bf6741c3cb1e5a27926fd81b6ab357d86a5f2fd9f85f4419b6e6331",
+          "s": "0x008048c5ddf3fc664713ffe96e7988a3edb8180f328f4f25fa71b93119c082fc",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Cardiologist emergency access",
+        "success": true,
+        "duration": 33.80554200000006,
+        "gasUsed": 622760,
+        "error": null,
+        "participants": [
+          "cardiologist",
+          "patient1"
+        ],
+        "timestamp": "2025-07-20T23:35:22.551Z",
+        "result": {
+          "hash": "0xdfa0983913b3479a9f10cbefe799c76a00fce37164bdfc1f90dd5fe966879dc4",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x503326444d74c62ee961a081b73a45f41f6a7d5c43ccc52660ac1ed54a4b5eca",
+          "blockNumber": 5584,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x098ee9"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 186,
+          "data": "0xbd700f3300000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000002643617264696f6c6f677920636f6e73756c746174696f6e20666f72206368657374207061696e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020873d5f761479fe8811b5ebf97e6607b977625a6137d83dd5b98167e61e0e7483",
+          "r": "0x26194841fbd8dedd97c50c0d8cde23a13d75faee63f62b93ec9435d33b7c1782",
+          "s": "0x5e883129e61ef4e3a9bf16197ff6671ff4838d83da55178da5dd61a5585af81e",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Cardiologist assessment and orders",
+        "success": true,
+        "duration": 34.752292000000125,
+        "gasUsed": 348081,
+        "error": null,
+        "participants": [
+          "cardiologist",
+          "patient1"
+        ],
+        "timestamp": "2025-07-20T23:35:23.087Z",
+        "result": {
+          "hash": "0x60fd0f3fb0c015ed15d7f13dbd9301cc6582db48aed1b85132cbf4ad188048ab",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x498b23239b57429e65134ec87b4e9274d4a6d71209deee497bd39234edd6fe4b",
+          "blockNumber": 5586,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x055a50"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 188,
+          "data": "0xc7d7421c00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000160000000000000000000000000000000000000000000000000000000000000001063617264696f6c6f67792d6e6f74657300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006e454b472073686f777320535420656c65766174696f6e7320696e206c656164732049492c204949492c206156462e205265636f6d6d656e642063617468206c61622061637469766174696f6e2e205374617274206475616c20616e7469706c6174656c657420746865726170792e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020a66db7481aad8ec0384596a0c0ffbd8d31b6242cd85dbd6f2458cb271bee9ba3",
+          "r": "0x336c67dde598da23d64d8b984e0ab8dda3b63c48fe986c649f7c3434c071e0ec",
+          "s": "0x4c98478c16ea593cd5099734f25555a94c3672a16661d366194809e1e2676125",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Radiology imaging orders",
+        "success": true,
+        "duration": 13.679417000000285,
+        "gasUsed": 191489,
+        "error": null,
+        "participants": [
+          "cardiologist",
+          "radiologist"
+        ],
+        "timestamp": "2025-07-20T23:35:24.302Z",
+        "result": {
+          "hash": "0xdb59a4bbdb1fdb11a45ee7701d7d25b65e3d082839db08669efc8a3dc86f5a53",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x7887b77204a1989a5f5959eb445a3247d406ce8097a45af686d471677cbfc1f8",
+          "blockNumber": 5587,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x02ec01"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 3721,
+          "data": "0x39e1a6bb000000000000000000000000976ea74026e726554db657fa54763abd0c3a0aa9000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000015180000000000000000000000000000000000000000000000000000000000000001063617264696f6c6f67792d6e6f7465730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+          "r": "0xc458562f4ca632f2549754167a786d8df7765323e3d33fb1719b389a55e4b712",
+          "s": "0x323e7c9089df00c36a00154a62df11436dd2c81e8fb07f06ee3932cfd9715418",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Transfer to cardiac unit",
+        "success": true,
+        "duration": 27.18616699999984,
+        "gasUsed": 325462,
+        "error": null,
+        "participants": [
+          "nurse2",
+          "patient1"
+        ],
+        "timestamp": "2025-07-20T23:35:24.830Z",
+        "result": {
+          "hash": "0x070abcec3862497913388e22e4d8448655f331bc3dfbc1e7027349458d4b4787",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x8a0e190576c812c96d18ba76494b7302806826d8400d7726b68ffef4a975d5a2",
+          "blockNumber": 5589,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x050144"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 17,
+          "data": "0xc7d7421c00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000140000000000000000000000000000000000000000000000000000000000000000e7472616e736665722d6e6f746573000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005750617469656e74207472616e7366657272656420746f206361726469616320756e69742e20537461626c6520636f6e646974696f6e2e20436f6e74696e756f7573206d6f6e69746f72696e6720696e697469617465642e000000000000000000000000000000000000000000000000000000000000000000000000000000002035ae9a33254e89e658d859a895bfdaea670b6d70420d845e4e4fed6caa0f4c24",
+          "r": "0xd9edb4fe51d5a49b3e67733dc36e8d87727f563c4886ce961b67af417a4275ac",
+          "s": "0x0a7d6a75ca3854293d74b6132bb746bb142d31f92c809217da1377d1538328aa",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      }
+    ],
+    "metrics": {
+      "totalSteps": 8,
+      "successfulSteps": 8,
+      "failedSteps": 0,
+      "successRate": 100,
+      "averageStepLatency": 24.89090112500009,
+      "minStepLatency": 8.482083000000046,
+      "maxStepLatency": 34.752292000000125,
+      "totalGasUsed": 2634598,
+      "averageGasPerStep": 329324.75,
+      "participantCount": 6,
+      "workflowComplexity": 1.3333333333333333
+    }
+  },
+  "emergencyResponse": {
+    "description": "Emergency response scenarios (trauma, cardiac, stroke)",
+    "data": [
+      {
+        "stepName": "Ambulance dispatch and patient assessment",
+        "success": true,
+        "duration": 29.74316699999963,
+        "gasUsed": 330028,
+        "error": null,
+        "participants": [
+          "paramedic1",
+          "patient2"
+        ],
+        "timestamp": "2025-07-20T23:35:25.461Z",
+        "result": {
+          "hash": "0xd82098c016e1d6117c46aab251bed35ec9ba9c252ba64a6a64d547e3f0c1f2e2",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x62d45c1a7b55b856d8881baf465815db8629e6a8cc7d6d5b46ce5b6b682009a0",
+          "blockNumber": 5590,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x0515c3"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 231,
+          "data": "0x7eb3a9820000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+          "r": "0xa1e5e94b38d79b8008fc74e0e9aba82f99412faea55685c5fb22932e04ee7488",
+          "s": "0x73661b15fdcf9a52bd2f4bdd9355ec2b912390a2e9beb71aaa8cbc6e82075951",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Pre-hospital emergency delegation",
+        "success": true,
+        "duration": 21.933584000000337,
+        "gasUsed": 191549,
+        "error": null,
+        "participants": [
+          "patient2",
+          "paramedic1"
+        ],
+        "timestamp": "2025-07-20T23:35:25.983Z",
+        "result": {
+          "hash": "0x4849b45782f1d1460a4db5b59c05a286e89194a37734b399d58e02bfdee5cc9f",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0xc13e2129297bd13e82d986ca944ade977903f965b8e3620982af61ca0619d04b",
+          "blockNumber": 5591,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x02ec3d"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 120,
+          "data": "0x39e1a6bb000000000000000000000000bcd4042de499d14e55001ccbb24a551f3b954096000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000151800000000000000000000000000000000000000000000000000000000000000010656d657267656e63792d766974616c7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000",
+          "r": "0x007f20eb51e0d2579c1e41dca83abc06a8db8233bd3e3f7a27cdfcbbfebce5fe",
+          "s": "0x70600cfec2bf9257948d315f8b11642aef691bbdaa09ba3120a6a73b43aaa18d",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Paramedic emergency access request",
+        "success": true,
+        "duration": 37.91137499999968,
+        "gasUsed": 622772,
+        "error": null,
+        "participants": [
+          "paramedic1",
+          "patient2"
+        ],
+        "timestamp": "2025-07-20T23:35:26.523Z",
+        "result": {
+          "hash": "0x94577eca22c2d06254cf316c0903802c29deabeecedf510c74f4464fbbc8c89b",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x7315a912abeb7c96d2b2cae5649b43689608acf2ef00c48186909ccd2d32de5b",
+          "blockNumber": 5593,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x098ef5"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 27,
+          "data": "0xbd700f330000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000284d6f746f722076656869636c65206163636964656e74202d206d756c7469706c6520747261756d610000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020c11ba44167cd33a1ee837dacf74aa84aa7392ac731594040fa8d6ec98fd792bc",
+          "r": "0x7d8c3e85f67b8b3cbc4156e04f0e03f30cc6fe6cbd9d4f97603bb336aca5387f",
+          "s": "0x11b6faccb0a98a72119c5d14fc5a01c9815389d634ddfea3afc97a06b8d3b0b6",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Field assessment and stabilization",
+        "success": true,
+        "duration": 33.569000000000415,
+        "gasUsed": 347937,
+        "error": null,
+        "participants": [
+          "paramedic1",
+          "patient2"
+        ],
+        "timestamp": "2025-07-20T23:35:27.058Z",
+        "result": {
+          "hash": "0xd9b413eb0f54bdb34cc997388221465cfa274b0e951f7206d0f6d4a68ae48876",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0xe5250a567d4e2fdbe40b90d04bff797be41303a5526a2a7d762b1bbdd20ac738",
+          "blockNumber": 5595,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x0559bf"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 29,
+          "data": "0xc7d7421c0000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000016000000000000000000000000000000000000000000000000000000000000000106669656c642d6173736573736d656e740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000634d5641207769746820726f6c6c6f7665722e20436f6e7363696f75732062757420616c74657265642e2053757370656374656420696e7465726e616c20626c656564696e672e204956206163636573732078322c20324c204e532072756e6e696e672e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020bdf9ac879955a5d78cab85b36e610adb4072783f75a7aba81ee464adb4a516e5",
+          "r": "0x0bb8f854672001bb23acbd7c42c1046f018832df053055df86740c39be249516",
+          "s": "0x06f9fb6861e670ba749c8dd008d420af967fb601b664fc02c94fdb940b2917e6",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Hospital pre-arrival notification",
+        "success": true,
+        "duration": 20.627333000000363,
+        "gasUsed": 191549,
+        "error": null,
+        "participants": [
+          "paramedic1",
+          "erDoctor"
+        ],
+        "timestamp": "2025-07-20T23:35:28.080Z",
+        "result": {
+          "hash": "0xef83fdfea228da7d7af8257e7e88db37179724ca8b394c1bd6ff284f32eb5d94",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x4dcbe57b39e38f8338ecf42572d7b52eea615def580870c21dd8dc47357628ef",
+          "blockNumber": 5596,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x02ec3d"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 121,
+          "data": "0x39e1a6bb00000000000000000000000015d34aaf54267db7d7c367839aaf71a00a2c6a65000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000002a30000000000000000000000000000000000000000000000000000000000000000106669656c642d6173736573736d656e7400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000",
+          "r": "0x83a6809bf3dcc510fc49e45a7c29d10e61779d46176de00113d275af4a552423",
+          "s": "0x3e86b3ab0ba0029c7bb7b30a2da930270258f901c44c2297ea7789c8478a6fd1",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "ER trauma team activation",
+        "success": true,
+        "duration": 36.32487500000025,
+        "gasUsed": 622736,
+        "error": null,
+        "participants": [
+          "erDoctor",
+          "patient2"
+        ],
+        "timestamp": "2025-07-20T23:35:28.617Z",
+        "result": {
+          "hash": "0xf40baedc456c8d247e939908ce146c008cc7797229398844bafb588f777c739d",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x0f392d1fc62d32930456cb0588f25f883cf3eb6d4eae54ffd473a8642f2f55b9",
+          "blockNumber": 5598,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x098ed1"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 233,
+          "data": "0xbd700f330000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000027547261756d61207465616d2061637469766174696f6e202d204c6576656c203120747261756d610000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000203ac6e48c000f4ef443cdb3dddbdc85f39e26f82fba28ea00ab4707f517c7893f",
+          "r": "0xbcebff8362a6b208812614e61e895ad4d36e9edf94aaef9c09785771d863e1db",
+          "s": "0x5b1b98a2fb675d63b107b056e02d324cc4c662f51fb1be0a071b1c64d91b01dd",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Multi-specialist emergency consultation",
+        "success": true,
+        "duration": 22.370624999999563,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "erDoctor",
+          "cardiologist",
+          "radiologist"
+        ],
+        "timestamp": "2025-07-20T23:35:29.141Z",
+        "result": [
+          {
+            "hash": "0xa353af8754f5c1fb8160e66de3aab3869de0c049c3b404cfbd193e18530c8ab3",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0xbfc90c2aec4e4e0cd231a594144cbf9934cb14a928fd226b1c111d51ab0d8846",
+            "blockNumber": 5599,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ec01"
+            },
+            "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 122,
+            "data": "0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000001518000000000000000000000000000000000000000000000000000000000000000106669656c642d6173736573736d656e740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+            "r": "0x2086e5a3811c734d1f91586c9c8235900769858d91522d544317cdc0077686d6",
+            "s": "0x2b0527dcdf2734fbbd3f4a457a17a449596ddc909f45f8b4ac7d9c3ada28e531",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x9c8ca67202a3633727e2a5972b686996838cded293d23e3d4330d53cacde198c",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x31cc284314632fe538a90ca67d99b4ee747780224d909e6a27fa9cb3fcc81f8f",
+            "blockNumber": 5600,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ec01"
+            },
+            "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 123,
+            "data": "0x39e1a6bb000000000000000000000000976ea74026e726554db657fa54763abd0c3a0aa9000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000001518000000000000000000000000000000000000000000000000000000000000000106669656c642d6173736573736d656e740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+            "r": "0xf0d5cd5f2ff7eab9e9771429fb4f5ee43bf5dfe912de527e051da666e21216d3",
+            "s": "0x37a2338c84f52a460b4431a836e0ef3d7c9404150c34f9be6eccc51cdb5da42f",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          }
+        ]
+      },
+      {
+        "stepName": "Concurrent specialist assessments",
+        "success": true,
+        "duration": 33.49424999999974,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "cardiologist",
+          "radiologist"
+        ],
+        "timestamp": "2025-07-20T23:35:29.676Z",
+        "result": [
+          {
+            "hash": "0x39404517977f4d8b86bc87166e47673ddd5ce89039b5551c2fa9cfac692bfc9b",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x432e7d65ec4f86d619bcaa63e9d84a27fbea7b0f502064f4cdb3e66a1bb9821b",
+            "blockNumber": 5603,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x098ed1"
+            },
+            "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 190,
+            "data": "0xbd700f330000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000005000000000000000000000000000000000000000000000000000000000000002543617264696163206173736573736d656e7420666f7220747261756d612070617469656e74000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002063f82b8d303430983306976299c2cee94b4d78d9a50f25e8fc97bd3e98c6af72",
+            "r": "0x86ce062ac28bd024da80c068d4e8197a549ad6afd036d222526c7a145ed24567",
+            "s": "0x30da7fd2421efd237466cb1aa85d3524b38291c96c9e47eded2d3aaafb407551",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x286a309eed2ccaac7b8ee136658c760b42295237da9b63a4eba6eeb79de4af8a",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0xf1fed0faea98993d66a783985a2518219c1df715f1c426b23a4fa6b8ed0e4304",
+            "blockNumber": 5604,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x082f85"
+            },
+            "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 104,
+            "data": "0xbd700f330000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000001c456d657267656e637920696d6167696e6720666f7220747261756d610000000000000000000000000000000000000000000000000000000000000000000000204b06ee49a5796e65af7512487d8975a9ec5e925979de2ca08638d5610e79c4c8",
+            "r": "0x9fb7f0d57024540ac26b08c0af769981e4472d3facb3867d12747c58eaa472bc",
+            "s": "0x4d7ab886dfe52eb4e8fb1be000969a0eadd54d6eb1f11896522904d3bc961a57",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "totalSteps": 8,
+      "successfulSteps": 8,
+      "failedSteps": 0,
+      "successRate": 100,
+      "averageStepLatency": 29.496776124999997,
+      "minStepLatency": 20.627333000000363,
+      "maxStepLatency": 37.91137499999968,
+      "totalGasUsed": 2306571,
+      "averageGasPerStep": 288321.375,
+      "participantCount": 5,
+      "workflowComplexity": 1.6
+    }
+  },
+  "consultationWorkflow": {
+    "description": "Multi-specialist consultation and care coordination",
+    "data": [
+      {
+        "stepName": "Primary care referral initialization",
+        "success": true,
+        "duration": 46.57679199999984,
+        "gasUsed": 325546,
+        "error": null,
+        "participants": [
+          "erDoctor",
+          "patient3"
+        ],
+        "timestamp": "2025-07-20T23:35:30.525Z",
+        "result": {
+          "hash": "0xbfe44713df3f78ca26ffe495628c8bc86602e4e9bf351bb0570c9f9ab97f19d8",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0xcaf4b85452370243f7432538a157d18ecbdcf127bd5ea77ac1dd779a719ea358",
+          "blockNumber": 5607,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x050199"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 236,
+          "data": "0xc7d7421c00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000140000000000000000000000000000000000000000000000000000000000000000e726566657272616c2d6e6f746573000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005e436f6d706c65782063617264696163206361736520726571756972696e67206d756c74692d6469736369706c696e61727920617070726f6163682e20526566657220746f2063617264696f6c6f677920616e6420726164696f6c6f67792e000000000000000000000000000000000000000000000000000000000000000000204ad86c8774b3bf26e6410a8be73a6ad0a689429f744112a820785d775a1eb412",
+          "r": "0x37d0d5bbcd3372fa061490bc1b1252c35b02057a2efa793de9f1cf7a28051788",
+          "s": "0x2e5106110221ecd8999add78d48bdfd199cf9f4942850612dcb7dddbb4fba4c3",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Patient consent for multi-specialist access",
+        "success": true,
+        "duration": 21.233040999999503,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "patient3",
+          "cardiologist",
+          "radiologist"
+        ],
+        "timestamp": "2025-07-20T23:35:31.048Z",
+        "result": [
+          {
+            "hash": "0x5ad794a44c91ee2cedeebdd424cbac4bfb0a3b369e5bff7ee147cc1f3d8346d8",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x40d8f720a3c2a0afc8d40f965b74e770adac8cbfa54b6b7fc2562af17fb655b4",
+            "blockNumber": 5608,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ec31"
+            },
+            "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 276,
+            "data": "0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000003f480000000000000000000000000000000000000000000000000000000000000000e726566657272616c2d6e6f746573000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000",
+            "r": "0xe44ef7f84684e0c337eb2b7b2ae467315923f347097f77b32b5b2975713b391e",
+            "s": "0x651b4e8db4ccda53739c932a875d328b8b50ab5e5c4d04a98957b7de86029c33",
+            "v": 1,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0x7328d9405171a5427c3f9291e28fd250f4e373ae4e8666d0ac3affb7d74b9a0c",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x731a408c838dd1e58016c95d8e58718f75b72a7f6b55dc0370675d06167a72aa",
+            "blockNumber": 5609,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ebe9"
+            },
+            "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 277,
+            "data": "0x39e1a6bb000000000000000000000000976ea74026e726554db657fa54763abd0c3a0aa9000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000003f480000000000000000000000000000000000000000000000000000000000000000e726566657272616c2d6e6f74657300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+            "r": "0xaccfd885bc142687a8abbe7d57abbc0810e8c89a36ee2b750dd6cefcada06a31",
+            "s": "0x4a5f2e887d9a43e09122dc48b6f8ee3a62b568d953df345cb45656b986182de7",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          }
+        ]
+      },
+      {
+        "stepName": "Cardiology specialist access",
+        "success": true,
+        "duration": 38.744792000001326,
+        "gasUsed": 622724,
+        "error": null,
+        "participants": [
+          "cardiologist",
+          "patient3"
+        ],
+        "timestamp": "2025-07-20T23:35:31.588Z",
+        "result": {
+          "hash": "0x18f9f3dc2528ea02cdb0dc60a2113e3b1726c3908705c6b5b4fc8428232cd170",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x7c60535ca74930ac6b113197ead5d007505bd34545277903f78dcc8662830e3e",
+          "blockNumber": 5611,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x098ec5"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 192,
+          "data": "0xbd700f3300000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000700000000000000000000000000000000000000000000000000000000000000235370656369616c697a65642063617264696f6c6f677920636f6e73756c746174696f6e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000202a8f6796d6603bb55c05fe8a9160c15a760422b0e48eecf65141d4fba3ddb79f",
+          "r": "0x5259c394b5e80d3b7c22eed2e1357351217a46f740041b438b23380b7b2d17db",
+          "s": "0x6ff3928c5f28399df3287514da10bbd33ae80f097f96c830fb1e54d08cd3a9b3",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Cardiologist detailed assessment",
+        "success": true,
+        "duration": 34.49225000000115,
+        "gasUsed": 348021,
+        "error": null,
+        "participants": [
+          "cardiologist",
+          "patient3"
+        ],
+        "timestamp": "2025-07-20T23:35:32.122Z",
+        "result": {
+          "hash": "0xc0968372eb15e4b9d191d0f9cb984d4f232f089e327ffdf0c47361f8dd5eb2ff",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x97ecbdca700869e7bb47514bed72dc3d047c5f9f52329c95e80e6c7e32c585c6",
+          "blockNumber": 5613,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x055a13"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 194,
+          "data": "0xc7d7421c00000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000160000000000000000000000000000000000000000000000000000000000000001363617264696f6c6f67792d64657461696c65640000000000000000000000000000000000000000000000000000000000000000000000000000000000000000664563686f2073686f7773204546203335252c206d6f646572617465204d522e205265636f6d6d656e642063617264696163206361746820616e6420706f737369626c6520696e74657276656e74696f6e2e2053746172742041434520696e68696269746f722e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020710ce73096391ec71080edd7c53a7b6ba7ca657271e671e37808a5bce2eb344c",
+          "r": "0x08611727c27406a6264dfe87b2f29d8baf03875bb86c14f2dc4d4ab5812490d1",
+          "s": "0x148fab50883bf712ff7107d64eeb7606c1fdd0946715f5fa134f89f097e0a8fb",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Radiology imaging coordination",
+        "success": true,
+        "duration": 32.82408399999986,
+        "gasUsed": 533368,
+        "error": null,
+        "participants": [
+          "radiologist",
+          "patient3"
+        ],
+        "timestamp": "2025-07-20T23:35:33.657Z",
+        "result": {
+          "hash": "0x2004aae56cfca8b74eb6d0dbc5fc9cbbb83591f55cb3b1bf41975d4533bde707",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0xc5a6d0db4ceb93468d227692bc2937fbd2acb48719f83b0abeb736f948aa8553",
+          "blockNumber": 5615,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x082fad"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 106,
+          "data": "0xbd700f3300000000000000000000000090f79bf6eb2c4f870365e785982e1f101e93b906000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000001e4361726469616320696d6167696e6720696e746572707265746174696f6e000000000000000000000000000000000000000000000000000000000000000000206bacb1567194bafff25fd65c85a9ec3fcd45c6e25e765d13e91af387a98376ff",
+          "r": "0x08621cee774c6135080ae59314a1bf68485dcda9c8837c275d719252ba20d2f4",
+          "s": "0x63b821756fa27e49d976ff95a4a105d82ce254e1326d598dcc2c574fff9a4e83",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Cross-specialist consultation",
+        "success": true,
+        "duration": 17.585124999999607,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "cardiologist",
+          "radiologist"
+        ],
+        "timestamp": "2025-07-20T23:35:34.175Z",
+        "result": [
+          "Complex cardiac case requiring multi-disciplinary approach. Refer to cardiology and radiology.",
+          "Echo shows EF 35%, moderate MR. Recommend cardiac cath and possible intervention. Start ACE inhibitor."
+        ]
+      }
+    ],
+    "metrics": {
+      "totalSteps": 6,
+      "successfulSteps": 6,
+      "failedSteps": 0,
+      "successRate": 100,
+      "averageStepLatency": 31.909347333333546,
+      "minStepLatency": 17.585124999999607,
+      "maxStepLatency": 46.57679199999984,
+      "totalGasUsed": 1829659,
+      "averageGasPerStep": 304943.1666666667,
+      "participantCount": 4,
+      "workflowComplexity": 1.5
+    }
+  },
+  "interHospitalTransfer": {
+    "description": "Patient transfer between healthcare facilities",
+    "data": [
+      {
+        "stepName": "Transfer request initiation",
+        "success": true,
+        "duration": 38.473541999999725,
+        "gasUsed": 348129,
+        "error": null,
+        "participants": [
+          "erDoctor",
+          "patient1"
+        ],
+        "timestamp": "2025-07-20T23:35:34.916Z",
+        "result": {
+          "hash": "0x0e013511db2f553abf04df1b9f3f6f12cc364e81920859db4b41b0c4866538d4",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x0d373cbd6c6fde42d57c18ea8df784dc62434090e7c1479ac421b7ec99f31a2b",
+          "blockNumber": 5619,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x055a80"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 238,
+          "data": "0xc7d7421c00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000016000000000000000000000000000000000000000000000000000000000000000107472616e736665722d7265717565737400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007250617469656e74207265717569726573207370656369616c697a656420636172646961632073757267657279206e6f7420617661696c61626c65206174207468697320666163696c6974792e205265636f6d6d656e64207472616e7366657220746f20636172646961632063656e7465722e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020fa057cdd8eeedad8ebc0227edfaf2eac50d50f8fe8350698d043afae8422898e",
+          "r": "0x766c391c364ba2ceb48c1188a92254fe5b1f2ffd83261a156e45f26f9911093f",
+          "s": "0x51699f488b97b58fd44b65772b4bc250d13180b8667361bdb5a26e3f2200e1a2",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Receiving hospital access delegation",
+        "success": true,
+        "duration": 22.95604099999946,
+        "gasUsed": 191549,
+        "error": null,
+        "participants": [
+          "patient1",
+          "cardiologist"
+        ],
+        "timestamp": "2025-07-20T23:35:35.440Z",
+        "result": {
+          "hash": "0xaf0338e6f35c7d4faa04c6e3f4fcc4d2378c62126eef67530a4ce6b48676e946",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x2739d4524722e33ec8cf749fcfe664de73311a82747f5e7edb313d9401320641",
+          "blockNumber": 5620,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x02ec3d"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 3722,
+          "data": "0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000005460000000000000000000000000000000000000000000000000000000000000000107472616e736665722d7265717565737400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000",
+          "r": "0x057a94d4e22278f54d8e8cd573499783d2663ac953b34141e936d55fee563fcc",
+          "s": "0x1bdabd7d69de9ad30c4a967e7e16b1fb78206436892b2c6056dc6e732da14546",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Medical records transfer",
+        "success": true,
+        "duration": 56.076624999999694,
+        "gasUsed": 366772,
+        "error": null,
+        "participants": [
+          "cardiologist",
+          "patient1"
+        ],
+        "timestamp": "2025-07-20T23:35:35.997Z",
+        "result": {
+          "hash": "0xee2cc1cb0d4eac38a82981a4f7f53c0caeca90f729a9ad260cd4c5bbfbff8034",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0xfd38fc0af07a676bb903a60f6d29b5b8d11a4c0fada6cdb53a0e659d3282b4dc",
+          "blockNumber": 5622,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x05a6b2"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 197,
+          "data": "0xbd700f3300000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000009000000000000000000000000000000000000000000000000000000000000002c496e7465722d686f73706974616c207472616e73666572202d20726563656976696e6720666163696c69747900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020cf29481da71cfc2a36598b130d670826a4cadae5cb4941780bce517860a0c44a",
+          "r": "0xa592adaa21e75bcb14d04d3d71df253eccfdedc021eef9de91170fe3b786ce8e",
+          "s": "0x1b79086e37807951e4e1a709c9c768ec60f3b5570b89bfb35047c84f886b8c95",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Transport team handoff",
+        "success": true,
+        "duration": 46.63745899999776,
+        "gasUsed": 533292,
+        "error": null,
+        "participants": [
+          "paramedic2",
+          "patient1"
+        ],
+        "timestamp": "2025-07-20T23:35:37.244Z",
+        "result": {
+          "hash": "0xe9a880cd1b02d4d6ea8840587a8049da0bc4e6c3a61170dc634013c74a8b4740",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x7caa97260d086f61055f9c0589edf696dacd292b89ae286e5ee10544d723ea6b",
+          "blockNumber": 5626,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x082f61"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 17,
+          "data": "0xbd700f3300000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000018496e7465722d686f73706974616c207472616e73706f727400000000000000000000000000000000000000000000000000000000000000000000000000000020dacf4198332aa24481fd119cae6b57740e0916aac60f348ad2b05d5b686b177c",
+          "r": "0x4152cafc86bf1ed2f00a40d7028ab28df752eddf411a2cd307a4d5edfcee5508",
+          "s": "0x783f223c05300001a596b1a9854ff51c0f7ba829301378ded2523928b467ddf1",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Receiving facility admission",
+        "success": true,
+        "duration": 37.14025000000038,
+        "gasUsed": 347937,
+        "error": null,
+        "participants": [
+          "cardiologist",
+          "patient1"
+        ],
+        "timestamp": "2025-07-20T23:35:37.782Z",
+        "result": {
+          "hash": "0x873c3da804d87a882b55ab68a111e025fcc6c3cfc8791f55afa6bfc38679e0f9",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0xe7b3099edccad4ae3dd2bbfadae852233614a0bbdd3ddf197041995d725cb584",
+          "blockNumber": 5628,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x0559bf"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 200,
+          "data": "0xc7d7421c00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000160000000000000000000000000000000000000000000000000000000000000000f61646d697373696f6e2d6e6f7465730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006350617469656e742072656365697665642066726f6d206f75747369646520666163696c6974792e20537461626c6520666f72207472616e73706f72742e20526561647920666f7220636172646961632073757267657279206576616c756174696f6e2e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020202b475146189cbd15398d7b9b2a29288f6f220f3d0b62fb2ee39d37afcfdbcb",
+          "r": "0xe05e820da6d88637672bd3b189f3b76212081b4bdd61e99708a644b169e73642",
+          "s": "0x7d6c00c1e9c4160f6857359f07c56d97b0d9149afc94b57ed1e4bf0ef31c0af4",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      }
+    ],
+    "metrics": {
+      "totalSteps": 5,
+      "successfulSteps": 5,
+      "failedSteps": 0,
+      "successRate": 100,
+      "averageStepLatency": 40.25678339999941,
+      "minStepLatency": 22.95604099999946,
+      "maxStepLatency": 56.076624999999694,
+      "totalGasUsed": 1787679,
+      "averageGasPerStep": 357535.8,
+      "participantCount": 4,
+      "workflowComplexity": 1.25
+    }
+  },
+  "chronicCareManagement": {
+    "description": "Long-term chronic disease management workflows",
+    "data": [
+      {
+        "stepName": "Chronic care program enrollment",
+        "success": true,
+        "duration": 32.00445799999943,
+        "gasUsed": 325318,
+        "error": null,
+        "participants": [
+          "erDoctor",
+          "patient2"
+        ],
+        "timestamp": "2025-07-20T23:35:38.716Z",
+        "result": {
+          "hash": "0x15f2275c0b2acba28889358e9902e43bc753320824af25676baf628aa48a44ae",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x0bf0e4c0c937f9863c4fa0c4e89cbe9ce39087c02ab01a4f47d4b2c3283e4535",
+          "blockNumber": 5630,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x0500b3"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 240,
+          "data": "0xc7d7421c0000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000000116368726f6e69632d636172652d706c616e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000049456e726f6c6c656420696e206469616265746573206d616e6167656d656e742070726f6772616d2e20426173656c696e6520486241316320382e32252e20546172676574203c37252e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002046c90470e6928be1be0c8e283c4e3b577e49f84465e80ae64027c3df78efc0a5",
+          "r": "0xd04d60463d14c86a389e8b8016b744243f3fe3a53a5642e6b9632897097fdd60",
+          "s": "0x662f10f32c2911c2d82d439683c4c3c0f2a4c26c4939be97332a0b6fa5afbe71",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Care team access setup",
+        "success": true,
+        "duration": 15.814916000002995,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "patient2",
+          "nurse1",
+          "pharmacist"
+        ],
+        "timestamp": "2025-07-20T23:35:39.234Z",
+        "result": [
+          {
+            "hash": "0xb00bc26d1032da84025ffe16165cb70b592d0c22176e998d8b9149b97a955839",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x125f347e2e610e030ffad969315c2d02d387e7a40d7386bfed1c80346adc23c6",
+            "blockNumber": 5631,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ec61"
+            },
+            "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 124,
+            "data": "0x39e1a6bb00000000000000000000000023618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000001e1338000000000000000000000000000000000000000000000000000000000000000116368726f6e69632d636172652d706c616e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000",
+            "r": "0x4f4c3990deee871c07b57b197a6da6f766b4112ee2bf5ecd481ba446b876eaa8",
+            "s": "0x5c4b90655681af4c8fa61a56ac8872c6dfb24c404a2e7ad71f8e03023d06557a",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          },
+          {
+            "hash": "0xf38de486e5f2c165b8c48708959b95ad726e5c4a30a8806f74c58076a2e596d7",
+            "type": 2,
+            "accessList": [],
+            "blockHash": "0x161ca20a9fc79599fe7b22b43a344f516079d2304ed3e0bfc939a9bcde7077e7",
+            "blockNumber": 5632,
+            "transactionIndex": 0,
+            "confirmations": 1,
+            "from": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+            "gasPrice": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca07"
+            },
+            "maxPriorityFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca00"
+            },
+            "maxFeePerGas": {
+              "type": "BigNumber",
+              "hex": "0x3b9aca08"
+            },
+            "gasLimit": {
+              "type": "BigNumber",
+              "hex": "0x02ec19"
+            },
+            "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+            "value": {
+              "type": "BigNumber",
+              "hex": "0x00"
+            },
+            "nonce": 125,
+            "data": "0x39e1a6bb000000000000000000000000fabb0ac9d68b0b445fb7357272ff202c5651694a000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000001e1338000000000000000000000000000000000000000000000000000000000000000116368726f6e69632d636172652d706c616e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+            "r": "0x5449f07d8f4ce797efe39a0b6f6a0e8fb1937f60f3e34114940a1a712f8d4eb9",
+            "s": "0x55f754b9939fda3944ddccd7e304522a6cae2189c0f1d0f09210f7b11320f0f8",
+            "v": 0,
+            "creates": null,
+            "chainId": 1337
+          }
+        ]
+      },
+      {
+        "stepName": "Regular monitoring updates",
+        "success": true,
+        "duration": 31.041916999998648,
+        "gasUsed": 325462,
+        "error": null,
+        "participants": [
+          "nurse1",
+          "patient2"
+        ],
+        "timestamp": "2025-07-20T23:35:39.766Z",
+        "result": {
+          "hash": "0xb33b2c00741ff30eb31646794dbeb3e7b9de020e1234d633dee5939da9e564a5",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x885c22dbe52fdb7ff72d0559d9e892ab6e5dfca86fde723ef0d0fd07d093c951",
+          "blockNumber": 5634,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x050144"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 107,
+          "data": "0xc7d7421c0000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000140000000000000000000000000000000000000000000000000000000000000000f6d6f6e69746f72696e672d64617461000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000574d6f6e74686c7920636865636b3a2057656967687420737461626c652c204250203133352f38352c2070617469656e74207265706f72747320676f6f64206164686572656e636520746f206d656469636174696f6e732e0000000000000000000000000000000000000000000000000000000000000000000000000000000020a8fe7bf185a153962087f4c6be30aa9abd71ad0b51f7ae8a98137b3f5cf127b4",
+          "r": "0x931c45c0a537ee719628303610ad216b3f4ee673900d01d5680355ddfe6df4b1",
+          "s": "0x16815bc3dd419996fbc72732d324e12feb766cc17649b23e30b1c76b6a87dc4a",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Medication management review",
+        "success": true,
+        "duration": 24.502457999999024,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "pharmacist",
+          "patient2"
+        ],
+        "timestamp": "2025-07-20T23:35:40.393Z",
+        "result": "Enrolled in diabetes management program. Baseline HbA1c 8.2%. Target <7%."
+      }
+    ],
+    "metrics": {
+      "totalSteps": 4,
+      "successfulSteps": 4,
+      "failedSteps": 0,
+      "successRate": 100,
+      "averageStepLatency": 25.840937250000025,
+      "minStepLatency": 15.814916000002995,
+      "maxStepLatency": 32.00445799999943,
+      "totalGasUsed": 650780,
+      "averageGasPerStep": 162695,
+      "participantCount": 4,
+      "workflowComplexity": 1
+    }
+  },
+  "complianceWorkflows": {
+    "description": "HIPAA and regulatory compliance workflow testing",
+    "data": [
+      {
+        "stepName": "Audit trail generation for compliance",
+        "success": true,
+        "duration": 3.679707999999664,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "auditor"
+        ],
+        "timestamp": "2025-07-20T23:35:40.897Z",
+        "result": {
+          "type": "BigNumber",
+          "hex": "0x17"
+        }
+      },
+      {
+        "stepName": "Patient access history review",
+        "success": true,
+        "duration": 11.160958000000392,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "auditor",
+          "patient1"
+        ],
+        "timestamp": "2025-07-20T23:35:41.410Z",
+        "result": [
+          [
+            "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "create_record",
+            "New patient record created",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d9446"
+            },
+            false
+          ],
+          [
+            "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "update_data",
+            "Updated initial-assessment",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d9448"
+            },
+            false
+          ],
+          [
+            "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "update_data",
+            "Updated vital-signs",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d944a"
+            },
+            false
+          ],
+          [
+            "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "emergency_access",
+            "Cardiology consultation for chest pain",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d944d"
+            },
+            true
+          ],
+          [
+            "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "update_data",
+            "Updated cardiology-notes",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d944f"
+            },
+            false
+          ],
+          [
+            "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "update_data",
+            "Updated transfer-notes",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d9452"
+            },
+            false
+          ],
+          [
+            "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "update_data",
+            "Updated transfer-request",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d9470"
+            },
+            false
+          ],
+          [
+            "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "emergency_access",
+            "Inter-hospital transfer - receiving facility",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d9473"
+            },
+            true
+          ],
+          [
+            "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "emergency_access",
+            "Inter-hospital transport",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d9478"
+            },
+            true
+          ],
+          [
+            "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "update_data",
+            "Updated admission-notes",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d947a"
+            },
+            false
+          ]
+        ]
+      },
+      {
+        "stepName": "Provider access pattern analysis",
+        "success": true,
+        "duration": 69.86908300000141,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "auditor",
+          "erDoctor"
+        ],
+        "timestamp": "2025-07-20T23:35:41.981Z",
+        "result": [
+          [
+            "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "create_record",
+            "New patient record created",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d9446"
+            },
+            false
+          ],
+          [
+            "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "update_data",
+            "Updated initial-assessment",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d9448"
+            },
+            false
+          ],
+          [
+            "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+            "create_record",
+            "New patient record created",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d9453"
+            },
+            false
+          ],
+          [
+            "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+            "emergency_access",
+            "Trauma team activation - Level 1 trauma",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d945b"
+            },
+            true
+          ],
+          [
+            "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "create_record",
+            "New patient record created",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d9462"
+            },
+            false
+          ],
+          [
+            "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+            "update_data",
+            "Updated referral-notes",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d9464"
+            },
+            false
+          ],
+          [
+            "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "update_data",
+            "Updated transfer-request",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d9470"
+            },
+            false
+          ],
+          [
+            "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+            "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+            "update_data",
+            "Updated chronic-care-plan",
+            {
+              "type": "BigNumber",
+              "hex": "0x687d947c"
+            },
+            false
+          ]
+        ]
+      },
+      {
+        "stepName": "Emergency access compliance check",
+        "success": true,
+        "duration": 11.385666000001947,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "auditor"
+        ],
+        "timestamp": "2025-07-20T23:35:42.494Z",
+        "result": {
+          "totalAccess": 8,
+          "emergencyAccess": 4
+        }
+      }
+    ],
+    "metrics": {
+      "totalSteps": 4,
+      "successfulSteps": 4,
+      "failedSteps": 0,
+      "successRate": 100,
+      "averageStepLatency": 24.023853750000853,
+      "minStepLatency": 3.679707999999664,
+      "maxStepLatency": 69.86908300000141,
+      "totalGasUsed": 0,
+      "averageGasPerStep": 0,
+      "participantCount": 3,
+      "workflowComplexity": 1.3333333333333333
+    }
+  },
+  "patientConsentManagement": {
+    "description": "Dynamic patient consent and privacy management",
+    "data": [
+      {
+        "stepName": "Initial consent setup",
+        "success": true,
+        "duration": 21.866375000001426,
+        "gasUsed": 191501,
+        "error": null,
+        "participants": [
+          "patient3"
+        ],
+        "timestamp": "2025-07-20T23:35:43.018Z",
+        "result": {
+          "hash": "0x1bfbecfd5ec905b82386ab1c5290f91e0a5c7b6bfdd293af3acec1370d81288f",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x88e68d79c072d31b239872efd368518799ee4a779bba22f3eecb47671ab66aef",
+          "blockNumber": 5636,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x02ec0d"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 278,
+          "data": "0x39e1a6bb00000000000000000000000015d34aaf54267db7d7c367839aaf71a00a2c6a65000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000278d00000000000000000000000000000000000000000000000000000000000000000c636f6e73656e742d746573740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a726561642f777269746500000000000000000000000000000000000000000000",
+          "r": "0x90b0dd2a962260af12e49bd79e23e7446338f1877cfd08a3b019fdcc4324a136",
+          "s": "0x32c60d8353d1900ea2eba8750dcedb98767cd7a57ab233f17ec968df1ddb037d",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Consent modification - add specialist",
+        "success": true,
+        "duration": 20.75366700000086,
+        "gasUsed": 191429,
+        "error": null,
+        "participants": [
+          "patient3",
+          "cardiologist"
+        ],
+        "timestamp": "2025-07-20T23:35:43.541Z",
+        "result": {
+          "hash": "0xd658a6d7aa5293ec27e2cc4b9e1634e7e32d20579a9b9e180b7f60c0a397365b",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0x9c5c0dfef28fbdb44b3c69e2c9b53d2cab36a82f59a790ced743f0cafd8534d9",
+          "blockNumber": 5637,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x02ebc5"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 279,
+          "data": "0x39e1a6bb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000127500000000000000000000000000000000000000000000000000000000000000000c636f6e73656e742d74657374000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000047265616400000000000000000000000000000000000000000000000000000000",
+          "r": "0x679b360dd9cfc42c1034cf610c061e0065c84d906538bec5de164dd3bb26407a",
+          "s": "0x441237ed3586a9a5a668d07f7c818193224d22fe401f36b70b5cf98efbf660fe",
+          "v": 1,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Consent revocation test",
+        "success": true,
+        "duration": 46.47245800000019,
+        "gasUsed": 204353,
+        "error": null,
+        "participants": [
+          "patient3",
+          "cardiologist"
+        ],
+        "timestamp": "2025-07-20T23:35:44.088Z",
+        "result": {
+          "hash": "0x03bea7d94df018c65e2767d635555db6c86bff643e8be180efbbb4737e739347",
+          "type": 2,
+          "accessList": [],
+          "blockHash": "0xcec9e58b160f9b14434808f6fc3f0d67189cb915a8a35ab174ab0134befaa06b",
+          "blockNumber": 5640,
+          "transactionIndex": 0,
+          "confirmations": 1,
+          "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+          "gasPrice": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca07"
+          },
+          "maxPriorityFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca00"
+          },
+          "maxFeePerGas": {
+            "type": "BigNumber",
+            "hex": "0x3b9aca08"
+          },
+          "gasLimit": {
+            "type": "BigNumber",
+            "hex": "0x033d70"
+          },
+          "to": "0x987Aa6E80e995d6A76C4d061eE324fc760Ea9F61",
+          "value": {
+            "type": "BigNumber",
+            "hex": "0x00"
+          },
+          "nonce": 280,
+          "data": "0x64853fbb0000000000000000000000009965507d1a55bcc2695c58ba16fb37d819b0a4dc",
+          "r": "0x5481f6139f67ccde0d4c59e396c6525613ab31ac478264cc354aa62b08f30714",
+          "s": "0x20b8ddbea0a121cf8e8a7242ee80c18ef5b4f508bcedce2bf25c85c42c6a4b20",
+          "v": 0,
+          "creates": null,
+          "chainId": 1337
+        }
+      },
+      {
+        "stepName": "Verify consent enforcement",
+        "success": true,
+        "duration": 20.822791000002326,
+        "gasUsed": 0,
+        "error": null,
+        "participants": [
+          "cardiologist",
+          "patient3"
+        ],
+        "timestamp": "2025-07-20T23:35:44.610Z",
+        "result": ""
+      }
+    ],
+    "metrics": {
+      "totalSteps": 4,
+      "successfulSteps": 4,
+      "failedSteps": 0,
+      "successRate": 100,
+      "averageStepLatency": 27.4788227500012,
+      "minStepLatency": 20.75366700000086,
+      "maxStepLatency": 46.47245800000019,
+      "totalGasUsed": 587283,
+      "averageGasPerStep": 146820.75,
+      "participantCount": 2,
+      "workflowComplexity": 2
+    }
+  }
+}
