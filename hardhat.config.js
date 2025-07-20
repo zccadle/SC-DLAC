@@ -23,7 +23,7 @@ if (process.env.ALCHEMY_API_KEY && process.env.PRIVATE_KEY) {
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: {
-    version: "0.8.0",
+    version: "0.8.30",
     settings: {
       optimizer: {
         enabled: true,
